@@ -24,20 +24,15 @@ img {
 
 /* layout */
 
-.wrap{
-    width: 1080px;
+.content-w {
+    width: min(1080px, 100%);
     margin: 0 auto;
 }
 
-h1{
-    font-weight: normal;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #C85C5C;
-}
-.blog-text{
-    padding-top: 20px;
-    line-height: 2;
+@media screen and (max-width: 1080px) {
+
+    .content-w {
+        padding: 0 20px;
+    }
+
 }
