@@ -12,6 +12,31 @@
  * だだし、文章になる場合は自由な数字とする
  */
 
+/**
+ * transitionの値は全て0.25s ease-in-out
+ */
+
+/**
+ * フォント：Monarcha（英語用）
+ * font-family: monarcha, serif;
+ * font-weight: 400;
+ * font-style: normal;
+ */
+
+/**
+ * フォント：A-OTF UD 黎ミン Pr6N（本文）
+ * font-family: a-otf-ud-reimin-pr6n, sans-serif;
+ * font-weight: 300;
+ * font-style: normal;
+ */
+
+/**
+ * フォント：Adorn Garland（筆記体の英語用）
+ * font-family: adorn-garland, sans-serif;
+ * font-weight: 400;
+ * font-style: normal;
+ */
+
 
 /* common */
 
@@ -25,10 +50,22 @@
     --c-red_accent: #FF7171;
     --c-base: #fff;
 
-    --f-primary: 2em;
-    --f-secondary: 1.3em;
-    --f-common: clamp(16px, vw, 18px);
+    --fsz-primary: 2em;
+    --fsz-secondary: 1.3em;
+    --fsz-common: clamp(16px, 2.34375vw, 18px);
 
+    --ff-title: monarcha, serif;
+    --ff-text: a-otf-ud-reimin-pr6n, sans-serif;
+    --ff-cursive: adorn-garland, sans-serif;
+
+}
+
+body {
+    max-height: 0vw;
+    font-family: var(--ff-text);
+    font-weight: 300;
+    font-size: var(--fsz-common);
+    font-style: normal;
 }
 
 a {
