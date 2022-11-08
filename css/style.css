@@ -2,6 +2,16 @@
 
 /* common */
 
+:root {
+    --c-font: #2C2C2C;
+    --c-red_main: #C85C5C;
+    --c-green: #B2EA70;
+    --c-blue: #9FD8DF;
+    --c-yellow: #FBD148;
+    --c-red_accent: #FF7171;
+    --c-base: #fff;
+}
+
 ul {
     list-style: none;
 }
