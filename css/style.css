@@ -22,6 +22,11 @@ img {
     vertical-align: bottom;
 }
 
+a {
+    color: var(--c-red_accent);
+}
+
+
 /* layout */
 
 .content-w {
