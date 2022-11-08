@@ -1,8 +1,22 @@
 @charset "UTF-8";
 
+/**
+ * clampの計算
+ * clamp(最小値, 変化点（~vw）, 最大値)
+ * 変化点(vw) = (最大値 / ブレイクポイント) * 100
+ * clampの計算で使うブレイクポイントは全て768で計算すること
+ */
+
+/**
+ * 一行である要素（タイトルなど）の縦方向を、正確なマージンをとるためにline-hightを1にすること
+ * だだし、文章になる場合は自由な数字とする
+ */
+
+
 /* common */
 
 :root {
+
     --c-font: #2C2C2C;
     --c-red_main: #C85C5C;
     --c-green: #B2EA70;
@@ -10,11 +24,17 @@
     --c-yellow: #FBD148;
     --c-red_accent: #FF7171;
     --c-base: #fff;
+
+    --f-primary: 2em;
+    --f-secondary: 1.3em;
+    --f-common: clamp(16px, vw, 18px);
+
 }
 
-ul {
-    list-style: none;
+a {
+    color: var(--c-red_accent);
 }
+
 
 img {
     width: 100%;
@@ -22,8 +42,8 @@ img {
     vertical-align: bottom;
 }
 
-a {
-    color: var(--c-red_accent);
+ul {
+    list-style: none;
 }
 
 
