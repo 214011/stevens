@@ -1,1 +1,25 @@
 @charset "UTF-8";
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.wrap{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+h1{
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #C85C5C;
+}
+.blog-text{
+    padding-top: 20px;
+    line-height: 2;
+}
