@@ -146,15 +146,15 @@ ul {
 }
 
 
-/* nav */
+/* gnav */
 
-.nav {
+.gnav {
     height: 100%;
     display: grid;
     place-items: center;
 }
 
-.nav > .nav__container {
+.gnav > .gnav__container {
     height: 100%;
     display: flex;
     align-items: center;
@@ -162,18 +162,18 @@ ul {
     position: relative;
 }
 
-.nav__container--item {
+.gnav__container--item {
     min-height: 0vw;
     font-size: clamp(16px, 2.3148148148vw, 25px);
     font-family: var(--ff-title);
 }
 
-.nav__container--item:not(:last-child) {
+.gnav__container--item:not(:last-child) {
     padding-left: 15px;
     position: relative;
 }
 
-.nav__container--item:not(:last-child) a::before {
+.gnav__container--item:not(:last-child) a::before {
     content: "";
     display: block;
     width: 10px;
@@ -188,24 +188,32 @@ ul {
     opacity: 0;
 }
 
-.nav__container--item:nth-child(1) a::before {
+.gnav__container--item:nth-child(1) a::before {
     background-color: var(--c-blue);
 }
 
-.nav__container--item:nth-child(2) a::before {
+.gnav__container--item:nth-child(2) a::before {
     background-color: var(--c-green);
 }
 
-.nav__container--item:nth-child(3) a::before {
+.gnav__container--item:nth-child(3) a::before {
     background-color: var(--c-yellow);
 }
 
-.nav__container--item:nth-child(4) a::before {
+.gnav__container--item:nth-child(4) a::before {
     background-color: var(--c-red_main);
 }
 
+.gnav__container--item:not(:last-child):hover a::before {
+    opacity: 1;
+}
+._current-page::before {
+    opacity: 1 !important;
+}
 
-.nav__container--item:last-child {
+
+
+.gnav__container--item:last-child {
     font-size: 18px;
     position: absolute;
     top: 0;
@@ -214,28 +222,28 @@ ul {
 
 @media screen and (max-width: 1080px) {
 
-    .nav__container--item:last-child  {
+    .gnav__container--item:last-child  {
         font-size: 1em;
     }
 
 }
 
-.nav__container--item:last-child a {
+.gnav__container--item:last-child a {
     display: flex;
     align-items: center;
 }
 
-.nav__container--item:last-child a .fa-circle-user {
+.gnav__container--item:last-child a .fa-circle-user {
     display: block;
     margin-right: 4px;
     transition: var(--transition);
 }
 
-.nav__container--item:last-child a:hover .fa-circle-user {
+.gnav__container--item:last-child a:hover .fa-circle-user {
     color: var(--c-green);
 }
 
-.nav__container--item a {
+.gnav__container--item a {
     text-decoration: none;
     color: var(--c-font);
 }
