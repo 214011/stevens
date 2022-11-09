@@ -170,7 +170,40 @@ ul {
 
 .nav__container--item:not(:last-child) {
     padding-left: 15px;
+    position: relative;
 }
+
+.nav__container--item:not(:last-child) a::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(5px,-50%);
+    transition: var(--transition);
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.nav__container--item:nth-child(1) a::before {
+    background-color: var(--c-blue);
+}
+
+.nav__container--item:nth-child(2) a::before {
+    background-color: var(--c-green);
+}
+
+.nav__container--item:nth-child(3) a::before {
+    background-color: var(--c-yellow);
+}
+
+.nav__container--item:nth-child(4) a::before {
+    background-color: var(--c-red_main);
+}
+
 
 .nav__container--item:last-child {
     font-size: 18px;
