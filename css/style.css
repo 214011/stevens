@@ -161,12 +161,47 @@ ul {
 }
 
 .nav__container--item {
-    font-size: 25px;
+    min-height: 0vw;
+    font-size: clamp(16px, 2.3148148148vw, 25px);
     font-family: var(--ff-title);
 }
 
 .nav__container--item:last-child {
+    font-size: 18px;
     position: absolute;
     top: 0;
     right: 0;
 }
+
+@media screen and (max-width: 1080px) {
+
+    .nav__container--item:last-child  {
+        font-size: 1em;
+    }
+
+}
+
+.nav__container--item:last-child a {
+    display: flex;
+    align-items: center;
+}
+
+.nav__container--item:last-child a .fa-circle-user {
+    display: block;
+    margin-right: 4px;
+}
+
+.nav__container--item a {
+    text-decoration: none;
+    color: var(--c-font);
+}
+
+
+
+
+
+
+
+
+
+
