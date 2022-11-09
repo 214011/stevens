@@ -60,6 +60,8 @@
     --ff-text: a-otf-ud-reimin-pr6n, sans-serif;
     --ff-cursive: adorn-garland, sans-serif;
 
+    --btn-h: max(2.5em, 44px);
+
     --transition: .25s ease-in-out;
 }
 
@@ -105,7 +107,7 @@ ul {
 }
 
 
-/* bg */
+/* bg -- background-image */
 
 .bg {
     background-size: cover;
@@ -147,6 +149,41 @@ ul {
 }
 
 
+/* hamburger-menu */
+
+.hamburger-menu {
+
+}
+
+.hamburger-menu--graph {
+
+}
+
+.hamburger-menu--graph {
+
+}
+
+.hamburger-menu--tex {
+
+}
+
+@media screen and (min-width: 1081px) {
+
+    .hamburger-menu  {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border-width: 0
+    }
+
+}
+
+
 /* gnav */
 
 .gnav {
@@ -157,15 +194,36 @@ ul {
 
 .gnav > .gnav__container {
     height: 100%;
+    min-height: 0vw;
     display: flex;
     align-items: center;
     gap: 20px;
+    font-size: clamp(16px, 2.3148148148vw, 25px);
     position: relative;
 }
 
+@media screen and (max-width: 1080px) {
+
+    .gnav {
+        width: 100%;
+        height: auto;
+        display: block;
+        background-color: var(--c-base);
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
+
+    .gnav > .gnav__container {
+        height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+    }
+
+}
+
 .gnav__container--item {
-    min-height: 0vw;
-    font-size: clamp(16px, 2.3148148148vw, 25px);
     font-family: var(--ff-title);
 }
 
@@ -180,7 +238,7 @@ ul {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    transform: translate(5px,-50%);
+    transform: translate(5px, -50%);
     transition: var(--transition);
     position: absolute;
     top: 50%;
@@ -212,21 +270,80 @@ ul {
     opacity: 1 !important;
 }
 
+@media screen and (max-width: 1080px) {
 
+    .gnav__container--item {
+        width: 100%;
+        padding: 0;
+        border-top: 1px solid var(--c-font);
+    }
+
+    .gnav__container--item:not(:last-child) {
+        padding: 0;
+    }
+
+    .gnav__container--item a {
+        width: 100%;
+        height: var(--btn-h);
+        display: flex;
+        align-items: center;
+    }
+
+    .gnav__container--item:not(:last-child) a {
+        padding-left: calc(20px + 1em + 5px);
+        position: relative;
+    }
+
+    .gnav__container--item:not(:last-child) a::before {
+        width: 1em;
+        height: 1em;
+        margin-left: 20px;
+        display: inline-block;
+        background-color: transparent;
+        border-radius: revert;
+        transform: translateY(-50%);
+        transition: var(--transition);
+        position: absolute;
+        top: 50%;
+        overflow: revert;
+        opacity: 1;
+    }
+
+    .gnav__container--item:nth-child(1) a::before {
+        color: var(--c-blue);
+        content: "\f0c4";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    .gnav__container--item:nth-child(2) a::before {
+        color: var(--c-green);
+        content: "\f073";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    .gnav__container--item:nth-child(3) a::before {
+        color: var(--c-yellow);
+        content: "\f781";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    .gnav__container--item:nth-child(4) a::before {
+        color: var(--c-red_main);
+        content: "\f1d8";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 400;
+    }
+
+}
 
 .gnav__container--item:last-child {
     font-size: 18px;
     position: absolute;
     top: 0;
     right: 0;
-}
-
-@media screen and (max-width: 1080px) {
-
-    .gnav__container--item:last-child  {
-        font-size: 1em;
-    }
-
 }
 
 .gnav__container--item:last-child a {
@@ -242,6 +359,31 @@ ul {
 
 .gnav__container--item:last-child a:hover .fa-circle-user {
     color: var(--c-green);
+}
+
+@media screen and (max-width: 1080px) {
+
+    .gnav__container--item:last-child  {
+        border-bottom: 1px solid var(--c-font);
+        font-size: 1em;
+        position: revert;
+    }
+
+    .gnav__container--item:last-child a {
+        padding-left: calc(20px + 1em + 5px);
+        position: relative;
+    }
+
+    .gnav__container--item:last-child a .fa-circle-user {
+        margin-right: 0;
+        margin-left: 17px;
+        color: var(--c-green);
+        transform: translateY(-50%);
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+
 }
 
 .gnav__container--item a {
