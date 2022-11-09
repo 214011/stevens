@@ -160,6 +160,11 @@ ul {
     position: relative;
 }
 
+.nav__container--item {
+    font-size: 25px;
+    font-family: var(--ff-title);
+}
+
 .nav__container--item:last-child {
     position: absolute;
     top: 0;
