@@ -179,6 +179,8 @@ ul {
 .hamburger-menu--graph:nth-child(1) {
     height: 7px;
     background-image: url(../images/menu_scissors_static.svg);
+    transform-origin: 50% 50%;
+    transition: var(--transition);
     top: 7.5px;
     z-index: 7;
 }
@@ -188,6 +190,8 @@ ul {
     height: 9px;
     background-image: url(../images/menu_scissors_dynamic.svg);
     transform: translateX(-40%);
+    transform-origin: 50% 50%;
+    transition: var(--transition);
     top: calc(3px + 7.5px);
     left: 40%;
     z-index: 6;
@@ -196,6 +200,8 @@ ul {
 .hamburger-menu--graph:nth-child(3) {
     height: 10px;
     background-image: url(../images/menu_hairbrush.svg);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    transition: var(--transition);
     top: 25px;
     z-index: 5;
 }
@@ -235,6 +241,18 @@ ul {
 
 .gnav.ham-is-active {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+}
+
+.hamburger-menu.ham-is-active .hamburger-menu--graph:nth-child(1) {
+    transform: translate(-53%, 10px) rotate(-135deg);
+}
+
+.hamburger-menu.ham-is-active .hamburger-menu--graph:nth-child(2) {
+    transform: translate(-24%, 8.5px) rotate(-45deg);
+}
+
+.hamburger-menu.ham-is-active .hamburger-menu--graph:nth-child(3) {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%) !important;
 }
 
 

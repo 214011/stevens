@@ -18,7 +18,9 @@
 
 
         $elms.hamburgerTrigger.addEventListener('click', (e) => {
-            Array.from($elms.hamburgerHook).forEach($elm => $elm.classList.toggle('ham-is-active'))
+            const $target = e.currentTarget;
+            $target.classList.toggle('ham-is-active');
+            Array.from($elms.hamburgerHook).forEach($elm => $elm.classList.toggle('ham-is-active'));
         });
 
 
