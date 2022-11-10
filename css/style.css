@@ -171,7 +171,7 @@ ul {
 }
 
 .hamburger-menu:active {
-    transform: scale(.875);
+    transform: scale(.95);
 }
 
 .hamburger-menu--graph {
