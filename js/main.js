@@ -1,6 +1,7 @@
 ((d) => {
     window.addEventListener('DOMContentLoaded', () => {
 
+
         /**
          * @type {
          *      {
