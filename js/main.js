@@ -1,5 +1,6 @@
+'use strict';
 ((d) => {
-    window.addEventListener('DOMContentLoaded', () => {
+    d.addEventListener('DOMContentLoaded', () => {
 
 
 
