@@ -120,7 +120,8 @@ ul {
 .header {
     width: 100%;
     height: 80px;
-    background-image: linear-gradient(#fff 0%, #fff0 100%);;
+    background-image: linear-gradient(#fff 0%, #fff0 100%);
+    transition: 1s ease-in-out;
 }
 
 .header > .content-w {
@@ -183,6 +184,20 @@ ul {
 
 }
 
+/*
+    jsで使うクラス --- ハンバーガーメニューの開閉
+*/
+
+.header.ham-is-active {
+    background-image: none !important;
+    background-color: var(--c-base) !important;
+}
+
+.gnav.ham-is-active {
+    height: auto;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+}
+
 
 /* gnav */
 
@@ -206,12 +221,13 @@ ul {
 
     .gnav {
         width: 100%;
-        height: auto;
+        height: 0;
         display: block;
         background-color: var(--c-base);
         position: absolute;
         top: 80px;
         left: 0;
+        clip-path: polygon(0 0, 100% 0%, 0% 0%, 0% 0%);
     }
 
     .gnav > .gnav__container {
