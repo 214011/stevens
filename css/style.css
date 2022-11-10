@@ -194,7 +194,6 @@ ul {
 }
 
 .gnav.ham-is-active {
-    height: auto;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
 }
 
@@ -221,13 +220,14 @@ ul {
 
     .gnav {
         width: 100%;
-        height: 0;
+        height: auto;
         display: block;
         background-color: var(--c-base);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .65s ease-in-out;
         position: absolute;
         top: 80px;
         left: 0;
-        clip-path: polygon(0 0, 100% 0%, 0% 0%, 0% 0%);
     }
 
     .gnav > .gnav__container {
