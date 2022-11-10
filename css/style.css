@@ -124,6 +124,9 @@ ul {
     background-image: linear-gradient(#fff 0%, #fff0 100%);
     background-size: 100% 100%;
     transition: .775s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .header > .content-w {
