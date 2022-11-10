@@ -244,11 +244,11 @@ ul {
 }
 
 .hamburger-menu.ham-is-active .hamburger-menu--graph:nth-child(1) {
-    transform: translate(-53%, 10px) rotate(-135deg);
+    transform: translate(-53%, 10px) rotate(-135deg) !important;
 }
 
 .hamburger-menu.ham-is-active .hamburger-menu--graph:nth-child(2) {
-    transform: translate(-24%, 8.5px) rotate(-45deg);
+    transform: translate(-24%, 8.5px) rotate(-45deg) !important;
 }
 
 .hamburger-menu.ham-is-active .hamburger-menu--graph:nth-child(3) {
