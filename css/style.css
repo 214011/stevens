@@ -69,7 +69,6 @@
 
 body {
     min-height: 0vw;
-    background-color: #000;
     color: var(--c-font);
     font-family: var(--ff-text);
     font-weight: 300;
@@ -164,7 +163,12 @@ ul {
     justify-content: flex-end;
     background-color: rgba(44, 44, 44, .7);
     border-radius: 10px;
+    transition: var(--transition);
     position: relative;
+}
+
+.hamburger-menu:active {
+    transform: scale(.875);
 }
 
 .hamburger-menu--graph {
@@ -203,7 +207,7 @@ ul {
     height: 10px;
     background-image: url(../images/menu_hairbrush.svg);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-    transition: .15s ease-in-out;
+    transition: var(--transition);
     top: 25px;
     z-index: 5;
 }
@@ -363,6 +367,11 @@ ul {
         height: var(--btn-h);
         display: flex;
         align-items: center;
+        transition: var(--transition);
+    }
+
+    .gnav__container--item a:hover {
+        background-color: var(--c-red_accent);
     }
 
     .gnav__container--item:not(:last-child) a {
