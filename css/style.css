@@ -201,7 +201,7 @@ ul {
     height: 10px;
     background-image: url(../images/menu_hairbrush.svg);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-    transition: var(--transition);
+    transition: .15s ease-in-out;
     top: 25px;
     z-index: 5;
 }
