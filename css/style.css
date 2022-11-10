@@ -154,15 +154,59 @@ ul {
 /* hamburger-menu */
 
 .hamburger-menu {
-
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgba(44, 44, 44, .7);
+    border-radius: 10px;
+    position: relative;
 }
 
 .hamburger-menu--graph {
-
+    width: 40px;
+    display: block;
+    background-size: contain;
+    background-position: center center;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 50%;
 }
 
-.hamburger-menu--tex {
+.hamburger-menu--graph:nth-child(1) {
+    height: 7px;
+    background-image: url(../images/menu_scissors_static.svg);
+    top: 7.5px;
+    z-index: 7;
+}
 
+.hamburger-menu--graph:nth-child(2) {
+    width: 34px;
+    height: 9px;
+    background-image: url(../images/menu_scissors_dynamic.svg);
+    transform: translateX(-40%);
+    top: calc(3px + 7.5px);
+    left: 40%;
+    z-index: 6;
+}
+
+.hamburger-menu--graph:nth-child(3) {
+    height: 10px;
+    background-image: url(../images/menu_hairbrush.svg);
+    top: 25px;
+    z-index: 5;
+}
+
+.hamburger-menu--text {
+    margin-bottom: 7.5px;
+    color: var(--c-base);
+    font-family: var(--ff-title);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
 }
 
 @media screen and (min-width: 1081px) {
