@@ -2,13 +2,19 @@
     window.addEventListener('DOMContentLoaded', () => {
 
 
+
+        /**
+         * DOM要素を格納するオブジェクト
+         * @type {{
+         *      hamburgerTrigger:  HTMLElement,
+         *      hamburgerHook: HTMLCollectionOf<Element>
+         * }}
+         */
         const $elms = {
             hamburgerTrigger: d.getElementById('js-hamburger__trigger'),
             hamburgerHook: d.getElementsByClassName('js-hamburger__hook')
         };
 
-
-        $elms.hamburgerTrigger.addEventListener('click', (e) => hamburger(e));
 
 
         /**
@@ -25,6 +31,9 @@
             $Array_elms.forEach($elm => $elm.classList.toggle('ham-is-active'));
 
         };
+
+        // ハンバーガーメニューを起動
+        $elms.hamburgerTrigger.addEventListener('click', (e) => hamburger(e));
 
 
     });
