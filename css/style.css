@@ -410,7 +410,7 @@ ul {
 .gnav__container--item:not(:last-child):hover a::before {
     opacity: 1;
 }
-._current-page::before {
+._current-page a::before {
     opacity: 1 !important;
 }
 
