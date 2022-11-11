@@ -757,6 +757,9 @@ ul {
 
 .footer__container--list li {
     width: 100%;
+}
+
+.footer__container--list li:not(:first-child) {
     margin-top: 15px;
 }
 
@@ -767,6 +770,15 @@ ul {
     text-decoration: none;
 }
 
+@media screen and (max-width: 1080px) {
+
+    .footer__container--list li a {
+        width: auto;
+        display: inline;
+    }
+
+}
+
 .footer__container--list li a:hover {
     text-decoration: underline;
 }
@@ -775,6 +787,15 @@ ul {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+@media screen and (max-width: 1080px) {
+
+    .footer__grid-box .footer__container:nth-child(3) li a {
+        width: 100%;
+        display: block;
+    }
+
 }
 
 .footer__flex-container:last-child {
