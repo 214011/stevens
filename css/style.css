@@ -551,9 +551,8 @@ ul {
  * メインコンテンツここから
  */
 
-.kubatablog-main-image{
-    width: 1080px;
-    margin: 30px auto 0;
+.main {
+    margin-top: calc(80px + clamp(35px, 9.114583333vw, 70px));
 }
 
 
