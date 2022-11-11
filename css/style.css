@@ -1,6 +1,22 @@
 @charset "UTF-8";
 
 
+/* !----- パソコンベースでCSSを書いていく -----! */
+
+/**
+ * ----------------------------------------------------------------------
+ * CSSを書く時に気を付けること
+ * ----------------------------------------------------------------------
+ */
+
+/**
+ * ↓ スマホ版＆タブレット版ブレイクポイントの基本 ↓
+ * @media screen and (max-width: 1080px)
+ * ----------------------------------------------------------------------
+ * ↓ ところによりブレイクポイントを変える必要がある場合 ↓
+ * @media screen and (max-width: 768px)
+ */
+
 /**
  * clampの計算
  * clamp(最小値, 変化点（~vw）, 最大値)
@@ -14,6 +30,13 @@
 
 /**
  * clamp関数を使ったところにはSafariで機能させるためにmin-height: 0vw;を入れること
+ */
+
+
+/**
+ * ----------------------------------------------------------------------
+ * フォント(使いたいものがあったらコピペしてね)
+ * ----------------------------------------------------------------------
  */
 
 /**
@@ -38,7 +61,11 @@
  */
 
 
-
+/**
+ * ----------------------------------------------------------------------
+ * 共通部分のCSS
+ * ----------------------------------------------------------------------
+ */
 
 /* common */
 
@@ -67,7 +94,6 @@
 
 body {
     min-height: 0vw;
-    background-color: #000;
     color: var(--c-font);
     font-family: var(--ff-text);
     font-weight: 300;
@@ -90,6 +116,30 @@ ul {
     list-style: none;
 }
 
+.btn {
+    height: var(--btn-h);
+}
+
+.btn a {
+    height: 100%;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--c-base);
+    background-color: var(--c-red_accent);
+    border-radius: 1.5em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn a:hover {
+    background-color: var(--c-red_main);
+    box-shadow: none;
+}
+
 
 /* layout */
 
@@ -107,6 +157,12 @@ ul {
 }
 
 
+/**
+ * ----------------------------------------------------------------------
+ * バックグラウンドの画像
+ * ----------------------------------------------------------------------
+ */
+
 /* bg -- background-image */
 
 .bg {
@@ -114,6 +170,11 @@ ul {
     background-position: center center;
 }
 
+
+/**
+ * ----------------------------------------------------------------------
+ * ヘッダーコンテンツここから
+ */
 
 /* header */
 
@@ -123,6 +184,10 @@ ul {
     background-image: linear-gradient(#fff 0%, #fff0 100%);
     background-size: 100% 100%;
     transition: .775s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
 
 .header > .content-w {
@@ -133,12 +198,12 @@ ul {
     position: relative;
 }
 
-.header-title {
+.header--title {
     width: clamp(125px, 13.8888vw, 150px);
     min-height: 0vw;
 }
 
-.header-title a {
+.header--title a {
     width: 100%;
     height: 100%;
     display: grid;
@@ -146,7 +211,7 @@ ul {
     transition: var(--transition);
 }
 
-.header-title a:hover {
+.header--title a:hover {
     filter: brightness(1.3);
 }
 
@@ -162,7 +227,12 @@ ul {
     justify-content: flex-end;
     background-color: rgba(44, 44, 44, .7);
     border-radius: 10px;
+    transition: var(--transition);
     position: relative;
+}
+
+.hamburger-menu:active {
+    transform: scale(.95);
 }
 
 .hamburger-menu--graph {
@@ -340,7 +410,7 @@ ul {
 .gnav__container--item:not(:last-child):hover a::before {
     opacity: 1;
 }
-._current-page::before {
+._current-page a::before {
     opacity: 1 !important;
 }
 
@@ -361,6 +431,11 @@ ul {
         height: var(--btn-h);
         display: flex;
         align-items: center;
+        transition: var(--transition);
+    }
+
+    .gnav__container--item a:hover {
+        background-color: var(--c-red_accent);
     }
 
     .gnav__container--item:not(:last-child) a {
@@ -465,6 +540,16 @@ ul {
     color: var(--c-font);
 }
 
+/**
+ * ヘッダーコンテンツここまで
+ * ----------------------------------------------------------------------
+ */
+
+
+/**
+ * ----------------------------------------------------------------------
+ * メインコンテンツここから
+ */
 
 
 
@@ -474,3 +559,241 @@ ul {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * ----------------------------------------------------------------------
+ * フッターコンテンツここから
+ */
+
+/* footer */
+
+.footer {
+    margin-top: 150px;
+    padding: 60px 0;
+    background-color: var(--c-red_main);
+    color: var(--c-base);
+}
+
+.footer__flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__flex-container > .footer__container {
+    width: 45%;
+}
+
+.footer__container--title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid var(--c-base);
+    font-family: var(--ff-title);
+    font-size: var(--fsz-primary);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+/* .footer__container--map iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+} */
+
+.footer__container--map-caption {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    line-height: 1;
+}
+
+.footer__container--map-caption address {
+    font-style: normal;
+}
+
+/* @supports not (aspect-ratio: 3 / 2) { */
+
+    .footer__container--map {
+        width: 100%;
+        margin-bottom: calc(3em * 2);
+        position: relative;
+    }
+
+    .footer__container--map::before {
+        content: "";
+        display: block;
+        padding-top: calc(2 / 3 * 100%);
+    }
+
+    .footer__container--map iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .footer__container--map-caption {
+        margin-top: 10px;
+        position: absolute;
+    }
+
+/* } */
+
+.footer__grid-box {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 45px 20px;
+}
+
+.footer__container--list {
+    padding-left: 1em;
+    line-height: 1;
+    list-style: revert;
+}
+
+.footer__container--list li {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.footer__container--list li a {
+    width: 100%;
+    display: block;
+    color: var(--c-base);
+    text-decoration: none;
+}
+
+.footer__container--list li a:hover {
+    text-decoration: underline;
+}
+
+.footer__grid-box .footer__container:nth-child(3) li a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.footer__flex-container:last-child {
+    margin-top: 72px;
+    align-items: center;
+}
+
+.footer--title {
+    width: clamp(125px, 16.666666vw, 180px);
+    min-height: 0vw;
+}
+
+.footer--title a {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    transition: var(--transition);
+}
+
+.footer--title a:hover {
+    opacity: .75;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.copyright small {
+    font-size: 100%;
+}
+
+.footer--btn a {
+    padding: 0 3.5835em;
+}
+
+.footer--btn a:hover {
+    background-color: var(--c-base);
+    color: var(--c-red_accent);
+}
+
+/**
+ * フッターコンテンツここまで
+ * ----------------------------------------------------------------------
+ */
