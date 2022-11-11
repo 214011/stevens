@@ -551,7 +551,10 @@ ul {
  * メインコンテンツここから
  */
 
-
+.kubatablog-main-image{
+    width: 1080px;
+    margin: 30px auto 0;
+}
 
 
 
