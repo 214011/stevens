@@ -551,8 +551,17 @@ ul {
  * メインコンテンツここから
  */
 
+ /* blog */
 .main {
     margin-top: calc(80px + clamp(35px, 9.114583333vw, 70px));
+}
+
+/* contact */
+.contact--text{
+    padding: 40px;
+    line-height: 2;
+    border-top: 2px solid #FBD148;;
+    border-bottom: 2px solid #FBD148;;
 }
 
 
