@@ -642,6 +642,7 @@ ul {
     min-height: 0vw;
     padding-bottom: clamp(5px, 1.302083333vw, 10px);
     border-bottom: 2px solid var(--c-red_main);
+    font-size: var(--fsz-secondary);
     line-height: 1.5;
 }
 
@@ -687,6 +688,10 @@ ul {
 .blog__pager--previousBtn:hover,
 .blog__pager--nextBtn:hover {
     transform: scale(0.95);
+}
+
+.__blog-arrowBtn_none {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 }
 
 .blog__pager--link {
