@@ -762,6 +762,7 @@ ul {
     line-height: 2;
     border-top: 2px solid var(--c-green);
     border-bottom: 2px solid var(--c-green);
+    margin-top: 100px;
 }
 
 /* reserve */
@@ -769,7 +770,33 @@ ul {
     text-align: center;
 }
 
-
+/* account */
+.account__container{
+    margin-top: 35px;
+}
+.complete--text {
+    text-align: center;
+}
+.complete--text .short input{
+    width: 150px;
+    height: 45px;
+    margin-top: 20px;
+    border: 1px solid var(--c-font);
+    border-radius: 27px;
+    text-align: center;
+}
+.complete--text .long input{
+    width: 506px;
+    height: 45px;
+    margin-top: 20px;
+    border: 1px solid var(--c-font);
+    border-radius: 27px;
+    text-align: center;
+}
+.account--btn{
+    width: 252px;
+    margin: 60px auto 0;
+}
 
 
 
