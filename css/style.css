@@ -574,6 +574,10 @@ ul {
     border-bottom: 2px solid var(--c-green);
 }
 
+/* reserve */
+.reserve--text{
+    text-align: center;
+}
 
 
 
