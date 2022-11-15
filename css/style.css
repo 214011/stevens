@@ -551,10 +551,12 @@ ul {
  * メインコンテンツここから
  */
 
- /* blog */
 .main {
     margin-top: calc(80px + clamp(35px, 9.114583333vw, 70px));
 }
+
+
+/* blog */
 
 /* contact */
 .contact--text{
