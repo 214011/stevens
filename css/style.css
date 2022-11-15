@@ -567,6 +567,7 @@ ul {
 }
 
 .blog__category {
+    margin-top: 10px;
     color: var(--c-blue);
 }
 
@@ -589,6 +590,7 @@ ul {
     place-items: center;
     padding: 0 1em;
     color: var(--c-base);
+    line-height: 1;
     text-decoration: none;
 }
 
