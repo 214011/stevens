@@ -602,11 +602,74 @@ ul {
 
 
 /* contact */
+.contact{
+    margin-top: 60px;
+}
 .contact--text{
     padding: 40px;
     line-height: 2;
     border-top: 2px solid var(--c-yellow);
     border-bottom: 2px solid var(--c-yellow);
+}
+.contact__row--item{
+    display: flex;
+    height: 58px;
+}
+.contact__row--item > dt{
+    width: 350px;
+    background-color: var(--c-blue);
+    padding-left: 30px;
+    line-height: 58px;
+    border-left: 1px solid var(--c-font);
+    border-bottom: 1px solid var(--c-font);
+}
+.contact--fast > dt{
+    border-top: 1px solid var(--c-font);
+}
+.contact__row--item > dd{
+    width: 730px;
+    padding-left: 60px;
+    line-height: 58px;
+    border-right: 1px solid var(--c-font);
+    border-bottom: 1px solid var(--c-font);
+}
+.contact__row--item > dd input{
+    width: 150px;
+    height: 45px;
+    border: solid 1px var(--c-font);
+    border-radius: 27px;
+    margin-right: 20px;
+    text-align: center;
+}
+.contact--fast > dd{
+    border-top: 1px solid var(--c-font);
+}
+.red{
+    color: var(--c-red_accent);
+}
+.contact__row--contact{
+    display: flex;
+    height: 298px;
+}
+.contact__row--contact > dt{
+    width: 350px;
+    background-color: var(--c-blue);
+    padding-left: 30px;
+    line-height: 298px;
+    border-left: 1px solid var(--c-font);
+    border-bottom: 1px solid var(--c-font);
+}
+.contact__row--contact > dd{
+    width: 730px;
+    padding-left: 60px;
+    line-height: 298px;
+    border-right: 1px solid var(--c-font);
+    border-bottom: 1px solid var(--c-font);
+}
+.contact--btn{
+    width: 131px;
+    font-size: 18px;
+    margin: 30px auto 0;
 }
 
 /* complete */
@@ -621,8 +684,6 @@ ul {
 .reserve--text{
     text-align: center;
 }
-
-
 
 
 
