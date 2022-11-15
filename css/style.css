@@ -554,13 +554,15 @@ ul {
     margin-top: calc(80px + clamp(35px, 9.114583333vw, 70px));
 }
 /* menu */
-.menu__grid-box{
 
+.menu__container{
 }
 .menu__container--list{
+    width: 600px;
+    margin: 0 auto ;
     display: grid;
     gap: 35px;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,3fr);
     justify-items: center;
 }
 .menu__container--list li{
@@ -579,7 +581,12 @@ ul {
     color: var(--c-base);
 }
 .menubtn{
-    grid-column: ;
+    
+}
+.menubtn-a{
+    justify-items: stretch;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 
