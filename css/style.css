@@ -566,6 +566,13 @@ ul {
     border-bottom: 2px solid var(--c-yellow);
 }
 
+/* complete */
+.complete--text{
+    padding: 40px;
+    line-height: 2;
+    border-top: 2px solid var(--c-green);
+    border-bottom: 2px solid var(--c-green);
+}
 
 
 
