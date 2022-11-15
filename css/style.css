@@ -556,6 +556,17 @@ ul {
 }
 
 
+/* blog */
+
+/* contact */
+.contact--text{
+    padding: 40px;
+    line-height: 2;
+    border-top: 2px solid var(--c-yellow);
+    border-bottom: 2px solid var(--c-yellow);
+}
+
+
 
 
 
