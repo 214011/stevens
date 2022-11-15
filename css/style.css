@@ -654,6 +654,11 @@ ul {
     margin-top: clamp(10px, 2.60416666vw, 20px);
 }
 
+.blog__container--text mark {
+    background-color: transparent;
+    background: linear-gradient(rgba(251, 209, 72, 0) 0%, rgba(251, 209, 72, 0.2) 43.35%, var(--c-yellow) 100%);
+}
+
 .blog__pager {
     min-height: 0vw;
     margin-top: clamp(50px, 13.02083333vw, 100px);
@@ -712,8 +717,8 @@ ul {
 }
 
 .__blog-current {
-    color: var(--c-yellow);
-    box-shadow: none;
+    color: var(--c-yellow) !important;
+    box-shadow: none !important;
 }
 
 
