@@ -711,7 +711,7 @@ ul {
     box-shadow: none;
 }
 
-__blog-current {
+.__blog-current {
     color: var(--c-yellow);
     box-shadow: none;
 }
