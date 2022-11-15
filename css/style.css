@@ -668,7 +668,7 @@ ul {
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-radius: 1px;
-    position: relative;
+    transition: var(--transition);
 }
 
 .blog__pager--previousBtn {
@@ -677,6 +677,11 @@ ul {
 
 .blog__pager--nextBtn {
     border-left: 30px solid var(--c-red_accent);
+}
+
+.blog__pager--previousBtn:hover,
+.blog__pager--nextBtn:hover {
+    transform: scale(0.95);
 }
 
 .blog__pager--link {
@@ -702,6 +707,11 @@ ul {
 }
 
 .blog__pager--link_item a:hover {
+    color: var(--c-yellow);
+    box-shadow: none;
+}
+
+__blog-current {
     color: var(--c-yellow);
     box-shadow: none;
 }
