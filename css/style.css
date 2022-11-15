@@ -25,13 +25,12 @@
  */
 
 /**
- * transitionの値は全て0.25s ease-in-out
- */
-
-/**
  * clamp関数を使ったところにはSafariで機能させるためにmin-height: 0vw;を入れること
  */
 
+/**
+ * transitionの値は全て0.25s ease-in-out
+ */
 
 /**
  * ----------------------------------------------------------------------
@@ -306,7 +305,7 @@ ul {
 */
 
 .header.ham-is-active {
-    background-size: 100% 4500% !important;
+    background-size: 100% 1000% !important;
 }
 
 .gnav.ham-is-active {
@@ -352,7 +351,7 @@ ul {
         display: block;
         background-color: var(--c-base);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: .65s ease-in-out;
+        transition: .4s ease-in-out;
         position: absolute;
         top: 80px;
         left: 0;
@@ -567,7 +566,8 @@ ul {
 }
 
 .blog__category {
-    margin-top: 10px;
+    min-height: 0vw;
+    margin-top: clamp(5px, 1.302083333vw, 10px);
     color: var(--c-blue);
 }
 
@@ -579,8 +579,6 @@ ul {
 
 .blog__category--tag li {
     height: 1.5em;
-    background-color: var(--c-blue);
-    border-radius: 1.5em;
 }
 
 .blog__category--tag li a {
@@ -590,11 +588,71 @@ ul {
     place-items: center;
     padding: 0 1em;
     color: var(--c-base);
+    background-color: var(--c-blue);
+    border-radius: 1.5em;
     line-height: 1;
     text-decoration: none;
+    transition: var(--transition);
 }
 
+.blog__category--tag li a:hover {
+    background-color: var(--c-yellow);
+}
 
+.blog__image {
+    min-height: 0vw;
+    margin-top: clamp(20px, 3.2552083333vw, 25px);
+    aspect-ratio: 16 / 9;
+}
+
+.blog__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+
+    .blog__image {
+        position: relative;
+    }
+
+    .blog__image::before {
+        content: "";
+        display: block;
+        padding-top: calc(9 / 16 * 100%);
+    }
+
+    .blog__image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+}
+
+.blog__container {
+    min-height: 0vw;
+    margin-top: clamp(15px, 5.2083333vw, 40px);
+}
+
+.blog__container--title {
+    min-height: 0vw;
+    padding-bottom: clamp(5px, 1.302083333vw, 10px);
+    border-bottom: 2px solid var(--c-red_main);
+    line-height: 1.5;
+}
+
+.blog__container--text {
+    line-height: 2;
+}
+
+.blog__container--text:nth-child(2) {
+    min-height: 0vw;
+    margin-top: clamp(10px, 2.60416666vw, 20px);
+}
 
 
 
@@ -710,7 +768,6 @@ ul {
 .reserve--text{
     text-align: center;
 }
-
 
 
 
