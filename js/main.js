@@ -8,7 +8,7 @@
             methodType: 'GET',
             url: './header.html',
             dataType: 'document',
-            timeout: 500
+            timeout: 100
         }).done(data => {
 
             d.body.prepend(data.body.children[0]);
@@ -54,7 +54,7 @@
             methodType: 'GET',
             url: './footer.html',
             dataType: 'document',
-            timeout: 500
+            timeout: 100
         })
         .done(data => d.body.appendChild(data.body.children[0]))
         .fail(data => {
