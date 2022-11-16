@@ -45,7 +45,7 @@
 
         }).fail(data => {
             if (data) {
-                console.log(data)
+                console.log(data);
             }
         });
 
@@ -59,7 +59,7 @@
         .done(data => d.body.appendChild(data.body.children[0]))
         .fail(data => {
             if (data) {
-                console.log(data)
+                console.log(data);
             }
         });
 
