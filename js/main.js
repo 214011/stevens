@@ -16,8 +16,6 @@
             hamburgerHook: d.getElementsByClassName('js-hamburger__hook')
         };
 
-
-
         /**
          * ハンバーガーメニューのコンテンツを開閉する関数
          * @param {MouseEvent} e addEventListenerのイベントオブジェクト
