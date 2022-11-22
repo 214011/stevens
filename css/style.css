@@ -731,7 +731,7 @@ ul {
 
 .menu__contents-wrap{
     width: 1080px;
-    height: 100vh;
+    height: 1000vh;
     margin:200px auto 0;
     background-color: #ececec;/* 一時的に区別をつけるため色を変えています */
     padding: 70px;
@@ -739,6 +739,10 @@ ul {
 
 .menu__contents{
     border-left: solid 5px var(--c-blue);
+}
+.menu__contents2{
+    border-left: solid 5px var(--c-blue);
+    margin-top: 100px;
 }
 
 .menu__h2{
@@ -752,6 +756,8 @@ ul {
 
 .menu__list{
     margin-top: 40px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--c-font);
     display: flex;
     gap: 40px;
 }
