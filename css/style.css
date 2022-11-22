@@ -677,6 +677,27 @@ ul {
     font-size: 18px;
 }
 
+.menu__contents-wrap{
+    width: 1080px;
+    height: 100vh;
+    margin:200px auto 0;
+    background-color: #ececec;/* 一時的に区別をつけるため色を変えています */
+    padding: 70px;
+}
+
+.menu__contents{
+    border-left: solid 5px var(--c-blue);
+}
+
+.menu__h2{
+    padding-left: 10px;
+    height: 72px;
+    line-height: 72px;
+}
+.menu__h2 h2{
+    font-size: 36px;
+}
+
 
 /* blog */
 .blog__contents{
