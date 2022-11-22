@@ -591,12 +591,12 @@ ul {
 /* index */
 .home__contents{
     width: 100%;
-    height: 768px;
+    height: 100vh;
     background-color: var(--c-red_main);
     line-height: 2;
 }
 .home__textcontents{
-    padding-top: 65px;
+    
 }
 .home__textcontents p{
     color: #fff;
