@@ -566,8 +566,6 @@ ul {
     justify-items: center;
 }
 .menu__container--list li{
-    width: 280px;
-    height: 60px;
     font-size: 23px;
     display: flex;
     align-items: center;
@@ -581,10 +579,12 @@ ul {
     color: var(--c-base);
 }
 .menubtn{
-    
+    width: 280px;
+    height: 60px;
 }
 .menubtn-a{
-    justify-items: stretch;
+    width: 100%;
+    height: 60px;
     grid-column-start: 1;
     grid-column-end: 3;
 }
