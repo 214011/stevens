@@ -616,6 +616,7 @@ ul {
 /* blog's top page */
 
 .main__content--blog {
+    padding: 100px 0;
     background-color: var(--c-base);
 }
 
