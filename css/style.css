@@ -553,6 +553,9 @@ ul {
 .main {
     margin-top: calc(80px + clamp(35px, 9.114583333vw, 70px));
 }
+
+
+
 /* menu */
 
 .menu__container{
@@ -565,7 +568,8 @@ ul {
     grid-template-columns: repeat(2,3fr);
     justify-items: center;
 }
-.menu__container--list li{
+.menu__container--list a{
+    height: 100%;
     font-size: 23px;
     display: flex;
     align-items: center;
@@ -573,10 +577,12 @@ ul {
     background-color: var(--c-red_accent);
     border-radius: 1.5em;
     box-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
-}
-.menu__container--list a{
-    text-decoration: none;
     color: var(--c-base);
+    text-decoration: none;
+}
+.menu__container--list a:hover{
+    background-color: var(--c-red_main);
+    box-shadow: none;
 }
 .menubtn{
     width: 280px;
