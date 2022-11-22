@@ -664,7 +664,7 @@ ul {
     line-height: 2;
 }
 .home__textcontents{
-    
+
 }
 .home__textcontents p{
     color: #fff;
@@ -679,6 +679,14 @@ ul {
 
 
 /* blog */
+.blog__contents{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--c-base);
+}
+.blog__moji{
+    color: #2C2C2C;
+}
 
 .blog__published,
 .blog__category {
