@@ -1,6 +1,6 @@
 'use strict';
-((d) => {
-    window.addEventListener('DOMContentLoaded', () => {
+((d, w) => {
+    w.addEventListener('DOMContentLoaded', () => {
 
 
         /**
@@ -35,16 +35,16 @@
 
         /**
          * ページャーをホバーした時の処理
-         * @returns {void} 返り値なし
+         * @return {void} 返り値なし
          */
         const pagerMouseover = () => array_$pagerItem.forEach($elm => $elm.children[0].classList.remove('__blog-current'));
 
         /**
          * ページャーのホバーを抜けた時の処理
-         * @returns {void} 返り値なし
+         * @return {void} 返り値なし
          */
         const pagerMouseout = () => $elms.pagerItem[currentPage].children[0].classList.add('__blog-current');
 
 
     });
-})(document);
+})(document, window);
