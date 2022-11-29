@@ -800,10 +800,10 @@ ul {
 
 @keyframes content__area--anim_left {
     0% {
-        transform: translateX(-75vw);
+        transform: translateX(-45vw);
     }
     10% {
-        transform: translateX(-30vw);
+        transform: translateX(-15vw);
     }
     15% {
         transform: translateX(0);
@@ -830,10 +830,10 @@ ul {
 
 @keyframes content__area--anim_right {
     0% {
-        transform: translateX(75vw);
+        transform: translateX(45vw);
     }
     10% {
-        transform: translateX(-0vw);
+        transform: translateX(15vw);
     }
     15% {
         transform: translateX(0);
@@ -861,12 +861,25 @@ ul {
 .__menu-content .content__area,
 .__blog-content .content__area,
 .__account-content .content__area {
+    transform: translateX(-45vw);
+}
+
+.__menu-content .content__area.content__area--is-active,
+.__blog-content .content__area.content__area--is-active,
+.__account-content .content__area.content__area--is-active {
     animation: content__area--anim_left 2s linear;
+    transform: translateY(0);
 }
 
 .__reserve-content .content__area,
 .__contact-content .content__area {
+    transform: translateX(45vw);
+}
+
+.__reserve-content .content__area.content__area--is-active,
+.__contact-content .content__area.content__area--is-active {
     animation: content__area--anim_right 2s linear;
+    transform: translateY(0);
 }
 
 .index__container.fxd-rr .content__area {
