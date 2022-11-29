@@ -798,6 +798,77 @@ ul {
     background-color: var(--c-base);
 }
 
+@keyframes content__area--anim_left {
+    0% {
+        transform: translateX(-75vw);
+    }
+    10% {
+        transform: translateX(-30vw);
+    }
+    15% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-8vw);
+    }
+    45% {
+        transform: translateX(0);
+    }
+    60% {
+        transform: translateX(-3vw);
+    }
+    75% {
+        transform: translateX(0);
+    }
+    90% {
+        transform: translateX(-0.5vw);
+    }
+    105% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes content__area--anim_right {
+    0% {
+        transform: translateX(75vw);
+    }
+    10% {
+        transform: translateX(-0vw);
+    }
+    15% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(8vw);
+    }
+    45% {
+        transform: translateX(0);
+    }
+    60% {
+        transform: translateX(3vw);
+    }
+    75% {
+        transform: translateX(0);
+    }
+    90% {
+        transform: translateX(0.5vw);
+    }
+    105% {
+        transform: translateY(0);
+    }
+}
+
+.__menu-content .content__area,
+.__blog-content .content__area,
+.__account-content .content__area {
+    animation: content__area--anim_left 2s linear;
+}
+
+.__reserve-content .content__area,
+.__contact-content .content__area {
+    animation: content__area--anim_right 2s linear;
+}
+
 .index__container.fxd-rr .content__area {
     margin-left: revert;
     margin-right: auto;
