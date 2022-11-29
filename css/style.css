@@ -953,7 +953,7 @@ ul {
 
 .menu__contents-wrap{
     width: 1080px;
-    height: 680vh;
+    /*height: 680vh;*/
     margin:200px auto 0;
     background-color: #ececec;/* 一時的に区別をつけるため色を変えています */
     padding: 70px;
@@ -986,8 +986,8 @@ ul {
 
 .menu__main{
     width: 50%;
-
 }
+
 .menu__main h2{
     font-size: 36px;
     font-family: var(--ff-title);
@@ -1006,6 +1006,33 @@ ul {
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 1080px){
+
+    .menu__container--list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu__container--list li{
+        width: 350px;
+        height: 44px;
+        font-size: 16px;
+        border-radius: 1.5em;
+    }
+
+    .menu__list{
+        flex-direction: column;
+    }
+    .menu__contents-wrap {
+        padding: 10px;
+        width: 100%
+    }
+    .menu__main{
+        width: 100%;
+    }
+}
+
 
 
 
