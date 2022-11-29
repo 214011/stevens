@@ -142,7 +142,7 @@ ul {
     gap: 5px;
     color: var(--c-base);
     background-color: var(--c-red_accent);
-    border-radius: calc(2.5em / 2);
+    border-radius: calc(var(--btn-h) / 2);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
     text-decoration: none;
     transition: var(--transition);
@@ -824,16 +824,14 @@ ul {
 }
 
 .main__content--blog__latest--content-btn {
-    width: 9em;
     margin-top: clamp(20px, 7.8125vw, 60px);
-    margin-left: auto;
+    justify-content: flex-end;
 }
 
 @media screen and (max-width: 1080px){
 
-    .main__content--blog__latest--content-btn {
+    .main__content--blog__latest--content-btn .btn {
         width: 100%;
-        margin-right: auto;
     }
 
 }
