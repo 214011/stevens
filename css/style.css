@@ -722,19 +722,121 @@ ul {
 .index__container--content {
     width: 45vw;
     height: 100%;
+}
+
+.__menu-content {
     background-color: var(--c-blue);
 }
 
-.content__inner {
+.__menu-content .content__title--main {
+    border-color: var(--c-blue);
+}
+
+.__menu-content .content__title--main i {
+    color: var(--c-blue);
+}
+
+.__reserve-content,
+.__account-content {
+    background-color: var(--c-green);
+}
+
+.__reserve-content .content__title--main,
+.__account-content .content__title--main  {
+    border-color: var(--c-green);
+}
+
+.__reserve-content .content__title--main i,
+.__account-content .content__title--main  i {
+    color: var(--c-green);
+}
+
+.__blog-content {
+    background-color: var(--c-yellow);
+}
+
+.__blog-content .content__title--main {
+    border-color: var(--c-yellow);
+}
+
+.__blog-content .content__title--main i {
+    color: var(--c-yellow);
+}
+
+.__contact-content {
+    background-color: var(--c-red_main);
+}
+
+.__contact-content .content__title--main {
+    border-color: var(--c-red_main);
+}
+
+.__contact-content .content__title--main i {
+    color: var(--c-red_main);
+}
+
+.__menu-content .content__title,
+.__blog-content .content__title,
+.__account-content .content__title {
+    align-items: flex-end;
+}
+
+.__menu-content .btn__outer,
+.__blog-content .btn__outer,
+.__account-content .btn__outer {
+    justify-content: flex-end;
+}
+
+.content__area {
     width: calc(1080px * 0.4370370370);
     height: 100%;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--c-base);
 }
 
-.index__container.fxd-rr .content__inner {
+.index__container.fxd-rr .content__area {
     margin-left: revert;
     margin-right: auto;
+}
+
+.content__inner {
+    width: 324px;
+}
+
+.content__title {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.content__title > span:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.content__title--main {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid;
+    font-family: var(--ff-title);
+    font-size: var(--fsz-primary);
+}
+
+.content__title--sub {
+    margin-top: 10px;
+    font-size: var(--fsz-secondary);
+}
+
+.content__text {
+    margin: 40px 0 60px;
+    line-height: 2;
 }
 
 
