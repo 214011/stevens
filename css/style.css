@@ -568,8 +568,6 @@ ul {
     margin-top: calc(80px + clamp(35px, 9.114583333vw, 70px));
 }
 
-<<<<<<< HEAD
-=======
 .main--title {
     display: flex;
     flex-direction: column;
@@ -937,7 +935,6 @@ ul {
 }
 
 
->>>>>>> 19a9dc67adf81313801f69cb6dad5a8592dd8fce
 
 
 /* menu */
