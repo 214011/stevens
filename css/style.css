@@ -959,7 +959,7 @@ ul {
 
 .menu__contents-wrap{
     width: 1080px;
-    height: 1000vh;
+    height: 680vh;
     margin:200px auto 0;
     background-color: #ececec;/* 一時的に区別をつけるため色を変えています */
     padding: 70px;
