@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
-        <script src="js/blog.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
@@ -32,60 +31,17 @@
                 </button>
                 <nav class="gnav js-hamburger__hook">
                     <ul class="gnav__container">
-                        <li class="gnav__container--item"><a class="js-gnav" href="#">MenuList</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="#">Reserve</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="#">Blog</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="#">Contact</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="#"><i class="fa-solid fa-circle-user"></i>Account</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="menu.html">MenuList</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="reserve.html">Reserve</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="blog.html">Blog</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="contact.html">Contact</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="account.html"><i class="fa-solid fa-circle-user"></i>Account</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main class="main">
-            <article class="blog content-w">
-                <dl class="blog__published">
-                    <dt><i class="fa-regular fa-clock"></i><span class="fa-sr-only">公開日</span></dt>
-                    <dd><time datetime="20YY-MM-DD">20YY.MM.DD</time></dd>
-                </dl>
-                <dl class="blog__category">
-                    <dt><i class="fa-solid fa-tags"></i><span class="sr-only">カテゴリー</span></dt>
-                    <dd>
-                        <ul class="blog__category--tag">
-                            <li><a href="#">Tag</a></li>
-                            <li><a href="#">Tag</a></li>
-                            <li><a href="#">Tag</a></li>
-                            <li><a href="#">Tag</a></li>
-                        </ul>
-                    </dd>
-                </dl>
-                <figure class="blog__image">
-                    <img src="images/blog_nagai.jpg" alt="髪の毛さらさら" width="1600" height="1066">
-                </figure>
-                <div class="blog__container">
-                    <h2 class="blog__container--title">Bordeauxでうるツヤ髪へ、シルクのような抜群の手触りに</h2>
-
-                    <p class="blog__container--text">うるツヤになれる厳選トリートメントも当店の自慢です。</p>
-                    <p class="blog__container--text">ブリーチや矯正を重ねたボロボロの髪も<mark>【再生トリートメント】で短期で高補修します。</mark></p>
-                    <p class="blog__container--text"><mark>一人一人に合わせてオーダーメイド</mark>し、超音波のコテを使い髪の芯部まで栄養を入れ込むことで、 施術後の自分の髪に嘘みたいと驚くはずです。</p>
-                    <p class="blog__container--text">理想の髪質に合わせてベストなトリートメントが選べるから、ツヤ感はもちろん手触りも抜群です。</p>
-                    <p class="blog__container--text">高彩度なカラーを維持するためのプレミアムなトリートメントで、カラーをしてもダメージが気にならず、うるツヤ髪になれます。</p>
-                    <p class="blog__container--text">また、薬剤を使用するメニューにはTOKIOトリートメント付です。</p>
-                    <p class="blog__container--text">ファッションやメイクは素髪の美しさがあってこそ映えるもの。美容感度の高い女性に大人気の《INCE》素材を大切に、通えば通うほど髪の質が変わることを実感下さい。<mark>シルクのような抜群の手触りがお手頃価格で叶います。</mark></p>
-                    <p class="blog__container--text">パサつきやゴワゴワ感など自身の髪にお悩みのある方は是非当店に足を運んでください。</p>
-
-                </div>
-            </article>
-            <div class="blog__pager content-w">
-                <button class="blog__pager--previousBtn __blog-arrowBtn" type="button" onclick="location.href='blog-content_02.html'"><span class="fa-sr-only">前の記事へ</span></button>
-                <ul class="blog__pager--link">
-                    <li class="blog__pager--link_item"><a href="blog-content_01.html">1</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_02.html">2</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_03.html" class="__blog-current">3</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_04.html">4</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_05.html">5</a></li>
-                </ul>
-                <button class="blog__pager--nextBtn" type="button" onclick="location.href='blog-content_04.html'"><span class="fa-sr-only">次の記事へ</span></button>
-            </div>
+            
         </main>
         <footer class="footer">
             <div class="content-w">
@@ -122,17 +78,17 @@
                         <section class="footer__container">
                             <h2 class="footer__container--title"><i class="fa-solid fa-blog"></i>Blog</h2>
                             <ul class="footer__container--list">
-                                <li><a href="#">当店のシャワーヘッドは、塩素除去によって髪の毛や頭皮のダメージを抑えてあなたに寄り添います</a></li>
-                                <li><a href="#">刈り上げヘアが好きだ！そんな貴方へ朗報です！！！！</a></li>
-                                <li><a href="#">Bordeauxでうるツヤ髪へ、シルクのような抜群の手触りに</a></li>
-                                <li><a href="#">２回目ご来店の方限定のお得なクーポンのご紹介。</a></li>
-                                <li><a href="#">Bordeauxのお得情報！スタンプを10個以上集めた方に次回来客すれば特典を差し上げます！　.</a></li>
+                                <li><a href="blog-content_01.html">当店のシャワーヘッドは、塩素除去によって髪の毛や頭皮のダメージを抑えてあなたに寄り添います</a></li>
+                                <li><a href="blog-content_02.html">刈り上げヘアが好きだ！そんな貴方へ朗報です！！！！</a></li>
+                                <li><a href="blog-content_03.html">Bordeauxでうるツヤ髪へ、シルクのような抜群の手触りに</a></li>
+                                <li><a href="blog-content_04.html">２回目ご来店の方限定のお得なクーポンのご紹介。</a></li>
+                                <li><a href="blog-content_05.html">Bordeauxのお得情報！スタンプを10個以上集めた方に次回来客すれば特典を差し上げます！　.</a></li>
                             </ul>
                         </section>
                         <section class="footer__container">
                             <h2 class="footer__container--title"><i class="fa-solid fa-circle-user"></i>Account</h2>
                             <ul class="footer__container--list">
-                                <li><a href="#">アカウント登録</a></li>
+                                <li><a href="account.html">アカウント登録</a></li>
                                 <li><a href="#">ログイン</a></li>
                             </ul>
                         </section>
