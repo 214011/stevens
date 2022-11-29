@@ -115,6 +115,10 @@ ul {
     list-style: none;
 }
 
+.d-fx {
+    display: flex;
+}
+
 .fx-jc-start {
     justify-content: flex-start;
 }
@@ -125,6 +129,10 @@ ul {
 
 .fx-jc-end {
     justify-content: flex-end;
+}
+
+.fxd-rr {
+    flex-direction: row-reverse;
 }
 
 .btn__outer {
@@ -709,6 +717,24 @@ ul {
 
 .lead__text strong {
     font-weight: normal;
+}
+
+.index__container--content {
+    width: 45vw;
+    height: 100%;
+    background-color: var(--c-blue);
+}
+
+.content__inner {
+    width: calc(1080px * 0.4370370370);
+    height: 100%;
+    margin-left: auto;
+    background-color: var(--c-base);
+}
+
+.index__container.fxd-rr .content__inner {
+    margin-left: revert;
+    margin-right: auto;
 }
 
 
