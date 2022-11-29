@@ -702,11 +702,7 @@ ul {
 
 .lead__text {
     min-height: 0vw;
-<<<<<<< HEAD
-    margin-top: clamp(40px, 9.765625vw, 75px);
-=======
     margin-top: clamp(40px, 8.46354166666vw, 65px);
->>>>>>> 405c6014b947239ffb6eedd334cf59badbbed0dd
     text-align: center;
     line-height: 2;
 }
@@ -1764,6 +1760,7 @@ ul {
 }
 
 .footer--btn {
+    width: 50%;
     justify-content: flex-end;
 }
 
@@ -1775,6 +1772,7 @@ ul {
 @media screen and (max-width: 1080px) {
 
     .footer--btn {
+        width: 100%;
         justify-content: center;
     }
 
