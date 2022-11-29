@@ -702,7 +702,11 @@ ul {
 
 .lead__text {
     min-height: 0vw;
+<<<<<<< HEAD
     margin-top: clamp(40px, 9.765625vw, 75px);
+=======
+    margin-top: clamp(40px, 8.46354166666vw, 65px);
+>>>>>>> 405c6014b947239ffb6eedd334cf59badbbed0dd
     text-align: center;
     line-height: 2;
 }
