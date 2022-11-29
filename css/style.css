@@ -679,7 +679,7 @@ ul {
 
 .lead__title {
     min-height: 0vw;
-    font-size: clamp(40px, 10.41666666vw, 80px);
+    font-size: clamp(40px, 8.46354166666vw, 65px);
     font-weight: normal;
     text-align: center;
     line-height: 2;
