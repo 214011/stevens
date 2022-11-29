@@ -687,7 +687,7 @@ ul {
 
 .lead__text {
     min-height: 0vw;
-    margin-top: clamp(40px, 11.71875vw, 90px);
+    margin-top: clamp(40px, 8.46354166666vw, 65px);
     text-align: center;
     line-height: 2;
 }
