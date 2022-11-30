@@ -26,19 +26,19 @@
 
         const scrollHandler = () => {
             // console.log(w.scrollY)
-            // console.log($elms.indexContainer[viewIndex].getBoundingClientRect().top)
-            const $targetTop = $elms.indexContainer[viewIndex].getBoundingClientRect().top;
             if (w.scrollY >= (w.innerHeight * viewIndex) - (w.innerHeight / 3)) {
                 if (viewIndex < 6) {
                     $elms.contentArea(viewIndex).classList.add('content__area--is-active');
                     console.log(viewIndex)
+                    let className = d.body.classList[1];
+                    d.body.classList.remove(className);
+                    className
                     viewIndex++;
                 } else {
                     if (viewIndex === 6) $elms.contentArea(viewIndex).classList.add('content__area--is-active');
                 }
             }
         };
-        console.log($elms.contentArea(2))
 
 
     });
