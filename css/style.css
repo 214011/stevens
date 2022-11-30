@@ -1658,6 +1658,10 @@ ul {
     font-size: var(--fsz-common);
 }
 
+.contact-table__row:nth-child(3) .contact-table__row--col dd {
+    gap: 28px;
+}
+
 .contact-table__row--col dd > label[for = form-subject] {
     width: 15em;
     height: var(--btn-h);
@@ -1709,6 +1713,31 @@ ul {
 .no-spin {
     -moz-appearance: textfield;
 }
+
+#form-tel + div {
+    position: relative;
+}
+
+#form-tel + div::before,
+#form-tel + div::after {
+    content: "";
+    width: 1em;
+    height: 1px;
+    display: block;
+    background-color: var(--c-font);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#form-tel + div::before {
+    left: calc(-1em - 5px);
+}
+
+#form-tel + div::after {
+    right: calc(-1em - 5px);
+}
+
 
 .contact-table__row--col dd input[type = email] {
     width: 506px;
