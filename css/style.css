@@ -157,9 +157,23 @@ ul {
     transition: var(--transition);
 }
 
-.btn:hover {
-    background-color: var(--c-red_main);
-    box-shadow: none;
+@media screen and (min-width: 901px) {
+
+    .btn:hover {
+        background-color: var(--c-red_main);
+        box-shadow: none;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .btn:active {
+        background-color: var(--c-red_main);
+        box-shadow: none;
+        transform: scale(.98);
+    }
+
 }
 
 .span-block {
@@ -1761,7 +1775,7 @@ ul {
     width: clamp(140px, 19.53125vw, 150px);
 }
 
-.contact-table__row:nth-child(3) .contact-table__row--col dd input[type = number] {
+.contact-table__row:nth-child(3) .contact-table__row--col dd input[type = tel] {
     width: clamp(90px, 19.53125vw, 150px);
 }
 
