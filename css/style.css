@@ -149,6 +149,7 @@ ul {
     justify-content: center;
     gap: 5px;
     color: var(--c-base);
+    cursor: pointer;
     background-color: var(--c-red_accent);
     border-radius: calc(var(--btn-h) / 2);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
@@ -629,7 +630,6 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--c-base);
     font-size: 1em;
 }
 
@@ -639,6 +639,7 @@ ul {
     display: flex;
     align-items: center;
     border-bottom: 2px solid var(--c-base);
+    font-family: var(--ff-title);
     font-size: var(--fsz-primary);
     line-height: 1;
 }
@@ -655,12 +656,24 @@ ul {
     line-height: 1;
 }
 
+.main--title.main--title_blog {
+    color: var(--c-base);
+}
+
 .main--title_blog span:first-child {
     border-color: var(--c-yellow);
 }
 
 .main--title_blog span:first-child > i {
     color: var(--c-yellow);
+}
+
+.main--title_contact span:first-child {
+    border-color: var(--c-red_main);
+}
+
+.main--title_contact span:first-child > i {
+    color: var(--c-red_main);
 }
 
 
@@ -1565,106 +1578,72 @@ ul {
 }
 
 
-
-
-
-
-
-
 /* contact */
+
 .contact{
-    margin-top: 60px;
+    margin-top: 100px;
 }
+
 .contact--text{
     padding: 40px;
     line-height: 2;
     border-top: 2px solid var(--c-yellow);
     border-bottom: 2px solid var(--c-yellow);
 }
-.contact__row--item{
+
+.contact__container {
+    margin-top: 65px;
+}
+
+.contact__container--contact-table {
+    border: 1px solid var(--c-font);
+    border-radius: 20px;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.contact-table__row {
+    height: 3em;
+}
+
+.contact-table__row:not(:first-child) {
+    border-top: 1px solid var(--c-font);
+}
+
+.contact-table__row--col {
+    height: 100%;
     display: flex;
-    height: 58px;
+    align-items: center;
+    gap: 60px;
+    font-size: 1em;
 }
-.contact__row--item > dt{
+
+.contact-table__row:last-child {
+    height: 300px;
+}
+
+.contact-table__row .contact-table__row--col {
+    height: 100%;
+}
+
+.contact-table__row--col dt {
     width: 350px;
+    height: 100%;
+    display: flex;
+    align-items: center;
     background-color: var(--c-blue);
-    padding-left: 30px;
-    line-height: 58px;
-    border-left: 1px solid var(--c-font);
-    border-bottom: 1px solid var(--c-font);
+    text-indent: 30px;
 }
-.contact--fast > dt{
-    border-top: 1px solid var(--c-font);
+
+.contact-table__row--col dd {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-indent: 30px;
 }
-.contact__row--item > dd{
-    width: 730px;
-    padding-left: 60px;
-    line-height: 58px;
-    border-right: 1px solid var(--c-font);
-    border-bottom: 1px solid var(--c-font);
-}
-.contact__row--item > dd input{
-    width: 150px;
-    height: 45px;
-    border: solid 1px var(--c-font);
-    border-radius: 27px;
-    margin-right: 20px;
-    text-align: center;
-}
-.contact--fast > dd{
-    border-top: 1px solid var(--c-font);
-}
-.red{
-    color: var(--c-red_accent);
-}
-.contact__row:last-child .contact__row--item{
-    height: 298px;
-}
-.contact__row:last-child .contact__row--item > dt{
-    background-color: var(--c-blue);
-    padding-left: 30px;
-    line-height: 298px;
-    border-left: 1px solid var(--c-font);
-    border-bottom: 1px solid var(--c-font);
-}
-.contact__row:last-child .contact__row--item > dd{
-    width: 730px;
-    padding-left: 60px;
-    line-height: 298px;
-    border-right: 1px solid var(--c-font);
-    border-bottom: 1px solid var(--c-font);
-}
-.contact--btn{
-    width: 131px;
-    font-size: 18px;
-    margin: 30px auto 0;
-}
-/*contact-sp*/
-@media screen and (max-width: 1080px){
-    .contact__row--item{
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-    }
-    .contact__row--item > dt{
-        width: 100%;
-        background-color: var(--c-blue);
-        text-align: center;
-    }
-    .contact__row--item > dd{
-        padding-left: 0;
-        width: 100%;
-        text-align: center;
-    }
-    .contact__row:last-child .contact__row--item > dt{
-        width: 100%;
-        background-color: var(--c-blue);
-    }
-    .contact__row:last-child .contact__row--item > dd{
-        width: 100%;
-        height: auto;
-    }
-}
+
+
+
 
 /* complete */
 .complete--text{

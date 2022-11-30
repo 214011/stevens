@@ -41,52 +41,63 @@
             </div>
         </header>
         <main class="main">
-
-            <div class="contact--text content-w">
-                <p>お問い合わせをご希望の方はこちらの入力フォームに必要事項をご記入のうえ、『送信する』ボタンを押してください。</p>
-                <p>自動処理で控えの返信メールをお送りいたします。</p>
-                <p>後ほど、確認でき次第なるべく早く、メールまたはお電話で折り返しご連絡させて頂きます。</p>
-                <p>※メールか、お電話のいずれかをご希望される際は、お問い合わせ内容にその旨をご記入ください。</p>
+            <h2 class="main--title main--title_contact">
+                <span class="span-block"><i class="fa-sharp fa-solid fa-paper-plane"></i>Contact</span>
+                <span class="fa-sr-only">-</span>
+                <span class="span-block">お問い合わせ</span>
+            </h2>
+            <div class="contact content-w">
+                <div class="contact--text">
+                    <p>お問い合わせをご希望の方はこちらの入力フォームに必要事項をご記入のうえ、『送信する』ボタンを押してください。</p>
+                    <p>自動処理で控えの返信メールをお送りいたします。</p>
+                    <p>後ほど、確認でき次第なるべく早く、メールまたはお電話で折り返しご連絡させて頂きます。</p>
+                    <p>※メールか、お電話のいずれかをご希望される際は、お問い合わせ内容にその旨をご記入ください。</p>
+                </div>
+                <form action="" method="post" class="contact__container">
+                    <ul class="contact__container--contact-table">
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col contact--fast">
+                                <dt>ご用件</dt>
+                                <dd>
+                                    <select value="">
+                                        <option name="" id="">質問</option>
+                                        <option name="" id="">お店へのお問い合わせ</option>
+                                        <option name="" id="">予約の取り消し</option>
+                                        <option name="" id="">サイトの質問</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt>お名前</dt>
+                                <dd><input type="text" placeholder="姓"><input type="text" placeholder="名"></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt>電話番号</dt>
+                                <dd><input type="number"><input type="number"><input type="number"></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt>メールアドレス</dt>
+                                <dd><input type="email"></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt>お問い合わせ内容</dt>
+                                <dd><textarea name="" id=""></textarea></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div class="btn__outer">
+                        <label for="form-submit" class="btn"><input type="submit" id="form-submit" value="" class="fa-sr-only"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</label>
+                    </div>
+                </form>
             </div>
-        
-            <ul class="contact content-w">
-                <li class="contact__row">
-                    <dl class="contact__row--item contact--fast">
-                        <dt>ご用件</dt>
-                        <dd></dd>
-                    </dl>
-                </li>
-                <li class="contact__row">
-                    <dl class="contact__row--item">
-                        <dt>お名前　<span class="red">※必須</span></dt>
-                        <dd><input type="text" placeholder="姓"><input type="text" placeholder="名"></dd>
-                    </dl>
-                </li>
-                <li class="contact__row">
-                    <dl class="contact__row--item">
-                        <dt>電話番号　<span class="red">※必須</span></dt>
-                        <dd><input type="text"><input type="text"><input type="text"></dd>
-                    </dl>
-                </li>
-                <li class="contact__row">
-                    <dl class="contact__row--item">
-                        <dt>メールアドレス　<span class="red">※必須</span></dt>
-                        <dd><input type="text"></dd>
-                    </dl>
-                </li>
-                <li class="contact__row">
-                    <dl class="contact__row--item">
-                        <dt>お問い合わせ内容　<span class="red">※必須</span></dt>
-                        <dd><textarea name="" id=""></textarea></dd>
-                    </dl>
-                </li>
-            </ul>
-
-            
-            <p class="btn contact--btn"><a href="#"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</a></p>
-
-
-
         </main>
         <footer class="footer">
             <div class="content-w">
