@@ -201,6 +201,7 @@ ul {
 .bg {
     background-size: cover;
     background-position: center center;
+    transition: .5s ease-in-out;
 }
 
 .bg__index-01 {
