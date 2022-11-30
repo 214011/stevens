@@ -1581,29 +1581,41 @@ ul {
 /* contact */
 
 .contact{
-    margin-top: 100px;
+    min-height: 0vw;
+    margin-top: clamp(50px, 13.0208333333vw, 100px);
 }
 
 .contact--text{
-    padding: 40px;
+    min-height: 0vw;
+    padding: clamp(20px, 5.208333333vw, 40px) clamp(0px, 5.208333333vw, 40px);
     line-height: 2;
     border-top: 2px solid var(--c-yellow);
     border-bottom: 2px solid var(--c-yellow);
 }
 
 .contact__container {
-    margin-top: 65px;
+    min-height: 0vw;
+    margin-top: clamp(60px, 8.463541666666vw, 65px);
 }
 
 .contact__container--contact-table {
+    min-height: 0vw;
     border: 1px solid var(--c-font);
     border-radius: 20px;
-    font-size: 20px;
+    font-size: clamp(18px, 2.6041666666vw, 20px);
     overflow: hidden;
 }
 
 .contact-table__row {
-    height: 3em;
+    height: 60px;
+}
+
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row {
+        height: auto;
+    }
+
 }
 
 .contact-table__row:not(:first-child) {
@@ -1618,21 +1630,47 @@ ul {
     font-size: 1em;
 }
 
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row--col {
+        height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+        font-size: 1em;
+    }
+
+}
+
 .contact-table__row:last-child {
     height: 300px;
 }
 
-.contact-table__row .contact-table__row--col {
-    height: 100%;
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row:last-child {
+        height: auto;
+    }
+
 }
 
 .contact-table__row--col dt {
     width: 350px;
     height: 100%;
+    min-height: 0vw;
     display: flex;
     align-items: center;
     background-color: var(--c-blue);
-    text-indent: 30px;
+    text-indent: clamp(10px, 3.90625vw, 30px);
+}
+
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row--col dt {
+        width: 100%;
+        height: 60px;
+    }
+
 }
 
 .contact-table__row--col dt label {
@@ -1645,8 +1683,9 @@ ul {
 
 .form-required label::after {
     content: "※必須";
+    min-height: 0vw;
     color: var(--c-red_accent);
-    text-indent: 15px;
+    text-indent: clamp(5px, 1.953125vw, 15px);
 }
 
 .contact-table__row--col dd {
@@ -1658,8 +1697,23 @@ ul {
     font-size: var(--fsz-common);
 }
 
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row--col dd {
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+    }
+
+    .contact-table__row:last-child .contact-table__row--col dd {
+        height: clamp(250px, 45.57291666666vw, 300px);
+        padding: 0 10px;
+    }
+
+}
+
 .contact-table__row:nth-child(3) .contact-table__row--col dd {
-    gap: 28px;
+    gap: clamp(26px, 3.6458333333vw, 28px);
 }
 
 .contact-table__row--col dd > label[for = form-subject] {
@@ -1694,7 +1748,6 @@ ul {
 }
 
 .contact-table__row--col dd input {
-    width: 150px;
     height: var(--btn-h);
     padding: 0 1em;
     border: 1px solid var(--c-font);
@@ -1702,6 +1755,14 @@ ul {
     text-align: center;
     vertical-align: middle;
     transition: var(--transition);
+}
+
+.contact-table__row:nth-child(2) .contact-table__row--col dd input[type = text] {
+    width: clamp(140px, 19.53125vw, 150px);
+}
+
+.contact-table__row:nth-child(3) .contact-table__row--col dd input[type = number] {
+    width: clamp(90px, 19.53125vw, 150px);
 }
 
 .no-spin::-webkit-inner-spin-button,
@@ -1745,13 +1806,34 @@ ul {
     transition: var(--transition);
 }
 
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row:nth-child(4) .contact-table__row--col dd {
+        padding: 0 10px;
+    }
+
+    .contact-table__row--col dd input[type = email] {
+        width: 100%;
+    }
+
+}
+
 .contact-table__row--col dd textarea {
     width: 33.8em;
-    height: 15.7777777em;
+    height: clamp(234px, 36.9791666666vw, 284px);
+    min-height: 0vw;
     padding: 1em;
     border: 1px solid var(--c-font);
     border-radius: 20px;
     resize: none;
+}
+
+@media screen and (max-width: 1080px) {
+
+    .contact-table__row--col dd textarea {
+        width: 100%;
+    }
+
 }
 
 .contact-table__row--col dd label[for = form-subject] select:focus,
