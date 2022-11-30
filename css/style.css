@@ -1635,11 +1635,111 @@ ul {
     text-indent: 30px;
 }
 
-.contact-table__row--col dd {
+.contact-table__row--col dt label {
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    text-indent: 30px;
+    cursor: pointer;
+}
+
+.form-required label::after {
+    content: "※必須";
+    color: var(--c-red_accent);
+    text-indent: 15px;
+}
+
+.contact-table__row--col dd {
+    height: 100%;
+    min-height: 0vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: var(--fsz-common);
+}
+
+.contact-table__row--col dd > label[for = form-subject] {
+    width: 15em;
+    height: var(--btn-h);
+    border: 1px solid var(--c-font);
+    border-radius: calc(var(--btn-h) / 2);
+    position: relative;
+}
+
+.contact-table__row--col dd > label[for = form-subject]::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 9px;
+}
+
+.contact-table__row--col dd label[for = form-subject] select {
+    width: 100%;
+    height: 100%;
+    padding: 0 1em;
+    display: grid;
+    place-items: center;
+    border-radius: calc(var(--btn-h) / 2);
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    transition: var(--transition);
+}
+
+.contact-table__row--col dd input {
+    width: 150px;
+    height: var(--btn-h);
+    padding: 0 1em;
+    border: 1px solid var(--c-font);
+    border-radius: calc(var(--btn-h) / 2);
+    text-align: center;
+    vertical-align: middle;
+    transition: var(--transition);
+}
+
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.no-spin {
+    -moz-appearance: textfield;
+}
+
+.contact-table__row--col dd input[type = email] {
+    width: 506px;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.contact-table__row--col dd textarea {
+    width: 33.8em;
+    height: 15.7777777em;
+    padding: 1em;
+    border: 1px solid var(--c-font);
+    border-radius: 20px;
+    resize: none;
+}
+
+.contact-table__row--col dd label[for = form-subject] select:focus,
+.contact-table__row--col dd input:focus,
+.contact-table__row--col dd input[type = email]:focus,
+.contact-table__row--col dd textarea:focus {
+    box-shadow: 0 0 8px var(--c-red_accent);
+}
+
+.contact__container--contact-table + .btn__outer {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.contact__container--contact-table + .btn__outer input[type = submit]:focus + .btn  {
+    background-color: var(--c-red_main);
+    box-shadow: none;
 }
 
 

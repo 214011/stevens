@@ -53,48 +53,55 @@
                     <p>後ほど、確認でき次第なるべく早く、メールまたはお電話で折り返しご連絡させて頂きます。</p>
                     <p>※メールか、お電話のいずれかをご希望される際は、お問い合わせ内容にその旨をご記入ください。</p>
                 </div>
-                <form action="" method="post" class="contact__container">
+                <form action="./confirm.html" method="POST" class="contact__container">
                     <ul class="contact__container--contact-table">
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col contact--fast">
-                                <dt>ご用件</dt>
+                                <dt><label for="form-subject">ご用件</label></dt>
                                 <dd>
-                                    <select value="">
-                                        <option name="" id="">質問</option>
-                                        <option name="" id="">お店へのお問い合わせ</option>
-                                        <option name="" id="">予約の取り消し</option>
-                                        <option name="" id="">サイトの質問</option>
-                                    </select>
+                                    <label for="form-subject">
+                                        <select name="" id="form-subject">
+                                            <option value="">質問</option>
+                                            <option value="">お店へのお問い合わせ</option>
+                                            <option value="">予約の取り消し</option>
+                                            <option value="">サイトの質問</option>
+                                        </select>
+                                    </label>
                                 </dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
-                                <dt>お名前</dt>
-                                <dd><input type="text" placeholder="姓"><input type="text" placeholder="名"></dd>
+                                <dt class="form-required"><label for="form-username">お名前</label></dt>
+                                <dd><input type="text" id="form-username" placeholder="姓" required><input type="text" placeholder="名" required></dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
-                                <dt>電話番号</dt>
-                                <dd><input type="number"><input type="number"><input type="number"></dd>
+                                <dt class="form-required"><label for="form-tel">電話番号</label></dt>
+                                <dd>
+                                    <input type="number" id="form-tel" class="no-spin" pattern="\d{2,4}" required>
+                                    <input type="number" class="no-spin" required>
+                                    <input type="number" class="no-spin" required>
+                                </dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
-                                <dt>メールアドレス</dt>
-                                <dd><input type="email"></dd>
+                                <dt class="form-required"><label for="form-email">メールアドレス</label></dt>
+                                <dd><input type="email" id="form-email" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
-                                <dt>お問い合わせ内容</dt>
-                                <dd><textarea name="" id=""></textarea></dd>
+                                <dt class="form-required"><label for="form-contact_content">お問い合わせ内容</label></dt>
+                                <dd><textarea name="" id="form-contact_content" required></textarea></dd>
                             </dl>
                         </li>
                     </ul>
                     <div class="btn__outer">
-                        <label for="form-submit" class="btn"><input type="submit" id="form-submit" value="" class="fa-sr-only"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</label>
+                        <input type="submit" id="form-submit" value="" class="fa-sr-only">
+                        <label for="form-submit" class="btn"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</label>
                     </div>
                 </form>
             </div>
