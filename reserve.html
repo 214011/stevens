@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
+        <script src="js/reserve.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
@@ -50,147 +51,153 @@
                 <div class="reserve__calender--container">
                     <section class="calender--container__item">
                         <h3 class="calender--container__item--title">MM月</h3>
-                        <table class="calender--container__item--table">
-                            <thead>
-                                <tr>
-                                    <th>日</th>
-                                    <th>月</th>
-                                    <th>火</th>
-                                    <th>水</th>
-                                    <th>木</th>
-                                    <th>金</th>
-                                    <th>土</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="calender--container__item--table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>日</th>
+                                        <th>月</th>
+                                        <th>火</th>
+                                        <th>水</th>
+                                        <th>木</th>
+                                        <th>金</th>
+                                        <th>土</th>
+                                    </tr>
+                                </thead>
+                                <!-- フロントエンドなのでJSでカレンダーを作る。最終的にバックエンドでPHPを使って作る。 -->
+                                <tbody class="js-reserve__calender">
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
                     <section class="calender--container__item">
                         <h3 class="calender--container__item--title">MM月</h3>
-                        <table class="calender--container__item--table">
-                            <thead>
-                                <tr>
-                                    <th>日</th>
-                                    <th>月</th>
-                                    <th>火</th>
-                                    <th>水</th>
-                                    <th>木</th>
-                                    <th>金</th>
-                                    <th>土</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="calender--container__item--table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>日</th>
+                                        <th>月</th>
+                                        <th>火</th>
+                                        <th>水</th>
+                                        <th>木</th>
+                                        <th>金</th>
+                                        <th>土</th>
+                                    </tr>
+                                </thead>
+                                <!-- フロントエンドなのでJSでカレンダーを作る。最終的にバックエンドでPHPを使って作る。 -->
+                                <tbody class="js-reserve__calender">
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
                 </div>
             </div>

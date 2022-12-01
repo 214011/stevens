@@ -1921,8 +1921,7 @@ ul {
 
 .reserve__calender--container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(calc(420px + clamp(5px, 1.953125vw, 15px) + var(--fsz-primary)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 50px 100px;
 }
 
@@ -1935,19 +1934,56 @@ ul {
 
 .calender--container__item--table {
     width: 100%;
-    height: calc(100% - (clamp(16px, 2.34375vw, 18px) * 2));
+    position: relative;
+}
+
+.calender--container__item--table::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.calender--container__item--table table {
+    width: 100%;
+    height: 100%;
     border-collapse: collapse;
     font-size: clamp(17px, 3.515625vw, 27px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
-.calender--container__item--table th,
-.calender--container__item--table thead,
-.calender--container__item--table td {
+.calender--container__item--table table th,
+.calender--container__item--table table thead,
+.calender--container__item--table table td {
     width: calc(100% / 7);
     height: calc(100% / 7);
-    border: 1px solid var(--c-font);
+    border: 1.5px solid var(--c-font);
 }
 
+.calender--container__item--table table thead th:first-child {
+    color: var(--c-red_accent);
+}
+
+.calender--container__item--table table thead th:last-child {
+    color: var(--c-blue);
+}
+
+.calender--container__item--table table tbody td a {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--c-font);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.calender--container__item--table table tbody td a:hover {
+    background-color: var(--c-green);
+}
 
 
 
