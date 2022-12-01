@@ -1947,7 +1947,7 @@ ul {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
-    font-size: clamp(17px, 3.515625vw, 27px);
+    font-size: clamp(20px, 3.515625vw, 27px);
     position: absolute;
     top: 0;
     left: 0;
@@ -1979,6 +1979,10 @@ ul {
     color: var(--c-font);
     text-decoration: none;
     transition: var(--transition);
+}
+
+.calender__currentDay {
+    background-color: var(--c-green);
 }
 
 .calender--container__item--table table tbody td a:hover {

@@ -30,13 +30,45 @@
 
         let today = new Date();
 		const currentMonthFirstDay = new Date(`${today.getFullYear()}-${formatMonth(today.getMonth())}-1`);
-		const currentMonthLastDay = new Date(today.getFullYear(), formatMonth(today.getMonth()), 0);
+		const currentMonthLastDay = new Date(currentMonthFirstDay.getFullYear(), formatMonth(currentMonthFirstDay.getMonth()), 0);
 
-		let nextMonth = new Date(`${formatYear(today.getMonth() + 1)}-${formatMonth(today.getMonth() + 1)}-1`);
+		let nextMonth = new Date(`${formatYear(currentMonthFirstDay.getMonth() + 1)}-${formatMonth(currentMonthFirstDay.getMonth() + 1)}-1`);
 		const nextMonthLastDay = new Date(nextMonth.getFullYear(), formatMonth(nextMonth.getMonth()), 0);
 
         $elms.calenderMonth[0].innerText = `${formatMonth(currentMonthFirstDay.getMonth())}月`;
         $elms.calenderMonth[1].innerText = `${formatMonth(nextMonth.getMonth())}月`;
+
+        let forCurrent = 0;
+        let currentDayIndex = [0, 0];
+        for (let r = 0; r < 6; r++) {
+            for (let c = 0; c < 7; c++) {
+                const col = $elms.reserveCalender[0].children[r].children[c];
+                if (currentMonthFirstDay.getDay() <= c && r === 0) {
+                    forCurrent++;
+                    if (today.getDate() === forCurrent) {
+                        col.children[0].classList.add('calender__currentDay');
+                        currentDayIndex = [r,c];
+                    }
+                } else if (r >= 1) {
+                    if (forCurrent > currentMonthLastDay.getDate() - 1) {
+                        continue;
+                    } else {
+                        forCurrent++;
+                        if (today.getDate() === forCurrent) {
+                            col.children[0].classList.add('calender__currentDay');
+                            currentDayIndex = [r,c];
+                        }
+                    }
+                } else {
+                    continue;
+                }
+                col.children[0].addEventListener('mouseover', () => Array.from($elms.reserveCalender[0].children).forEach($row => Array.from($row.children).forEach($col => {if ($col.children[0]) $col.children[0].classList.remove('calender__currentDay')})));
+                col.children[0].addEventListener('mouseout', () => Array.from($elms.reserveCalender[0].children).forEach(($row, r)=> Array.from($row.children).forEach(($col, c) => {if ($col.children[0] && r === currentDayIndex[0] && c === currentDayIndex[1]) $col.children[0].classList.add('calender__currentDay')})));
+            }
+        }
+
+
+
 
         const setCalender = (where, firstDay, lastDay) => {
 
