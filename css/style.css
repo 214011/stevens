@@ -670,6 +670,24 @@ ul {
     line-height: 1;
 }
 
+.main--title_menu span:first-child {
+    border-color: var(--c-blue);
+}
+
+.main--title_menu span:first-child > i {
+    color: var(--c-blue);
+}
+
+.main--title_reserve span:first-child,
+.main--title_account span:first-child {
+    border-color: var(--c-green);
+}
+
+.main--title_reserve span:first-child > i,
+.main--title_account span:first-child > i {
+    color: var(--c-green);
+}
+
 .main--title.main--title_blog {
     color: var(--c-base);
 }
@@ -689,11 +707,6 @@ ul {
 .main--title_contact span:first-child > i {
     color: var(--c-red_main);
 }
-
-
-
-
-
 
 .main__content {
     min-height: 0vw;
