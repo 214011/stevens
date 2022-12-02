@@ -42,11 +42,14 @@
         let currentDayIndex = [0, 0];
         for (let r = 0; r < 6; r++) {
             for (let c = 0; c < 7; c++) {
-                const col = $elms.reserveCalender[0].children[r].children[c];
+                const col_0 = $elms.reserveCalender[0].children[r].children[c];
+                const col_1 = $elms.reserveCalender[1].children[r].children[c];
+                col_1.children[0].addEventListener('mouseover', () => $elms.reserveCalender[0].children[currentDayIndex[0]].children[currentDayIndex[1]].children[0].classList.remove('calender__currentDay'));
+                col_1.children[0].addEventListener('mouseout', () => $elms.reserveCalender[0].children[currentDayIndex[0]].children[currentDayIndex[1]].children[0].classList.add('calender__currentDay'));
                 if (currentMonthFirstDay.getDay() <= c && r === 0) {
                     forCurrent++;
                     if (today.getDate() === forCurrent) {
-                        col.children[0].classList.add('calender__currentDay');
+                        col_0.children[0].classList.add('calender__currentDay');
                         currentDayIndex = [r,c];
                     }
                 } else if (r >= 1) {
@@ -55,15 +58,15 @@
                     } else {
                         forCurrent++;
                         if (today.getDate() === forCurrent) {
-                            col.children[0].classList.add('calender__currentDay');
+                            col_0.children[0].classList.add('calender__currentDay');
                             currentDayIndex = [r,c];
                         }
                     }
                 } else {
                     continue;
                 }
-                col.children[0].addEventListener('mouseover', () => Array.from($elms.reserveCalender[0].children).forEach($row => Array.from($row.children).forEach($col => {if ($col.children[0]) $col.children[0].classList.remove('calender__currentDay')})));
-                col.children[0].addEventListener('mouseout', () => Array.from($elms.reserveCalender[0].children).forEach(($row, r)=> Array.from($row.children).forEach(($col, c) => {if ($col.children[0] && r === currentDayIndex[0] && c === currentDayIndex[1]) $col.children[0].classList.add('calender__currentDay')})));
+                col_0.children[0].addEventListener('mouseover', () => Array.from($elms.reserveCalender[0].children).forEach($row => Array.from($row.children).forEach($col => {if ($col.children[0]) $col.children[0].classList.remove('calender__currentDay')})));
+                col_0.children[0].addEventListener('mouseout', () => Array.from($elms.reserveCalender[0].children).forEach(($row, r)=> Array.from($row.children).forEach(($col, c) => {if ($col.children[0] && r === currentDayIndex[0] && c === currentDayIndex[1]) $col.children[0].classList.add('calender__currentDay')})));
             }
         }
 
@@ -82,13 +85,13 @@
                         col.children[0].innerText = dayCount;
                     } else if (r >= 1) {
                         if (dayCount > lastDay.getDate() - 1) {
-                            col.innerHTML = '';
+                            delete col.children[0].remove();
                         } else {
                             dayCount++;
                             col.children[0].innerText = dayCount;
                         }
                     } else {
-                        col.innerHTML = '';
+                        delete col.children[0].remove();
                     }
                 }
             }
