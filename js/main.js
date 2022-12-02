@@ -1,6 +1,6 @@
 'use strict';
-((d) => {
-    d.addEventListener('DOMContentLoaded', () => {
+((d, w) => {
+    w.addEventListener('DOMContentLoaded', () => {
 
 
 
@@ -37,4 +37,4 @@
 
 
     });
-})(document);
+})(document, w);
