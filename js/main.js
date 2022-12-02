@@ -37,4 +37,4 @@
 
 
     });
-})(document, w);
+})(document, window);
