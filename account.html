@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
+        <script src="js/form.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
@@ -41,41 +42,49 @@
             </div>
         </header>
         <main class="main">
-            
-            <div class="reserve--text content-w">
-                <p>すでにアカウントをお持ちの方はこちらのボタンからログインしてください。</p>
-                <p class="btn contact--btn"><a href="#"><i class="fa-sharp fa-solid fa-paper-plane"></i>ログイン</a></p>
+            <h2 class="main--title main--title_account">
+                <span class="span-block"><i class="fa-solid fa-circle-user"></i>Account</span>
+                <span class="fa-sr-only">-</span>
+                <span class="span-block">アカウント登録</span>
+            </h2>
+            <div class="account main__content content-w">
+                <div class="account--text content-w">
+                    <p>すでにアカウントをお持ちの方はこちらのボタンからログインしてください。</p>
+                    <p class="btn__outer fx-jc-center"><a class="btn" href="#"><i class="fa-sharp fa-solid fa-paper-plane"></i>ログイン</a></p>
+                </div>
+                <form action="./" method="POST" class="account__container">
+                    <dl class="account__container--item">
+                        <dt class="form-required"><label for="form-username">お名前をご入力してください。（姓と名）</label></dt>
+                        <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
+                    </dl>
+                    <dl class="account__container--item">
+                        <dt>電話番号をご入力してください。</dt>
+                        <dd class="short">
+                            <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
+                            <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
+                            <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
+                        </dd>
+                    </dl>
+                    <dl class="account__container--item">
+                        <dt class="form-required"><label for="form-email">メールアドレスをご入力してください。</label></dt>
+                        <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
+                    </dl>
+                    <dl class="account__container--item">
+                        <dt class="form-required">
+                            次回ログイン時にパスワードが必要となります。パスワードを設定してください。
+                        </dt>
+                        <dd class="long"><input type="text"></dd>
+                    </dl>
+                    <dl class="account__container--item">
+                        <dt>確認のため再度入力してください。</dt>
+                        <dd class="long"><input type="text"></dd>
+                    </dl>
+                    <div class="btn__outer">
+                        <input type="submit" id="form-submit" value="送信" class="fa-sr-only">
+                        <label for="form-submit" class="btn"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</label>
+                    </div>
+                </form>
             </div>
-
-            <div class="complete--text content-w">
-                <div class="account__container">
-                    <p>お名前をご入力してください。（姓と名）</p>
-                    <p class="short"><input type="text" placeholder="姓">　<input type="text" placeholder="名"></p>
-                </div>
-
-                <div class="account__container">
-                    <p>電話番号をご入力してください。</p>
-                    <p class="short"><input type="text"> ー <input type="text"> ー <input type="text"></p>
-                </div>
-
-                <div class="account__container">
-                    <p>メールアドレスをご入力してください。</p>
-                    <p class="long"><input type="text"></p>
-                </div>
-
-                <div class="account__container">
-                    <p>次回ログイン時にパスワードが必要となります。</p>
-                    <p>パスワードを設定してください。</p>
-                    <p class="long"><input type="text"></p>
-                </div>
-
-                <div class="account__container">
-                    <p>確認のため再度入力してください。</p>
-                    <p class="long"><input type="text"></p>
-                </div>
-                <p class="btn account--btn"><a href="#"><i class="fa-sharp fa-solid fa-paper-plane"></i>アカウントを登録する</a></p>
-            </div>
-
         </main>
         <footer class="footer">
             <div class="content-w">

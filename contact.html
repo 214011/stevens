@@ -61,7 +61,7 @@
                                 <dt><label for="form-subject">ご用件</label></dt>
                                 <dd>
                                     <label for="form-subject">
-                                        <select name="" id="form-subject">
+                                        <select name="" id="form-subject" class="form-focus">
                                             <option value="">質問</option>
                                             <option value="">お店へのお問い合わせ</option>
                                             <option value="">予約の取り消し</option>
@@ -74,34 +74,34 @@
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-username">お名前</label></dt>
-                                <dd><input type="text" id="form-username" placeholder="姓" required><input type="text" placeholder="名" required></dd>
+                                <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-tel">電話番号</label></dt>
                                 <dd>
-                                    <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin js-contact__tel" required>
-                                    <div><input type="tel" pattern="\d{2,4}" class="no-spin js-contact__tel" required></div>
-                                    <input type="tel" pattern="\d{2,4}" class="no-spin js-contact__tel" required>
+                                    <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
+                                    <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
+                                    <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
                                 </dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-email">メールアドレス</label></dt>
-                                <dd><input type="email" id="form-email" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
+                                <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
                             </dl>
                         </li>
                         <li class="contact-table__row">
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-contact_content">お問い合わせ内容</label></dt>
-                                <dd><textarea name="" id="form-contact_content" required></textarea></dd>
+                                <dd><textarea name="" id="form-contact_content" class="form-focus" required></textarea></dd>
                             </dl>
                         </li>
                     </ul>
                     <div class="btn__outer">
-                        <input type="submit" id="form-submit" value="" class="fa-sr-only">
+                        <input type="submit" id="form-submit" value="送信" class="fa-sr-only">
                         <label for="form-submit" class="btn"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</label>
                     </div>
                 </form>
