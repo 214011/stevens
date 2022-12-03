@@ -1915,10 +1915,6 @@ ul {
 
 /* reserve */
 
-.reserve--text{
-    text-align: center;
-}
-
 .reserve__calender--container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2042,8 +2038,8 @@ ul {
 }
 
 
-
 /* account */
+
 .account__container{
     margin-top: 35px;
 }
@@ -2070,7 +2066,7 @@ ul {
     width: 252px;
     margin: 60px auto 0;
 }
-/* account-sp */
+
 
 /* confirm */
  .confirm{
