@@ -3,7 +3,7 @@
     w.addEventListener('DOMContentLoaded', () => {
 
         const $elms = {
-            contactTable__tel: d.getElementsByClassName('js-contact-table__tel')
+            contactTable__tel: d.getElementsByClassName('js-contact__tel')
         };
 
         // イベント起動
