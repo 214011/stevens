@@ -1970,8 +1970,11 @@ ul {
     background-color: var(--c-green);
 }
 
-.reserve__today--title {
+.reserve__today {
     margin-top: 75px;
+}
+
+.reserve__today--title {
     display: flex;
     align-items: center;
     justify-content: center;
