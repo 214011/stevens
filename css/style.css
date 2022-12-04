@@ -2252,16 +2252,12 @@ margin-top: 100px;
 
 .footer__container--list {
     padding-left: 1em;
-    line-height: 1;
+    line-height: calc(1em + 15px);
     list-style: revert;
 }
 
 .footer__container--list li {
     width: 100%;
-}
-
-.footer__container--list li:not(:first-child) {
-    margin-top: 15px;
 }
 
 .footer__container--list li a {
