@@ -1003,6 +1003,162 @@ ul {
 }
 
 
+/* menu */
+
+.menu__link-list {
+    width: min(calc((((18px * 1.3) * 12)) * 2 + 30px), 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    gap: clamp(30px, 4.557291666666666vw, 35px) 30px;
+    font-size: var(--fsz-secondary);
+}
+
+@media screen and (min-width: 571px) {
+
+    .menu__link-list--item:first-child {
+        grid-column: span 2;
+    }
+
+}
+
+
+/* reserve */
+
+.reserve {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.__reserve-day {
+    min-height: 0vw;
+    flex-direction: column-reverse;
+    gap: clamp(50px, 13.020833333333333vw, 100vw);
+}
+
+.reserve__calender--container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px 100px;
+}
+
+.calender--container__item--title {
+    min-height: 0vw;
+    margin-bottom: clamp(5px, 1.953125vw, 15px);
+    font-size: var(--fsz-primary);
+    line-height: 1;
+}
+
+.calender--container__item--table {
+    width: 100%;
+    position: relative;
+}
+
+.calender--container__item--table::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.calender--container__item--table table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 7px #00000025;
+    font-size: clamp(20px, 3.515625vw, 27px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.calender--container__item--table table th,
+.calender--container__item--table table thead,
+.calender--container__item--table table td {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1.5px solid var(--c-font);
+}
+
+.calender--container__item--table table thead th:first-child {
+    color: var(--c-red_accent);
+}
+
+.calender--container__item--table table thead th:last-child {
+    color: var(--c-blue);
+}
+
+.calender--container__item--table table tbody td a {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--c-font);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.calender__currentDay {
+    background-color: var(--c-green);
+}
+
+.calender--container__item--table table tbody td a:hover {
+    background-color: var(--c-green);
+}
+
+.reserve__today--title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    text-indent: clamp(5px, 1.302083333333333vw, 10px);
+}
+
+.reserve__today--title > span {
+    border-left: 3px solid var(--c-green);
+}
+
+.reserve__today--title > span span:first-child {
+    font-family: var(--ff-title);
+    font-size: var(--fsz-primary);
+}
+
+.reserve__today--title > span span:last-child {
+    font-size: var(--fsz-secondary);
+}
+
+.reserve__today--container {
+    width: min(835px, 100%);
+    min-height: 0vw;
+    margin: clamp(30px, 7.8125vw, 60px) auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: repeat(4, var(--btn-h));
+    gap: clamp(40px, 6.51041666666vw, 50px) 100px;
+}
+
+.reserve__today--container_item {
+    width: 100%;
+}
+
+.reserve__today--container_item dl {
+    display: flex;
+    align-items: center;
+}
+
+.reserve__today--container_item > dl {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.reserve__today--container_item dl dd > dl {
+    min-height: 0vw;
+    gap: clamp(8px, 1.953125vw, 15px);
+}
+
+
 /* blog's top page */
 
 .main__content--blog {
@@ -1295,144 +1451,6 @@ ul {
 .main__content--blog__card--content .main__content--blog__category {
     justify-content: flex-end;
 }
-
-
-
-
-/* menu */
-
-.menu__container{
-}
-.menu__container--list{
-    width: 600px;
-    margin: 0 auto ;
-    display: grid;
-    gap: 35px;
-    grid-template-columns: repeat(2,3fr);
-    justify-items: center;
-}
-.menu__container--list a{
-    height: 100%;
-    font-size: 23px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--c-red_accent);
-    border-radius: 1.5em;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
-    color: var(--c-base);
-    text-decoration: none;
-}
-.menu__container--list a:hover{
-    background-color: var(--c-red_main);
-    box-shadow: none;
-}
-.menubtn{
-    width: 280px;
-    height: 60px;
-}
-.menubtn-a{
-    width: 100%;
-    height: 60px;
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-
-.menu__contents-wrap{
-    width: 1080px;
-    /*height: 680vh;*/
-    margin:200px auto 0;
-    background-color: #ececec;/* 一時的に区別をつけるため色を変えています */
-    padding: 70px;
-}
-
-.menu__contents{
-    border-left: solid 5px var(--c-blue);
-}
-.menu__contents2{
-    border-left: solid 5px var(--c-blue);
-    margin-top: 100px;
-}
-
-.menu__h2{
-    padding-left: 10px;
-    height: 72px;
-    line-height: 72px;
-}
-.menu__h2 h2{
-    font-size: 36px;
-}
-
-.menu__list{
-    margin-top: 40px;
-    padding-bottom: 100px;
-    border-bottom: 1px solid var(--c-font);
-    display: flex;
-    gap: 40px;
-}
-
-.menu__main{
-    width: 50%;
-}
-
-.menu__main h2{
-    font-size: 36px;
-    font-family: var(--ff-title);
-    border-bottom: solid 1px var(--c-font);
-    padding-bottom: 5px;
-}
-.menu__main p{
-    line-height: 2;
-}
-.menu__main h3{
-    font-size: 23.4px;
-    margin-top: 30px;
-    line-height: 2;
-}
-.menu__text{
-    display: flex;
-    justify-content: space-between;
-}
-
-@media screen and (max-width: 1080px){
-
-    .menu__container--list{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .menu__container--list li{
-        width: 350px;
-        margin: auto;
-        height: 44px;
-        border-radius: 1.5em;
-    }
-    .menu__container--list li a{
-        font-size: 16px;
-    }
-
-    .menu__list{
-        flex-direction: column;
-    }
-    .menu__contents-wrap {
-        padding: 10px;
-        width: 100%
-    }
-    .menu__main{
-        width: 100%;
-    }
-    .menu__contents-wrap{
-        margin-top: 120px;
-        padding-top: 16.5px;
-        padding-bottom: 20px;
-    }
-    h2{
-        font-size: 32px;
-    }
-}
-
-
-
 
 
 /* blog */
@@ -1903,142 +1921,6 @@ ul {
 .contact__container--contact-table + .btn__outer input[type = submit]:focus + .btn  {
     background-color: var(--c-red_main);
     box-shadow: none;
-}
-
-
-/* reserve */
-
-.reserve {
-    display: flex;
-    flex-direction: column;
-    gap: 75px;
-}
-
-.__reserve-day {
-    min-height: 0vw;
-    flex-direction: column-reverse;
-    gap: clamp(50px, 13.020833333333333vw, 100vw);
-}
-
-.reserve__calender--container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px 100px;
-}
-
-.calender--container__item--title {
-    min-height: 0vw;
-    margin-bottom: clamp(5px, 1.953125vw, 15px);
-    font-size: var(--fsz-primary);
-    line-height: 1;
-}
-
-.calender--container__item--table {
-    width: 100%;
-    position: relative;
-}
-
-.calender--container__item--table::before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.calender--container__item--table table {
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse;
-    box-shadow: 5px 5px 7px #00000025;
-    font-size: clamp(20px, 3.515625vw, 27px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.calender--container__item--table table th,
-.calender--container__item--table table thead,
-.calender--container__item--table table td {
-    width: calc(100% / 7);
-    height: calc(100% / 7);
-    border: 1.5px solid var(--c-font);
-}
-
-.calender--container__item--table table thead th:first-child {
-    color: var(--c-red_accent);
-}
-
-.calender--container__item--table table thead th:last-child {
-    color: var(--c-blue);
-}
-
-.calender--container__item--table table tbody td a {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    color: var(--c-font);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.calender__currentDay {
-    background-color: var(--c-green);
-}
-
-.calender--container__item--table table tbody td a:hover {
-    background-color: var(--c-green);
-}
-
-.reserve__today--title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
-    text-indent: clamp(5px, 1.302083333333333vw, 10px);
-}
-
-.reserve__today--title > span {
-    border-left: 3px solid var(--c-green);
-}
-
-.reserve__today--title > span span:first-child {
-    font-family: var(--ff-title);
-    font-size: var(--fsz-primary);
-}
-
-.reserve__today--title > span span:last-child {
-    font-size: var(--fsz-secondary);
-}
-
-.reserve__today--container {
-    width: min(835px, 100%);
-    min-height: 0vw;
-    margin: clamp(30px, 7.8125vw, 60px) auto 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-template-rows: repeat(4, var(--btn-h));
-    gap: clamp(40px, 6.51041666666vw, 50px) 100px;
-}
-
-.reserve__today--container_item {
-    width: 100%;
-}
-
-.reserve__today--container_item dl {
-    display: flex;
-    align-items: center;
-}
-
-.reserve__today--container_item > dl {
-    width: 100%;
-    justify-content: space-between;
-}
-
-.reserve__today--container_item dl dd > dl {
-    min-height: 0vw;
-    gap: clamp(8px, 1.953125vw, 15px);
 }
 
 
