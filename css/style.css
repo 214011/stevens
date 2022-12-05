@@ -2044,6 +2044,10 @@ ul {
     margin-top: clamp(15px, 3.255208333333334vw, 25px);
 }
 
+.account__container {
+    padding: clamp(20px, 5.208333333333334vw, 40px) 0;
+}
+
 
 /*
     confirm

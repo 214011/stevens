@@ -58,8 +58,8 @@
                         <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
                     </dl>
                     <dl class="account__container--item">
-                        <dt>電話番号をご入力してください。</dt>
-                        <dd class="short">
+                        <dt class="form-required"><label for="form-tel">電話番号</label></dt>
+                        <dd>
                             <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
                             <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
                             <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
@@ -70,14 +70,12 @@
                         <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
                     </dl>
                     <dl class="account__container--item">
-                        <dt class="form-required">
-                            次回ログイン時にパスワードが必要となります。パスワードを設定してください。
-                        </dt>
-                        <dd class="long"><input type="text"></dd>
+                        <dt class="form-required"><label for="form-password">次回ログイン時にパスワードが必要となります。パスワードを設定してください。</label></dt>
+                        <dd><input type="password" id="form-password" class="form-focus"></dd>
                     </dl>
                     <dl class="account__container--item">
                         <dt>確認のため再度入力してください。</dt>
-                        <dd class="long"><input type="text"></dd>
+                        <dd><input type="password"></dd>
                     </dl>
                     <div class="btn__outer">
                         <input type="submit" id="form-submit" value="送信" class="fa-sr-only">
