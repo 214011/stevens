@@ -2269,6 +2269,32 @@ margin-top: 100px;
     line-height: 1;
 }
 
+.footer__container--title a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--c-base);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer__menu-content:hover {
+    color: var(--c-blue);
+}
+
+.footer__reserve-content:hover {
+    color: var(--c-green);
+}
+
+.footer__blog-content:hover {
+    color: var(--c-yellow);
+}
+
+.footer__account-content:hover {
+    color: var(--c-green);
+}
+
+
 .footer__container--map iframe {
     width: 100%;
     height: auto;
