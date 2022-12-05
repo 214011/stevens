@@ -253,6 +253,14 @@ ul {
     background-image: url(../images/index-bg_06.jpg);
 }
 
+.bg__menu {
+    min-height: 0vw;
+    background-image: url(../images/MenuListPage_bg.svg);
+    background-size: clamp(190px, 36.458333333333333vw, 280px) clamp(147px, 33.072916666666667vw, 254px);
+    background-position: clamp(-20px, 5.208333333333334vw, -40px) clamp(-30px, 7.8125vw, -60px);
+    background-repeat: repeat repeat;
+}
+
 .bg__blog-top {
     background-attachment: fixed;
     background-image: url(../images/blog_top-bg.jpg);
