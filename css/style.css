@@ -2072,6 +2072,7 @@ ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .account__container--item dt label[for = form-password] {
@@ -2142,6 +2143,10 @@ ul {
 .account-login__container--item:not(:last-child) {
     min-height: 0vw;
     margin-top: clamp(35px, 7.8125vw, 60px);
+}
+
+.account-login__container--item dt label {
+    cursor: pointer;
 }
 
 .account-login__container--item dt,
