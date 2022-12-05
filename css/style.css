@@ -1857,6 +1857,7 @@ ul {
     border: 1px solid var(--c-font);
     border-radius: 20px;
     resize: none;
+    transition: var(--transition);
 }
 
 .contact-table__row--col dd textarea::-webkit-scrollbar {
@@ -2125,6 +2126,57 @@ ul {
     background-color: var(--c-red_main);
     box-shadow: none;
 }
+
+/*
+    login
+*/
+
+.account-login__container--item {
+    min-height: 0vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: clamp(15px, 2.604166666666667vw, 20px);
+}
+
+.account-login__container--item:not(:last-child) {
+    min-height: 0vw;
+    margin-top: clamp(35px, 7.8125vw, 60px);
+}
+
+.account-login__container--item dt,
+.account-login__container--item dd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-login__container--item dd {
+    width: min(506px, 100%);
+}
+
+.account-login__container--item dd input {
+    width: 100%;
+    height: var(--btn-h);
+    padding: 0 1em;
+    text-align: center;
+    border: 1px solid var(--c-font);
+    border-radius: calc(var(--btn-h) / 2);
+    transition: var(--transition);
+}
+
+
+.account-login__container .btn__outer {
+    min-height: 0vw;
+    margin-top: clamp(40px, 7.8125vw, 60px);
+    justify-content: center;
+}
+
+.account-login__container input[type = submit]:focus + .btn {
+    background-color: var(--c-red_main);
+    box-shadow: none;
+}
+
 
 
 /*
