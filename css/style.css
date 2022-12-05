@@ -1899,6 +1899,18 @@ ul {
 
 /* reserve */
 
+.reserve {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.__reserve-day {
+    min-height: 0vw;
+    flex-direction: column-reverse;
+    gap: clamp(50px, 13.020833333333333vw, 100vw);
+}
+
 .reserve__calender--container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1968,10 +1980,6 @@ ul {
 
 .calender--container__item--table table tbody td a:hover {
     background-color: var(--c-green);
-}
-
-.reserve__today {
-    margin-top: 75px;
 }
 
 .reserve__today--title {
