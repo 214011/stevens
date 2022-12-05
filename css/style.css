@@ -2041,11 +2041,89 @@ ul {
 }
 
 .account--text .btn__outer {
+    min-height: 0vw;
     margin-top: clamp(15px, 3.255208333333334vw, 25px);
 }
 
 .account__container {
+    min-height: 0vw;
+    margin-top: clamp(50px, 13.020833333333333vw, 100px);
     padding: clamp(20px, 5.208333333333334vw, 40px) 0;
+    border-top: 2px solid var(--c-green);
+    border-bottom: 2px solid var(--c-green);
+}
+
+.account__container--item {
+    text-align: center;
+}
+
+.account__container--item:not(:first-child) {
+    min-height: 0vw;
+    margin-top: clamp(35px, 7.8125vw, 60px);
+}
+
+.account__container--item dt {
+    min-height: 0vw;
+    margin-bottom: clamp(15px, 3.255208333333334vw, 25px);
+}
+
+.account__container--item dt label {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.account__container--item dt label[for = form-password] {
+    display: block;
+    line-height: 2;
+}
+
+.account__container--item dd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.account__container--item:nth-child(2) dd {
+    min-height: 0vw;
+    gap: clamp(23px, 3.645833333333334vw, 28px);
+}
+
+.account__container--item dd input {
+    width: clamp(100px, 19.53125vw, 150px);
+    height: var(--btn-h);
+    padding: 0 1em;
+    border: 1px solid var(--c-font);
+    border-radius: calc(var(--btn-h) / 2);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.account__container--item:not(:first-child).account__container--item:not(:nth-child(2)) dd input {
+    min-height: 0vw;
+    width: min(506px, 100%);
+}
+
+.account__container .btn__outer {
+    min-height: 0vw;
+    margin-top: clamp(40px, 5.208333333333334vw, 60px);
+    justify-content: center;
+}
+
+.account__container .btn span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.account__container .btn span:first-child i:first-child {
+    font-size: .5em;
+}
+
+.account__container input[type = submit]:focus + .btn {
+    background-color: var(--c-red_main);
+    box-shadow: none;
 }
 
 

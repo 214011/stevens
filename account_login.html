@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
-        <script src="js/form.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
@@ -43,56 +42,25 @@
         </header>
         <main class="main">
             <h2 class="main--title main--title_account">
-                <span class="span-block"><i class="fa-solid fa-circle-user"></i>Account</span>
+                <span class="span-block"><i class="fa-solid fa-right-to-bracket"></i>Login</span>
                 <span class="fa-sr-only">-</span>
-                <span class="span-block">アカウント登録</span>
+                <span class="span-block">ログイン</span>
             </h2>
             <div class="account main__content content-w">
-                <div class="account--text content-w">
-                    <p>すでにアカウントをお持ちの方はこちらのボタンからログインしてください。</p>
-                    <p class="btn__outer fx-jc-center"><a class="btn" href="account_login.html"><i class="fa-solid fa-right-to-bracket"></i>ログイン</a></p>
-                </div>
-                <form action="./account_create.html" method="POST" class="account__container">
-                    <dl class="account__container--item">
-                        <dt class="form-required"><label for="form-username">お名前をご入力してください。（姓と名）</label></dt>
-                        <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
+                <form action="./account_login.html" method="POST" class="account-login__container">
+                    <dl class="account-login--item">
+                        <dt><label for="form-email">メールアドレス</label></dt>
+                        <dd><input type="email" id="form-email" class="form-focus" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
                     </dl>
-                    <dl class="account__container--item">
-                        <dt class="form-required"><label for="form-tel">電話番号</label></dt>
-                        <dd>
-                            <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
-                            <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
-                            <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
-                        </dd>
-                    </dl>
-                    <dl class="account__container--item">
-                        <dt class="form-required"><label for="form-email">メールアドレスをご入力してください。</label></dt>
-                        <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
-                    </dl>
-                    <dl class="account__container--item">
-                        <dt class="form-required">
-                            <label for="form-password">
-                                <span class="span-block">次回ログイン時にパスワードが必要となります。</span>
-                                パスワードを設定してください。
-                            </label>
+                    <dl class="account-login--item">
+                        <dt>
+                            <label for="form-password">パスワード</label>
                         </dt>
                         <dd><input type="password" id="form-password" class="form-focus"></dd>
                     </dl>
-                    <dl class="account__container--item">
-                        <dt>確認のため再度入力してください。</dt>
-                        <dd><input type="password" class="form-focus"></dd>
-                    </dl>
                     <div class="btn__outer">
-                        <input type="submit" id="form-submit" value="アカウントを登録する" class="fa-sr-only">
-                        <label for="form-submit" class="btn">
-                            <span>
-                                <i class="fa-solid fa-plus"></i>
-                                <i class="fa-solid fa-circle-user"></i>
-                            </span>
-                            <span>
-                                アカウントを登録する
-                            </span>
-                        </label>
+                        <input type="submit" id="form-submit" value="ログイン" class="fa-sr-only">
+                        <label for="form-submit" class="btn"><i class="fa-solid fa-right-to-bracket"></i>ログイン</label>
                     </div>
                 </form>
             </div>
