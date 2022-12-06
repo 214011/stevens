@@ -16,7 +16,6 @@
 
             const rect = $targetElm.getBoundingClientRect().top;
 
-
             $targetElm.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
