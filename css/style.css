@@ -1193,21 +1193,29 @@ ul {
     border-bottom: 1px solid var(--c-font);
 }
 
+.menu__container--item_price:not(.menu__container--item > h4 + .menu__container--item_price) {
+    margin-top: 45px;
+}
+
+@media screen and (max-width: 1080px) {
+
+    .menu__container--item_price > h5 {
+        margin-top: 2em;
+    }
+
+}
+
 .menu__container--item_price > h5 {
-    margin: 45px 0 1em;
+    margin-bottom: 1em;
     font-size: var(--fsz-secondary);
 }
 
 @media screen and (max-width: 1080px) {
 
     .menu__container--item_price > h5 {
-        margin: 2em 0 1em;
+        margin-bottom: 1em;
     }
 
-}
-
-.menu__container--item > h4 + .menu__container--item_price > h5 {
-    margin-top: 0;
 }
 
 .menu__container--item_price dl {
