@@ -937,7 +937,7 @@ ul {
         transform: translateX(-0.5vw);
     }
     105% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
@@ -965,6 +965,36 @@ ul {
     }
     90% {
         transform: translateX(0.5vw);
+    }
+    105% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes content__area--anim_sp {
+    0% {
+        transform: translateY(100svh);
+    }
+    10% {
+        transform: translateY(15svh);
+    }
+    15% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(8svh);
+    }
+    45% {
+        transform: translateY(0);
+    }
+    60% {
+        transform: translateY(3svh);
+    }
+    75% {
+        transform: translateY(0);
+    }
+    90% {
+        transform: translateY(0.5svh);
     }
     105% {
         transform: translateY(0);
@@ -997,27 +1027,12 @@ ul {
 
 @media screen and (max-width: 1080px) {
 
-    .__menu-content .content__area,
-    .__blog-content .content__area,
-    .__account-content .content__area {
-        transform: translateX(0);
+    .index__container--content .content__area {
+        transform: translateY(100svh);
     }
 
-    .__menu-content .content__area.content__area--is-active,
-    .__blog-content .content__area.content__area--is-active,
-    .__account-content .content__area.content__area--is-active {
-        animation: none;
-        transform: translateY(0);
-    }
-
-    .__reserve-content .content__area,
-    .__contact-content .content__area {
-        transform: translateX(0);
-    }
-
-    .__reserve-content .content__area.content__area--is-active,
-    .__contact-content .content__area.content__area--is-active {
-        animation: none;
+    .index__container--content .content__area.content__area--is-active {
+        animation: content__area--anim_sp 2s linear;
         transform: translateY(0);
     }
 
