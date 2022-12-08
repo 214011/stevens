@@ -92,5 +92,11 @@
 
         };
 
+
+        const $toTop = d.getElementById('js-toTop');
+
+        $toTop.addEventListener('click', () => w.scroll({top: 0, behavior: 'smooth'}))
+
+
     });
 })(document, window);
