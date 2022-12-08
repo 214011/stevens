@@ -30,7 +30,7 @@
             if (setPosition < document.documentElement.scrollTop) {
                 if (w.scrollY >= (w.innerHeight * viewIndex) - (w.innerHeight / 3)) {
                     if (viewIndex < 6) {
-                        $elms.contentArea(viewIndex).classList.add('content__area--is-active');
+                        if ($elms.contentArea(viewIndex)) $elms.contentArea(viewIndex).classList.add('content__area--is-active');
                         let className = d.body.classList[1];
                         d.body.classList.remove(className);
                         const newClass = className.replace(className[className.length - 1], viewIndex);
