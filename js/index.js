@@ -27,6 +27,7 @@
         /**
          * バックグラウンド画像をスクロール範囲によって変更する関数
          * @param {number} i viewIndexの数値
+         * @return {void} 返り値なし
          */
         const bgChange = (i) => {
             let className = d.body.classList[1];
@@ -47,7 +48,7 @@
 
         /**
          * スクロールイベントのイベントハンドラ
-         * @return {void}
+         * @return {void} 返り値なし
          */
         const scrollHandler = () => {
 
