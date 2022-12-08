@@ -27,18 +27,20 @@
                     // アニメーション呼び出し＆IDを定数に格納
                     const loopId = requestAnimationFrame(loop);
 
+                    // もしloopIdが1以上
                     if (loopId >= 1) {
-                        // URLにリクエストされたIDを要素として取得
-                        const $targetElm = getElementByUrlId(url);
-                        // 取得した要素の絶対位置を取得
-                        const positionTop = $targetElm.getBoundingClientRect().top;
-                        // 要素より-150pxした位置にスクロールさせる処理
-                        w.scroll(0, w.scrollY + positionTop - 150);
-
                         // アニメーションループ停止
                         cancelAnimationFrame(loopId);
+
+                        // URLにリクエストされたIDを要素として取得
+                        const $urlElm = getElementByUrlId(url);
+                        // 取得した要素の絶対位置を取得
+                        const $positionTop = $urlElm.getBoundingClientRect().top;
+                        // 要素より-150pxした位置にスクロールさせる処理
+                        w.scroll(0, w.scrollY + $positionTop - 150);
+
                     } else {
-                        // 上記以外はページの上部に固定
+                        // 上記以外はページのトップに固定
                         w.scroll(0, 0);
                     }
 
@@ -56,15 +58,15 @@
          * ページ内リンクの要素を格納する配列を用意
          * @type {HTMLElement[]}
          */
-        let linkItem = [];
+        let $linkItem = [];
 
-        // メインコンテンツのページ内リンクを取得＆linkItemの配列に格納
-        Array.from(d.getElementsByClassName('menu__link-list--item')).forEach($elm => linkItem.push($elm.getElementsByClassName('btn')[0]));
-        // フッターコンテンツのページ内リンクを取得＆linkItemの配列に格納
-        Array.from(d.getElementById('menu__link-list').getElementsByTagName('li')).forEach($elm => linkItem.push($elm.children[0]));
+        // メインコンテンツのページ内リンクを取得＆$linkItemの配列に格納
+        Array.from(d.getElementsByClassName('menu__link-list--item')).forEach($elm => $linkItem.push($elm.getElementsByClassName('btn')[0]));
+        // フッターコンテンツのページ内リンクを取得＆$linkItemの配列に格納
+        Array.from(d.getElementById('menu__link-list').getElementsByTagName('li')).forEach($elm => $linkItem.push($elm.children[0]));
 
         // 配列に格納されたページ内リンクの要素をまとめてクリックイベントを起動
-        linkItem.forEach($elm => $elm.addEventListener('click', e => clickHandler(e)));
+        $linkItem.forEach($elm => $elm.addEventListener('click', e => clickHandler(e)));
 
         /**
          * ページ内リンクをクリックした時のイベントハンドラ
@@ -80,10 +82,11 @@
             const $target = e.currentTarget;
             const $targetElm = getElementByUrlId($target.href);
 
-            const positionTop = $targetElm.getBoundingClientRect().top;
+            // init関数内で記述した同じ定数名だが変数のスコープ（影響範囲）が別ブロックのため宣言できできる
+            const $positionTop = $targetElm.getBoundingClientRect().top;
 
             w.scroll({
-                top: w.scrollY + positionTop - 150,
+                top: w.scrollY + $positionTop - 150,
                 behavior: 'smooth'
             })
 
