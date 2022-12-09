@@ -88,7 +88,7 @@
             w.scroll({
                 top: w.scrollY + $positionTop - 150,
                 behavior: 'smooth'
-            })
+            });
 
         };
 
