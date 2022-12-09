@@ -1404,8 +1404,25 @@ button[type = button]#js-toTop::after {
     right: 0;
 }
 
-.calender--container__item--table table th,
 .calender--container__item--table table thead,
+.calender--container__item--table table tbody,
+.calender--container__item--table table tr {
+    width: 100%;
+}
+
+.calender--container__item--table table thead {
+    height: calc(100% / 7);
+}
+
+.calender--container__item--table table tbody {
+    height: calc(100% - (100% / 7));
+}
+
+.calender--container__item--table table tr {
+    height: calc(100% / 7);
+}
+
+.calender--container__item--table table th,
 .calender--container__item--table table td {
     width: calc(100% / 7);
     height: calc(100% / 7);
