@@ -1,3 +1,21 @@
+<?php require_once('module/mail.php'); ?>
+<?php
+    var_dump($_POST);
+    $toMail = new ToMail(
+        $_POST['subject'],
+        [
+            'firstName' => $_POST['firstName'],
+            'lastName' => $_POST['lastName']
+        ],
+        $_POST['mail'],
+        [
+            'firstTel' => $_POST['firstTel'],
+            'middleTel' => $_POST['middleTel'],
+            'lastTel' => $_POST['lastTel'],
+        ],
+        $_POST['contactMsg']
+    );
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -5,27 +23,29 @@
         <link rel="icon" href="favicon.ico">
         <meta name="robots" content="none">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bordeaux</title>
+        <title>内容確認</title>
         <link rel="stylesheet" href="css/base.css">
         <script>
-            (function(d) {
+            (function (d) {
                 var config = {
                     kitId: 'scj6ipp',
                     scriptTimeout: 3000,
                     async: true
                 },
-                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+                    h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
             })(document);
         </script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
-        <script src="js/form.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
             <div class="content-w">
-                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142" height="50"></a></h1>
+                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142"
+                            height="50"></a></h1>
                 <button type="button" class="hamburger-menu" id="js-hamburger__trigger">
                     <span class="hamburger-menu--graph"></span>
                     <span class="hamburger-menu--graph"></span>
@@ -37,76 +57,28 @@
                         <li class="gnav__container--item"><a class="js-gnav" href="menu.html">MenuList</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="reserve.html">Reserve</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="blog.html">Blog</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="contact.html">Contact</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="contact.php">Contact</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="account.html"><i class="fa-solid fa-circle-user"></i>Account</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main class="main">
-            <h2 class="main--title main--title_contact">
-                <span class="span-block"><i class="fa-sharp fa-solid fa-paper-plane"></i>Contact</span>
-                <span class="fa-sr-only">-</span>
-                <span class="span-block">お問い合わせ</span>
-            </h2>
-            <div class="contact main__content content-w">
-                <div class="contact--text">
-                    <p>お問い合わせをご希望の方はこちらの入力フォームに必要事項をご記入のうえ、『送信する』ボタンを押してください。</p>
-                    <p>自動処理で控えの返信メールをお送りいたします。</p>
-                    <p>後ほど、確認でき次第なるべく早く、メールまたはお電話で折り返しご連絡させて頂きます。</p>
-                    <p>※メールか、お電話のいずれかをご希望される際は、お問い合わせ内容にその旨をご記入ください。</p>
-                </div>
-                <form action="./confirm.html" method="POST" class="contact__container">
-                    <ul class="contact__container--contact-table">
-                        <li class="contact-table__row">
-                            <dl class="contact-table__row--col">
-                                <dt><label for="form-subject">ご用件</label></dt>
-                                <dd>
-                                    <label for="form-subject">
-                                        <select name="" id="form-subject" class="form-focus">
-                                            <option value="">質問</option>
-                                            <option value="">お店へのお問い合わせ</option>
-                                            <option value="">予約の取り消し</option>
-                                            <option value="">サイトの質問</option>
-                                        </select>
-                                    </label>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="contact-table__row">
-                            <dl class="contact-table__row--col">
-                                <dt class="form-required"><label for="form-username">お名前</label></dt>
-                                <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
-                            </dl>
-                        </li>
-                        <li class="contact-table__row">
-                            <dl class="contact-table__row--col">
-                                <dt class="form-required"><label for="form-tel">電話番号</label></dt>
-                                <dd>
-                                    <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
-                                    <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
-                                    <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="contact-table__row">
-                            <dl class="contact-table__row--col">
-                                <dt class="form-required"><label for="form-email">メールアドレス</label></dt>
-                                <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
-                            </dl>
-                        </li>
-                        <li class="contact-table__row">
-                            <dl class="contact-table__row--col">
-                                <dt class="form-required"><label for="form-contact_content">お問い合わせ内容</label></dt>
-                                <dd><textarea name="" id="form-contact_content" class="form-focus" required></textarea></dd>
-                            </dl>
-                        </li>
-                    </ul>
-                    <div class="btn__outer">
-                        <input type="submit" id="form-submit" value="送信" class="fa-sr-only">
-                        <label for="form-submit" class="btn"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</label>
-                    </div>
-                </form>
+            <div class="confirm">
+                <?php
+                    echo $_POST['subject'];
+                    echo $_POST['firstName'];
+                    echo $_POST['lastName'];
+                    echo $_POST['firstTel'];
+                    echo $_POST['middleTel'];
+                    echo $_POST['lastTel'];
+                    echo $_POST['mail'];
+                    echo $_POST['contactMsg'];
+                ?>
+                <p>お名前</p>
+                <p>電話番号</p>
+                <p>メールアドレス内容</p>
+                <p>パスワード</p>
             </div>
         </main>
         <footer class="footer">
@@ -165,7 +137,7 @@
                         <h2 class="footer--title"><a href="./"><img src="images/footer_logo.svg" alt="Bordeaux" width="142" height="50"></a></h2>
                         <p class="copyright"><small>© 2022 Bordeaux All rights reserved.</small></p>
                     </div>
-                    <p class="btn__outer footer--btn"><a class="btn" href="contact.html"><i class="fa-sharp fa-solid fa-paper-plane"></i>お問い合わせ</a></p>
+                    <p class="btn__outer footer--btn"><a class="btn" href="contact.php"><i class="fa-sharp fa-solid fa-paper-plane"></i>お問い合わせ</a></p>
                 </div>
             </div>
         </footer>
