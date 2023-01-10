@@ -2730,3 +2730,38 @@ margin-top: 100px;
  * フッターコンテンツここまで
  * ----------------------------------------------------------------------
  */
+
+
+
+ /**
+ * ----------------------------------------------------------------------
+ * 404エラーコンテンツここから
+ */
+
+/* error */
+
+.error{
+    margin: calc(80px + 2em) auto 0;
+    padding: 45px;
+    border: solid 5px var(--c-red_main);
+}
+.error h1{
+    text-align: center;
+    color: var(--c-font);
+}
+.error p{
+    text-align: center;
+    line-height: 3;
+    color: var(--c-font);
+}
+.error-accent{
+    color: var(--c-red_accent);
+}
+.error--alert-icon {
+    color: var(--c-yellow);
+}
+.error .btn__outer{
+    margin-top: 3em;
+    justify-content: center;
+}
+
