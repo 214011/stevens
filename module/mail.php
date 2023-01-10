@@ -1,6 +1,8 @@
 <?php
     class ToMail {
 
+        private $subject = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
+
         /**
          * @param string $to_subject お問い合わせの件名
          * @param array{'firstName': string, 'lastName': string} $to_name 宛先の氏名
@@ -13,12 +15,12 @@
             mb_language('ja');
             mb_internal_encoding('UTF-8');
             session_start();
-            $_SESSION['toSubject'] = $to_subject;
+            $_SESSION['toSubject'] = $this->subject[(int) $to_subject];
             $_SESSION['toName'] = $to_name['firstName'] . '　' . $to_name['firstName'];
             $_SESSION['toMail'] = $to_address;
             $_SESSION['toTel'] = $to_tel['firstTel'] . '-' . $to_tel['middleTel'] . '-' . $to_tel['lastTel'];
             $_SESSION['toContactMsg'] = $contact_msg;
-            $this-> mailText = $_SESSION['toName'] . '様\n\n'
+            $this->mailText = $_SESSION['toName'] . '様\n\n'
 			. '初めまして。\n'
 			. '美容院Bordeaux(ボルドー)でございます。\n\n'
 			. '-------------------------------------------------\n\n'
@@ -39,7 +41,7 @@
 			. '-------------------------------------------------';;
         }
 
-        private $subject = '【控え】 Bordeaux(ボルドー)へのお問い合わせ内容';
+        private $mailSubject = '【控え】 Bordeaux(ボルドー)へのお問い合わせ内容';
 
         private $mailText = '';
 
@@ -52,18 +54,10 @@
         public function send () {
             mb_send_mail(
                 $_SESSION['toMail'],
-                $this->subject,
+                $this->mailSubject,
                 $this->mailText,
                 $this->mailHead
             );
-        }
-
-        public function showAll () {
-            echo $_SESSION['toSubject'];
-            echo $_SESSION['toName'];
-            echo $_SESSION['toMail'];
-            echo $_SESSION['toTel'];
-            echo $_SESSION['toContactMsg'];
         }
 
     }

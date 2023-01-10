@@ -1,6 +1,11 @@
-<?php require_once('module/mail.php'); ?>
 <?php
-    var_dump($_POST);
+
+    if (empty($_POST)) {
+        header("Location: ./contact.php");
+    }
+
+    require_once('module/mail.php');
+
     $toMail = new ToMail(
         $_POST['subject'],
         [
@@ -65,16 +70,6 @@
         </header>
         <main class="main">
             <div class="confirm">
-                <?php
-                    echo $_POST['subject'];
-                    echo $_POST['firstName'];
-                    echo $_POST['lastName'];
-                    echo $_POST['firstTel'];
-                    echo $_POST['middleTel'];
-                    echo $_POST['lastTel'];
-                    echo $_POST['mail'];
-                    echo $_POST['contactMsg'];
-                ?>
                 <p>お名前</p>
                 <p>電話番号</p>
                 <p>メールアドレス内容</p>
