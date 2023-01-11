@@ -176,6 +176,31 @@ ul {
 
 }
 
+.btn--cancel {
+    background-color: var(--c-yellow);
+}
+
+@media screen and (min-width: 901px) {
+
+    .btn--cancel:hover {
+        background-color: var(--c-yellow);
+        box-shadow: none;
+        filter: brightness(0.98);
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .btn--cancel:active {
+        background-color: var(--c-yellow);
+        box-shadow: none;
+        filter: brightness(0.98);
+        transform: scale(.98);
+    }
+
+}
+
 .span-block {
     display: block;
 }
@@ -2428,27 +2453,56 @@ button[type = button]#js-toTop::after {
     confirm
 */
 
-.confirm{
-padding: 40px;
-line-height: 2;
-border-top: 2px solid var(--c-green);
-border-bottom: 2px solid var(--c-green);
-margin-top: 100px;
+.confirm .contact-table__row:last-child dd p {
+    width: 33.8em;
+    height: clamp(234px, 36.9791666666vw, 284px);
+    min-height: 0vw;
+    padding: 1em 0;
+    display: block;
+    overflow-y: scroll;
 }
 
-.confirm p{
-    text-align: center;
+.confirm .contact-table__row:last-child dd::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fff0;
 }
+
+.confirm .contact-table__row:last-child dd::-webkit-scrollbar-track {
+    width: 5px;
+    background-color: #fff0;
+}
+
+.confirm .contact-table__row:last-child dd::-webkit-scrollbar-thumb {
+    width: 5px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(20, 20, 20, .6);
+    border-radius: calc(5px / 2);
+}
+
+.confirm .contact__container .btn__outer {
+    min-height: 0vw;
+    gap: clamp(50px, 13.020833333333333vw, 100px);
+}
+
 
 /*
     complete
 */
-.complete--text{
+.complete__container {
     padding: 40px;
     line-height: 2;
     border-top: 2px solid var(--c-green);
     border-bottom: 2px solid var(--c-green);
     margin-top: 100px;
+}
+
+.complete__container p:last-child {
+    text-align: center;
+}
+
+.complete__container p:last-child a:hover {
+    text-decoration: none;
 }
 
 

@@ -1,13 +1,12 @@
+<?php if (empty($_POST)): ?>
+    <?php header("Location: ./contact.php"); ?>
+<?php else: ?>
 <?php
-
-    if (empty($_POST)) {
-        header("Location: ./contact.php");
-    }
 
     require_once('module/mail.php');
 
     $toMail = new ToMail(
-        $_POST['subject'],
+        (int)$_POST['subject'],
         [
             'firstName' => $_POST['firstName'],
             'lastName' => $_POST['lastName']
@@ -20,6 +19,27 @@
         ],
         $_POST['contactMsg']
     );
+
+    $toMeMail = new ToMeMail(
+        (int)$_POST['subject'],
+        [
+            'firstName' => $_POST['firstName'],
+            'lastName' => $_POST['lastName']
+        ],
+        $_POST['mail'],
+        [
+            'firstTel' => $_POST['firstTel'],
+            'middleTel' => $_POST['middleTel'],
+            'lastTel' => $_POST['lastTel'],
+        ],
+        $_POST['contactMsg']
+    );
+
+
+    session_start();
+    $_SESSION['toMail'] = serialize($toMail);
+    $_SESSION['toMeMail'] = serialize($toMeMail);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -37,20 +57,17 @@
                     scriptTimeout: 3000,
                     async: true
                 },
-                    h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
             })(document);
         </script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
             <div class="content-w">
-                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142"
-                            height="50"></a></h1>
+                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142" height="50"></a></h1>
                 <button type="button" class="hamburger-menu" id="js-hamburger__trigger">
                     <span class="hamburger-menu--graph"></span>
                     <span class="hamburger-menu--graph"></span>
@@ -69,11 +86,50 @@
             </div>
         </header>
         <main class="main">
-            <div class="confirm">
-                <p>お名前</p>
-                <p>電話番号</p>
-                <p>メールアドレス内容</p>
-                <p>パスワード</p>
+            <h2 class="main--title main--title_contact">
+                <span class="span-block"><i class="fa-sharp fa-solid fa-paper-plane"></i>Confirm</span>
+                <span class="fa-sr-only">-</span>
+                <span class="span-block">内容確認</span>
+            </h2>
+            <div class="contact confirm main__content content-w">
+                <div class="contact__container">
+                    <ul class="contact__container--contact-table">
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt>ご用件</dt>
+                                <dd><?php echo $toMail->get_subject(); ?></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt class="form-required">お名前</dt>
+                                <dd><?php echo $toMail->get_full_name(); ?></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt class="form-required">電話番号</dt>
+                                <dd><?php echo $toMail->get_full_tel(); ?></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt class="form-required">メールアドレス</dt>
+                                <dd><?php echo $toMail->get_mail(); ?></dd>
+                            </dl>
+                        </li>
+                        <li class="contact-table__row">
+                            <dl class="contact-table__row--col">
+                                <dt class="form-required">お問い合わせ内容</dt>
+                                <dd><p><?php echo $toMail->get_bind_msg(); ?></p></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div class="btn__outer">
+                        <p><a href="./contact.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
+                        <p><a href="./complete.php" class="btn"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</a></p>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="footer">
@@ -138,3 +194,4 @@
         </footer>
     </body>
 </html>
+<?php endif; ?>
