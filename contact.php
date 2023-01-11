@@ -72,15 +72,12 @@
                                 <dd>
                                     <label for="form-subject">
                                         <select name="subject" id="form-subject" class="form-focus">
-                                            <?php
-                                                $subject = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
-                                                $i = 0;
-                                            ?>
-                                            <?php while ($i < count($subject)): ?>
-                                                <?php if (isset($_SESSION['toMail']) && $toMail->get_subject() === $subject[$i]) :?>
-                                                    <option value="<?php echo $i; ?>" selected><?php echo $subject[$i]; ?></option>
+                                            <?php $i = 0; ?>
+                                            <?php while ($i < count(ToMail::$subjects)): ?>
+                                                <?php if (isset($_SESSION['toMail']) && $toMail->get_subject() === ToMail::$subjects[$i]) :?>
+                                                    <option value="<?php echo $i; ?>" selected><?php echo ToMail::$subjects[$i]; ?></option>
                                                 <?php else: ?>
-                                                    <option value="<?php echo $i; ?>"><?php echo $subject[$i]; ?></option>
+                                                    <option value="<?php echo $i; ?>"><?php echo ToMail::$subjects[$i]; ?></option>
                                                 <?php endif; ?>
                                                 <?php $i++; ?>
                                             <?php endwhile; ?>

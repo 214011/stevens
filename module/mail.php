@@ -1,7 +1,7 @@
 <?php
     class ToMail {
 
-        protected $subjects = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
+        static $subjects = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
         protected $subject = 0;
         protected $name = [];
         protected $mail = '';
