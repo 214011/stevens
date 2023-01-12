@@ -45,7 +45,7 @@
                 'メールアドレス： ' . $this->mail . $n . $n,
                 '電話番号： ' . $this->tel['full'] . $n . $n,
                 'お問い合わせ内容：' . $n,
-                '　' . $this->msg . $n . $n,
+                $this->msg . $n . $n,
                 '追ってご連絡させていただきます。' . $n . $n,
                 '-------------------------------------------------' . $n . $n,
                 '美容院 Bordeaux' . $n . $n,
@@ -113,8 +113,8 @@
             return nl2br($this->h($this->msg));
         }
 
-        private function h($string) {
-            return htmlspecialchars($string);
+        private function h(string $str) {
+            return htmlspecialchars($str);
         }
 
     }
@@ -125,7 +125,6 @@
 
         protected function mail_text () {
             $txt = '';
-            $n = "\r\n";
             $array_txt = [
                 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">',
                 '<html lang="ja">',
@@ -133,21 +132,61 @@
                         '<meta http-equiv="Content-Language" content="ja">',
                         '<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">',
                         '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">',
-                        '<title>sample</title>',
+                        '<title>【Bordeaux】 サイトからのお問い合わせ</title>',
                         '<meta http-equiv="Content-Style-Type" content="text/css">',
-                        '</head>',
+                        '<style>',
+                            '.thead--th {',
+                                'font-size: 25px;',
+                                'text-align: left;',
+                            '}',
+                            '.tbody--th {',
+                                'font-size: 18px;',
+                                'text-align: left;',
+                            '}',
+                        '</style>',
+                    '</head>',
                     '<body>',
-                        $this->name['full'] . ' 様よりお問い合わせです。' . $n,
-                        '-------------------------------------------------'  . $n . $n,
-                        $n,
-                        '件名： ' . $this->subject . $n . $n,
-                        '氏名： ' . $this->name['full'] . $n . $n,
-                        'メールアドレス： ' . $this->mail . $n . $n,
-                        '電話番号： ' . $this->tel['full'] . $n . $n,
-                        'お問い合わせ内容：' . $n,
-                        $this->msg . $n . $n,
-                        $n,
-                        '-------------------------------------------------'  . $n . $n,
+                        '<table>',
+                            '<tr>',
+                                '<th class="thead--th">' . $this->name['full'] . ' 様よりお問い合わせです。' . '</th>',
+                            '</tr>',
+                        '</table>',
+                        '<table>',
+                            '<tr>',
+                                '<th class="tbody--th">件名</th>',
+                            '</tr>',
+                            '<tr>',
+                                '<td>' . $this->subject . '</td>',
+                            '</tr>',
+                            '<br>',
+                            '<tr>',
+                                '<th class="tbody--th">氏名</th>',
+                            '</tr>',
+                            '<tr>',
+                                '<td>' . $this->name['full'] . '</td>',
+                            '</tr>',
+                            '<br>',
+                            '<tr>',
+                                '<th class="tbody--th">メールアドレス</th>',
+                            '</tr>',
+                            '<tr>',
+                                '<td>' . $this->mail . '</td>',
+                            '</tr>',
+                            '<br>',
+                            '<tr>',
+                                '<th class="tbody--th">電話番号</th>',
+                            '</tr>',
+                            '<tr>',
+                                '<td>' . $this->tel['full'] . '</td>',
+                            '</tr>',
+                            '<br>',
+                            '<tr>',
+                                '<th class="tbody--th">お問い合わせ内容</th>',
+                            '</tr>',
+                            '<tr>',
+                                '<td>' . $this->get_bind_msg() . '</td>',
+                            '</tr>',
+                        '</table>',
                     '</body>',
                 '</html>'
             ];
@@ -161,7 +200,7 @@
             return [
                 'From' => $this->from,
                 'Reply-To' => $this->reply_to = $this->mail,
-                'Content-Type' => 'text/html;; charset=ISO-2022-JP'
+                'Content-Type' => 'text/html; charset=ISO-2022-JP'
             ];
         }
 
