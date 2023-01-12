@@ -17,7 +17,7 @@
          * @return ToMail
          */
         public function  __construct($to_subject, $to_name, $to_address, $to_tel, $msg) {
-            $this->subject = $this->subjects[$to_subject];
+            $this->subject = ToMail::$subjects[$to_subject];
             $this->name = [
                 'full' => $to_name['firstName'] . '　' . $to_name['lastName'],
                 'provide' => [$to_name['firstName'], $to_name['lastName']]
@@ -127,17 +127,29 @@
             $txt = '';
             $n = "\r\n";
             $array_txt = [
-                $this->name['full'] . ' 様よりお問い合わせです。' . $n,
-                '-------------------------------------------------'  . $n . $n,
-                $n,
-                '件名： ' . $this->subject . $n . $n,
-                '氏名： ' . $this->name['full'] . $n . $n,
-                'メールアドレス： ' . $this->mail . $n . $n,
-                '電話番号： ' . $this->tel['full'] . $n . $n,
-                'お問い合わせ内容：' . $n,
-                $this->msg . $n . $n,
-                $n,
-                '-------------------------------------------------'  . $n . $n
+                '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">',
+                '<html lang="ja">',
+                    '<head>',
+                        '<meta http-equiv="Content-Language" content="ja">',
+                        '<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">',
+                        '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">',
+                        '<title>sample</title>',
+                        '<meta http-equiv="Content-Style-Type" content="text/css">',
+                        '</head>',
+                    '<body>',
+                        $this->name['full'] . ' 様よりお問い合わせです。' . $n,
+                        '-------------------------------------------------'  . $n . $n,
+                        $n,
+                        '件名： ' . $this->subject . $n . $n,
+                        '氏名： ' . $this->name['full'] . $n . $n,
+                        'メールアドレス： ' . $this->mail . $n . $n,
+                        '電話番号： ' . $this->tel['full'] . $n . $n,
+                        'お問い合わせ内容：' . $n,
+                        $this->msg . $n . $n,
+                        $n,
+                        '-------------------------------------------------'  . $n . $n,
+                    '</body>',
+                '</html>'
             ];
             foreach ($array_txt as $row) {
                 $txt .= $row;
@@ -149,7 +161,7 @@
             return [
                 'From' => $this->from,
                 'Reply-To' => $this->reply_to = $this->mail,
-                'Content-Type' => 'text/plain; charset=ISO-2022-JP'
+                'Content-Type' => 'text/html;; charset=ISO-2022-JP'
             ];
         }
 
