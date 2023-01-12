@@ -3,14 +3,12 @@
     <?php header("Location: ./contact.php"); ?>
 <?php else: ?>
 <?php
-
     require_once('module/mail.php');
     $toMail = unserialize($_SESSION['toMail']);
     $toMeMail = unserialize($_SESSION['toMeMail']);
     $toMail->send();
     $toMeMail->send();
     session_destroy();
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">

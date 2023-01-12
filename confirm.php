@@ -2,7 +2,6 @@
     <?php header("Location: ./contact.php"); ?>
 <?php else: ?>
 <?php
-
     require_once('module/mail.php');
 
     $toMail = new ToMail(
@@ -39,7 +38,6 @@
     session_start();
     $_SESSION['toMail'] = serialize($toMail);
     $_SESSION['toMeMail'] = serialize($toMeMail);
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
