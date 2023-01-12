@@ -2490,18 +2490,22 @@ button[type = button]#js-toTop::after {
     complete
 */
 .complete__container {
-    padding: 40px;
-    line-height: 2;
-    border-top: 2px solid var(--c-green);
-    border-bottom: 2px solid var(--c-green);
     margin-top: 100px;
 }
 
-.complete__container p:last-child {
+.complete__container--inner {
+    padding: 40px;
+    border-top: 2px solid var(--c-green);
+    border-bottom: 2px solid var(--c-green);
+    line-height: 2;
+}
+
+.complete__container--inner p:last-child {
+    margin-top: clamp(30px, 5.208333333333334vw, 40px);
     text-align: center;
 }
 
-.complete__container p:last-child a:hover {
+.complete__container--inner p:last-child a:hover {
     text-decoration: none;
 }
 
