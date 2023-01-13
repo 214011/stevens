@@ -5,29 +5,26 @@
         <link rel="icon" href="favicon.ico">
         <meta name="robots" content="none">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>登録完了</title>
+        <title>アカウント登録 - 確認</title>
         <link rel="stylesheet" href="css/base.css">
         <script>
-            (function (d) {
+            (function(d) {
                 var config = {
                     kitId: 'scj6ipp',
                     scriptTimeout: 3000,
                     async: true
                 },
-                    h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
             })(document);
         </script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
             <div class="content-w">
-                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142"
-                            height="50"></a></h1>
+                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142" height="50"></a></h1>
                 <button type="button" class="hamburger-menu" id="js-hamburger__trigger">
                     <span class="hamburger-menu--graph"></span>
                     <span class="hamburger-menu--graph"></span>
@@ -40,20 +37,51 @@
                         <li class="gnav__container--item"><a class="js-gnav" href="reserve.html">Reserve</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="blog.html">Blog</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="contact.php">Contact</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i
-                                    class="fa-solid fa-circle-user"></i>Account</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i class="fa-solid fa-circle-user"></i>Account</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main class="main">
-
-            <div class="reserve--text content-w">
-                <p>アカウントの登録ができました！さっそく予約をとってみましょう！</p>
-                <p>予約は下のリンクからできます。</p>
-                <p style="margin: 1em;"><a href="index.html">予約をとる</a></p>
+            <h2 class="main--title main--title_account">
+                <span class="span-block"><i class="fa-solid fa-circle-user"></i>Confirm</span>
+                <span class="fa-sr-only">-</span>
+                <span class="span-block">登録内容確認</span>
+            </h2>
+            <div class="account main__content content-w">
+                <div class="account__container">
+                    <dl class="account--confirm__container--item">
+                        <dt>お名前</dt>
+                        <dd>姫情　太郎</dd>
+                    </dl>
+                    <dl class="account--confirm__container--item">
+                        <dt>電話番号</dt>
+                        <dd>姫情　太郎</dd>
+                    </dl>
+                    <dl class="account--confirm__container--item">
+                        <dt>メールアドレス</dt>
+                        <dd>姫情　太郎</dd>
+                    </dl>
+                    <dl class="account--confirm__container--item">
+                        <dt>パスワード</dt>
+                        <dd>姫情　太郎</dd>
+                    </dl>
+                    <div class="btn__outer account--confirm">
+                        <p><a href="./account.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
+                            <p>
+                                <a href="account_success.php" class="btn">
+                                    <span>
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-circle-user"></i>
+                                    </span>
+                                    <span>
+                                        アカウントを登録する
+                                    </span>
+                                </a>
+                            </p>
+                        </div>
+                </div>
             </div>
-
         </main>
         <footer class="footer">
             <div class="content-w">

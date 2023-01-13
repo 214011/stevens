@@ -2395,6 +2395,51 @@ button[type = button]#js-toTop::after {
 }
 
 /*
+    confirm
+*/
+
+.account--confirm__container--item {
+    text-align: center;
+}
+
+.account--confirm__container--item:not(:first-child) {
+    min-height: 0vw;
+    margin-top: clamp(30px, 5.208333333333334vw, 40px);
+}
+
+.account--confirm__container--item dt {
+    font-size: var(--fsz-secondary);
+}
+
+.account--confirm__container--item dd {
+    min-height: 0vw;
+    margin-top: clamp(10px, 3.255208333333334vw, 25px);
+}
+
+.btn__outer.account--confirm {
+    flex-direction: column;
+    gap: clamp(20px, 3.255208333333334vw, 25px);;
+}
+
+/*
+    success
+*/
+
+.account--success {
+    text-align: center;
+    line-height: 2;
+}
+
+.account--success p:last-child {
+    min-height: 0vw;
+    margin-top: clamp(35px, 5.208333333333334vw, 40px);
+}
+
+.account--success p:last-child a:hover {
+    text-decoration: none;
+}
+
+/*
     login
 */
 

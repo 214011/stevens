@@ -5,28 +5,29 @@
         <link rel="icon" href="favicon.ico">
         <meta name="robots" content="none">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>アカウント登録</title>
+        <title>登録完了</title>
         <link rel="stylesheet" href="css/base.css">
         <script>
-            (function(d) {
+            (function (d) {
                 var config = {
                     kitId: 'scj6ipp',
                     scriptTimeout: 3000,
                     async: true
                 },
-                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+                    h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
             })(document);
         </script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
-        <script src="js/form.js"></script>
-        <script src="js/password.js"></script>
     </head>
     <body>
         <header class="header js-hamburger__hook">
             <div class="content-w">
-                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142" height="50"></a></h1>
+                <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142"
+                            height="50"></a></h1>
                 <button type="button" class="hamburger-menu" id="js-hamburger__trigger">
                     <span class="hamburger-menu--graph"></span>
                     <span class="hamburger-menu--graph"></span>
@@ -39,65 +40,22 @@
                         <li class="gnav__container--item"><a class="js-gnav" href="reserve.html">Reserve</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="blog.html">Blog</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="contact.php">Contact</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i class="fa-solid fa-circle-user"></i>Account</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i
+                                    class="fa-solid fa-circle-user"></i>Account</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main class="main">
             <h2 class="main--title main--title_account">
-                <span class="span-block"><i class="fa-solid fa-circle-user"></i>Account</span>
+                <span class="span-block"><i class="fa-solid fa-circle-user"></i>Success</span>
                 <span class="fa-sr-only">-</span>
-                <span class="span-block">アカウント登録</span>
+                <span class="span-block">登録できました</span>
             </h2>
-            <div class="account main__content content-w">
-                <div class="account--text content-w">
-                    <p>すでにアカウントをお持ちの方はこちらのボタンからログインしてください。</p>
-                    <p class="btn__outer fx-jc-center"><a class="btn" href="account_login.html"><i class="fa-solid fa-right-to-bracket"></i>ログイン</a></p>
-                </div>
-                <form action="./account_confirm.php" method="POST" class="account__container" id="js-form">
-                    <dl class="account__container--item">
-                        <dt class="form-required"><label for="form-username">お名前をご入力してください。（姓と名）</label></dt>
-                        <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
-                    </dl>
-                    <dl class="account__container--item">
-                        <dt class="form-required"><label for="form-tel">電話番号</label></dt>
-                        <dd>
-                            <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
-                            <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
-                            <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
-                        </dd>
-                    </dl>
-                    <dl class="account__container--item">
-                        <dt class="form-required"><label for="form-email">メールアドレスをご入力してください。</label></dt>
-                        <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
-                    </dl>
-                    <dl class="account__container--item">
-                        <dt class="form-required">
-                            <label for="form-password">
-                                <span class="span-block">次回ログイン時にパスワードが必要となります。</span>
-                                パスワードを設定してください。
-                            </label>
-                        </dt>
-                        <dd><input type="password" id="form-password" class="form-focus" required></dd>
-                    </dl>
-                    <dl class="account__container--item">
-                        <dt><label for="form-re_password">確認のため再度入力してください。</label></dt>
-                        <dd><input type="password" id="form-re_password" class="form-focus" required></dd>
-                    </dl>
-                    <div class="btn__outer">
-                        <input type="submit" id="form-submit" value="アカウントを登録する" class="fa-sr-only">
-                        <label for="form-submit" class="btn">
-                            <span>
-                                <i class="fa-solid fa-plus"></i>
-                                <i class="fa-solid fa-circle-user"></i>
-                            </span>
-                            <span>
-                                アカウントを登録する
-                            </span>
-                        </label>
-                    </div>
-                </form>
+            <div class="account--success main__content content-w">
+                <p>アカウントの登録ができました！さっそく予約をとってみましょう！</p>
+                <p>予約は下のリンクからできます。</p>
+                <p><a href="./reserve.html">予約をとる</a></p>
             </div>
         </main>
         <footer class="footer">
