@@ -40,8 +40,7 @@
                         <li class="gnav__container--item"><a class="js-gnav" href="reserve.html">Reserve</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="blog.html">Blog</a></li>
                         <li class="gnav__container--item"><a class="js-gnav" href="contact.php">Contact</a></li>
-                        <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i
-                                    class="fa-solid fa-circle-user"></i>Account</a></li>
+                        <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i class="fa-solid fa-circle-user"></i>Account</a></li>
                     </ul>
                 </nav>
             </div>
