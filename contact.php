@@ -73,11 +73,11 @@
                                     <label for="form-subject">
                                         <select name="subject" id="form-subject" class="form-focus">
                                             <?php $i = 0; ?>
-                                            <?php while ($i < count(ToMail::$subjects)): ?>
-                                                <?php if (isset($_SESSION['toMail']) && $toMail->get_subject() === ToMail::$subjects[$i]) :?>
-                                                    <option value="<?php echo $i; ?>" selected><?php echo ToMail::$subjects[$i]; ?></option>
+                                            <?php while ($i < count(ToMail::SUBJECTS)): ?>
+                                                <?php if (isset($_SESSION['toMail']) && $toMail->get_subject() === ToMail::SUBJECTS[$i]) :?>
+                                                    <option value="<?php echo $i; ?>" selected><?php echo ToMail::SUBJECTS[$i]; ?></option>
                                                 <?php else: ?>
-                                                    <option value="<?php echo $i; ?>"><?php echo ToMail::$subjects[$i]; ?></option>
+                                                    <option value="<?php echo $i; ?>"><?php echo ToMail::SUBJECTS[$i]; ?></option>
                                                 <?php endif; ?>
                                                 <?php $i++; ?>
                                             <?php endwhile; ?>

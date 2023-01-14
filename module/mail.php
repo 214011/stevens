@@ -1,7 +1,7 @@
 <?php
     class ToMail {
 
-        static $subjects = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
+        public const SUBJECTS = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
         protected $subject = 0;
         protected $name = [];
         protected $mail = '';
@@ -17,7 +17,7 @@
          * @return ToMail
          */
         public function  __construct($to_subject, $to_name, $to_address, $to_tel, $msg) {
-            $this->subject = ToMail::$subjects[$to_subject];
+            $this->subject = self::SUBJECTS[$to_subject];
             $this->name = [
                 'full' => $to_name['firstName'] . '　' . $to_name['lastName'],
                 'provide' => [$to_name['firstName'], $to_name['lastName']]
