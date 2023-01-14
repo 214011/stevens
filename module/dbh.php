@@ -7,12 +7,12 @@
         /**
          * @var PDO PHP Data Objects(データベースに接続および読み書きするクラスのインスタンス)
          */
-        public $pdo;
+        private $pdo;
 
         /**
          * @var string 持ってきたいデータベースのテーブル名
          */
-        public $tablename = '';
+        public $tableName = '';
 
         /**
          * @param string $host mysqlサーバーのホスト名
@@ -43,22 +43,50 @@
 
         /**
          * データベースにデータを書き込むSQL文のステートメントが返るメソッド
-         * @param array{… array{'field': string, 'value': string}} $sql_SET SQL文SET句でのセットするフィールドと値
+         * @param array{… array{'field': 'value'}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
         public function query_insert($sql_SET) {
             $SET = '';
             $i = 0;
-            foreach ($sql_SET as $key => $val) {
-                $SET .= '`' . $this->tablename . '`.`' . $key .'` = ' . $val . ',';
+            while ($i < count($sql_SET)) {
+                foreach ($sql_SET[$i] as $key => $val) {
+                    $SET .= '`' . $this->tableName . '`.`' . $key .'` = ' . $val . ',';
+                }
                 $i++;
             }
+            // 最後にコンマが入るとエラーが起こるので消す処理を加える。
+            $SET = substr($SET, 0, -1);
             return $this->pdo->prepare('
                 ' . self::SQL_INSERT_INTO . '
-                    `' . $this->tablename . '`
+                    `' . $this->tableName . '`
                 ' . self::SQL_SET . '
                 ' . $SET . '
             ');
         }
+
+        /**
+         * @param PDOStatement $stmt PDOStatementのオブジェクト
+         * @param array{… array{0: int|string, 1: mixed, 2: int | PDO::PARAM_STR?}} $array_bindValue 配列化したbindValueメソッドに入れる値（インデックスを引数に対応させる）
+         * @return void
+         */
+        public function bindValue (PDOStatement $stmt, $array_bindValue) {
+            $i = 0;
+            while ($i < count($array_bindValue)) {
+                $array_bindValue[$i];
+                $stmt->bindValue($array_bindValue[$i][0], $array_bindValue[$i][1], $array_bindValue[$i][2]);
+                $i++;
+            }
+        }
+
+        /**
+         * fetchモードはオブジェクトで返す
+         * @param PDOStatement $stmt PDOStatementのオブジェクト
+         * @return mixed
+         */
+        public function fetch (PDOStatement $stmt) {
+            return $stmt->fetch(PDO::FETCH_OBJ);
+        }
+
     }
 ?>
