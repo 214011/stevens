@@ -4,9 +4,11 @@
     $dbh->tableName = 'test_table';
 
     $stmt = $dbh->query__INSERT_INTO([
-        ['username' => ':username'],
-        ['password' => ':password'],
-        ['created' => 'NOW()']
+        DBH::SQL__SET => [
+            ['username' => ':username'],
+            ['password' => ':password'],
+            ['created' => 'NOW()']
+        ]
     ]);
     $dbh->bindValue($stmt,[
         [':username', '姫情　太郎', PDO::PARAM_STR],
@@ -15,11 +17,12 @@
     $stmt->execute();
 
     $stmt = $dbh->query__UPDATE([
-        ['username' => ':username'],
-        ['password' => ':password'],
-    ],
-    ['id' => ':id']
-    );
+        DBH::SQL__SET => [
+            ['username' => ':username'],
+            ['password' => ':password'],
+        ],
+        DBH::SQL__WHERE => ['id' => ':id']
+    ]);
     $dbh->bindValue($stmt,[
         [':username', '野村　純平', PDO::PARAM_STR],
         [':password', 'jnpnmr1227', PDO::PARAM_STR],

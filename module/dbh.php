@@ -33,31 +33,31 @@
             }
         }
 
-        public const SQL_INSERT_INTO = 'INSERT INTO';
-        public const SQL_SELECT = 'SELECT';
-        public const SQL_UPDATE = 'UPDATE';
-        public const SQL_SET = 'SET';
-        public const SQL_WHERE = 'WHERE';
-        public const SQL_ORDER_BY = 'ORDER BY';
+        public const SQL__INSERT_INTO = 'INSERT INTO';
+        public const SQL__SELECT = 'SELECT';
+        public const SQL__UPDATE = 'UPDATE';
+        public const SQL__SET = 'SET';
+        public const SQL__WHERE = 'WHERE';
+        public const SQL__ORDER_BY = 'ORDER BY';
         /**
          * @var string 昇順にする句
          */
-        public const SQL_ORDER_BY_ASC = 'ASC';
+        public const SQL__ORDER_BY_ASC = 'ASC';
         /**
          * @var string 降順にする句
          */
-        public const SQL_ORDER_BY_DESC = 'DESC';
+        public const SQL__ORDER_BY_DESC = 'DESC';
 
         /**
          * データベースにデータを書き込むSQL文のステートメントが返るメソッド
-         * @param array{… array{'field': 'value'}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{'SET': array{… array{'field': 'value'}}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
         public function query__INSERT_INTO($sql_SET) {
             $SET = '';
             $i = 0;
-            while ($i < count($sql_SET)) {
-                foreach ($sql_SET[$i] as $key => $val) {
+            while ($i < count($sql_SET[self::SQL__SET])) {
+                foreach ($sql_SET[self::SQL__SET][$i] as $key => $val) {
                     $SET .= '`' . $this->tableName . '`.`' . $key .'` = ' . $val . ',';
                 }
                 $i++;
@@ -65,40 +65,39 @@
             // 最後にコンマが入るとエラーが起こるので消す処理を加える。
             $SET = substr($SET, 0, -1);
             return $this->pdo->prepare('
-                ' . self::SQL_INSERT_INTO . '
+                ' . self::SQL__INSERT_INTO . '
                     `' . $this->tableName . '`
-                ' . self::SQL_SET . '
+                ' . self::SQL__SET . '
                 ' . $SET . '
             ');
         }
 
         /**
          * データベースのデータを更新・編集するSQL文のステートメントが返るメソッド
-         * @param array{… array{'field': 'value'}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
-         * @param array{'field': 'value'} $sql_WHERE SQL文WHERE句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{'SET': array{… array{'field': 'value'}}, 'WHERE': array{'field': 'value'}} $sql_SET_WHERE SQL文SET句とWHERE句でセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query__UPDATE($sql_SET, $sql_WHERE) {
+        public function query__UPDATE($sql_SET_WHERE) {
             $SET = '';
             $WHERE = '';
             $i = 0;
-            while ($i < count($sql_SET)) {
-                foreach ($sql_SET[$i] as $key => $val) {
+            while ($i < count($sql_SET_WHERE[self::SQL__SET])) {
+                foreach ($sql_SET_WHERE[self::SQL__SET][$i] as $key => $val) {
                     $SET .= '`' . $this->tableName . '`.`' . $key .'` = ' . $val . ',';
                 }
                 $i++;
             }
             // 最後にコンマが入るとエラーが起こるので消す処理を加える。
             $SET = substr($SET, 0, -1);
-            foreach ($sql_WHERE as $key => $val) {
+            foreach ($sql_SET_WHERE[self::SQL__WHERE] as $key => $val) {
                 $WHERE = '`' . $this->tableName . '`.`' . $key .'` = ' . $val;
             }
             return $this->pdo->prepare('
-                ' . self::SQL_UPDATE . '
+                ' . self::SQL__UPDATE . '
                     `' . $this->tableName . '`
-                ' . self::SQL_SET . '
+                ' . self::SQL__SET . '
                 ' . $SET . '
-                ' . self::SQL_WHERE . '
+                ' . self::SQL__WHERE . '
                 ' . $WHERE . '
             ');
         }
