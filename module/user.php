@@ -4,10 +4,16 @@
      */
     class User {
 
-        private $usr_name = '';
+        // コンストラクターで代入される値
+        private $userName = '';
         private $tel = '';
-        private $mail_address = '';
+        private $mailAddress = '';
         private $password = '';
+        // データベースから取得する値など
+        private $id = '';
+        private $reserveDate = '';
+        private $created = '';
+        private $modified = '';
 
         /**
          * ユーザー情報を登録
@@ -17,13 +23,59 @@
          * @param string $password パスワード（ハッシュ化する前）
          */
         public function __construct($array_usr_name, $array_tel, $mail_address, $password) {
-            $this->usr_name = $array_usr_name['firstName'] . '　' . $array_usr_name['lastName'];
+            $this->userName = $array_usr_name['firstName'] . '　' . $array_usr_name['lastName'];
             $this->tel = $array_tel['firstTel'] . '-' . $array_tel['middleTel'] . '-' . $array_tel['lastTel'];
-            $this->mail_address = $mail_address;
+            $this->mailAddress = $mail_address;
             $this->password = $password;
         }
 
+        public function get_userName() {
+            return $this->userName;
+        }
 
+        public function get_tel() {
+            return $this->tel;
+        }
+
+        public function get_mailAddress() {
+            return $this->mailAddress;
+        }
+
+        public function get_password() {
+            return $this->password;
+        }
+
+        public function set_id (string $id) {
+            $this->id = $id;
+        }
+
+        public function set_reserveDate (string $reserveDate) {
+            $this->reserveDate = $reserveDate;
+        }
+
+        public function set_created (string $created) {
+            $this->created = $created;
+        }
+
+        public function set_modified (string $modified) {
+            $this->modified = $modified;
+        }
+
+        public function get_id () {
+            $this->id;
+        }
+
+        public function get_reserveDate () {
+            $this->reserveDate;
+        }
+
+        public function get_created () {
+            $this->created;
+        }
+
+        public function get_modified () {
+            $this->modified;
+        }
 
     }
 ?>
