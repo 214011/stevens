@@ -146,7 +146,7 @@
             if (isset($array_sql[self::SQL__ORDER_BY])) {
                 $ORDER_BY = self::SQL__ORDER_BY;
                 foreach ($array_sql[self::SQL__ORDER_BY] as $field =>  $order) {
-                    $ORDER_BY .= '`' . $this->tableName . '`.`' . $field .'` = ' . $order;
+                    $ORDER_BY .= '`' . $this->tableName . '`.`' . $field .'` ' . $order;
                 }
             }
             if (isset($array_sql[self::SQL__LIMIT])) {

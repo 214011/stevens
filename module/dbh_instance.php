@@ -32,17 +32,14 @@
 
     $stmt = $dbh->query__SELECT([
         DBH::SQL__SELECT => '*',
-        DBH::SQL__WHERE => [
-            ['id' => ':id']
-        ]
-    ]);
-    $dbh->bindValue($stmt,[
-        [':id', 3, PDO::PARAM_INT]
+        DBH::SQL__ORDER_BY => ['id' => DBH::SQL__ORDER_BY_DESC],
+        DBH::SQL__LIMIT => 1
     ]);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
-        echo $row->username;
-        echo $row->password;
-        echo $row->created;
+        echo $row->id . '<br>';
+        echo $row->username . '<br>';
+        echo $row->password . '<br>';
+        echo $row->created . '<br>';
     }
 ?>
