@@ -1,7 +1,7 @@
 <?php
     require_once('dbh.php');
     $dbh = new DBH('localhost', 'test', 'root', 'root');
-    $dbh->tableName = 'test_table';
+    $dbh->set_tableName('test_table');
 
     $stmt = $dbh->query__INSERT_INTO([
         DBH::SQL__SET => [

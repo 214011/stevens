@@ -12,7 +12,7 @@
         /**
          * @var string 持ってきたいデータベースのテーブル名
          */
-        public $tableName = '';
+        private $tableName = '';
 
         /**
          * @param string $host mysqlサーバーのホスト名
@@ -31,6 +31,23 @@
                 header('Content-Type: text/html; charset=UTF-8', true, 500);
                 exit($e->getMessage());
             }
+        }
+
+        /**
+         * プロパティに直に代入しても良いが、視覚的にわかりやすいようにセッターでプライベートプロパティに代入する。
+         * @param string $tableName 持ってきたいデータベースのテーブル名
+         * @return void
+         */
+        public function set_tableName (string $tableName) {
+            $this->tableName = $tableName;
+        }
+
+        /**
+         * セットしたテーブル名を取得する
+         * @return string
+         */
+        public function get_tableName () {
+            return $this->tableName;
         }
 
         public const SQL__INSERT_INTO = 'INSERT INTO';
@@ -58,6 +75,7 @@
         // 途中で読み書きしたいテーブルがあればメソッド使用前にpublic $tableNameにテーブル名を代入し変更する。
         // FROM句も同様でメソッド使用時はショートカットできる
 
+
         /**
          * データベースにデータを書き込むSQL文のステートメントが返るメソッド
          * @param array{'SET': array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
@@ -83,8 +101,7 @@
         }
 
         /**
-         * ！WHERE句のANDとORは検討！
-         * データベースにデータを書き込むSQL文のステートメントが返るメソッド
+         * データベースのデータを取得するSQL文のステートメントが返るメソッド
          * @param array{'SET': array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
@@ -95,12 +112,35 @@
             $LIMIT = NULL;
             if (isset($array_sql[self::SQL__WHERE])) {
                 $WHERE = self::SQL__WHERE;
-                $i = 0;
-                while ($i < count($array_sql[self::SQL__WHERE])) {
-                    foreach ($array_sql[self::SQL__WHERE][$i] as $field => $val) {
-                        $WHERE .= '`' . $this->tableName . '`.`' . $field .'` = ' . $val;
+                foreach ($array_sql[self::SQL__WHERE] as $sqlText => $array) {
+                    if (is_numeric($sqlText)) {
+                        foreach ($array as $field => $val) {
+                            if (strpos($val, self::SQL__BETWEEN) !== false) {
+                                $WHERE .= '`' . $this->tableName . '`.`' . $field .'` ' . $val;
+                            } else {
+                                $WHERE .= '`' . $this->tableName . '`.`' . $field .'` = ' . $val;
+                            }
+                        }
+                    } else {
+                        if ($sqlText === self::SQL__AND) {
+                            $i = 0;
+                            while ($i < count($array)) {
+                                foreach ($array[$i] as $AND_field => $AND_val) {
+                                    $WHERE .= ' ' . self::SQL__AND . ' `' . $this->tableName . '`.`' . $AND_field .'` = ' . $AND_val;
+                                }
+                                $i++;
+                            }
+                        }
+                        if ($sqlText === self::SQL__OR) {
+                            $i = 0;
+                            while ($i < count($array)) {
+                                foreach ($array[$i] as $OR_field => $OR_val) {
+                                    $WHERE .= self::SQL__OR . '`' . $this->tableName . '`.`' . $OR_field .'` = ' . $OR_val;
+                                }
+                                $i++;
+                            }
+                        }
                     }
-                    $i++;
                 }
             }
             if (isset($array_sql[self::SQL__ORDER_BY])) {
