@@ -34,12 +34,19 @@
         }
 
         public const SQL_INSERT_INTO = 'INSERT INTO';
-        public const SQL_SET = 'SET';
         public const SQL_SELECT = 'SELECT';
+        public const SQL_UPDATE = 'UPDATE';
+        public const SQL_SET = 'SET';
         public const SQL_WHERE = 'WHERE';
         public const SQL_ORDER_BY = 'ORDER BY';
-        public const SQL_ORDER_BY_DESC = 'DESC';
+        /**
+         * @var string 昇順にする句
+         */
         public const SQL_ORDER_BY_ASC = 'ASC';
+        /**
+         * @var string 降順にする句
+         */
+        public const SQL_ORDER_BY_DESC = 'DESC';
 
         /**
          * データベースにデータを書き込むSQL文のステートメントが返るメソッド
@@ -66,11 +73,42 @@
         }
 
         /**
+         * データベースにデータを書き込むSQL文のステートメントが返るメソッド
+         * @param array{… array{'field': 'value'}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{'field': 'value'} $sql_WHERE SQL文WHERE句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @return PDOStatement
+         */
+        public function query_update($sql_SET, $sql_WHERE) {
+            $SET = '';
+            $WHERE = '';
+            $i = 0;
+            while ($i < count($sql_SET)) {
+                foreach ($sql_SET[$i] as $key => $val) {
+                    $SET .= '`' . $this->tableName . '`.`' . $key .'` = ' . $val . ',';
+                }
+                $i++;
+            }
+            // 最後にコンマが入るとエラーが起こるので消す処理を加える。
+            $SET = substr($SET, 0, -1);
+            foreach ($sql_WHERE as $key => $val) {
+                $WHERE = '`' . $this->tableName . '`.`' . $key .'` = ' . $val;
+            }
+            return $this->pdo->prepare('
+                ' . self::SQL_UPDATE . '
+                    `' . $this->tableName . '`
+                ' . self::SQL_SET . '
+                ' . $SET . '
+                ' . self::SQL_WHERE . '
+                ' . $WHERE . '
+            ');
+        }
+
+        /**
          * @param PDOStatement $stmt PDOStatementのオブジェクト
          * @param array{… array{0: int|string, 1: mixed, 2: int | PDO::PARAM_STR?}} $array_bindValue 配列化したbindValueメソッドに入れる値（インデックスを引数に対応させる）
          * @return void
          */
-        public function bindValue (PDOStatement $stmt, $array_bindValue) {
+        public function bindValue(PDOStatement $stmt, $array_bindValue) {
             $i = 0;
             while ($i < count($array_bindValue)) {
                 $array_bindValue[$i];
@@ -80,11 +118,25 @@
         }
 
         /**
+         * @param PDOStatement $stmt PDOStatementのオブジェクト
+         * @param array{… array{0: int|string, 1: mixed, 2: int | PDO::PARAM_STR?}} $array_bindValue 配列化したbindValueメソッドに入れる値（インデックスを引数に対応させる）
+         * @return void
+         */
+        public function bindParam(PDOStatement $stmt, $array_bindParam) {
+            $i = 0;
+            while ($i < count($array_bindParam)) {
+                $array_bindParam[$i];
+                $stmt->bindParam($array_bindParam[$i][0], $array_bindParam[$i][1], $array_bindParam[$i][2]);
+                $i++;
+            }
+        }
+
+        /**
          * fetchモードはオブジェクトで返す
          * @param PDOStatement $stmt PDOStatementのオブジェクト
          * @return mixed
          */
-        public function fetch (PDOStatement $stmt) {
+        public function fetch(PDOStatement $stmt) {
             return $stmt->fetch(PDO::FETCH_OBJ);
         }
 
