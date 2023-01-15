@@ -53,7 +53,7 @@
          * @param array{… array{'field': 'value'}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query_insert($sql_SET) {
+        public function query__INSERT_INTO($sql_SET) {
             $SET = '';
             $i = 0;
             while ($i < count($sql_SET)) {
@@ -73,12 +73,12 @@
         }
 
         /**
-         * データベースにデータを書き込むSQL文のステートメントが返るメソッド
+         * データベースのデータを更新・編集するSQL文のステートメントが返るメソッド
          * @param array{… array{'field': 'value'}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @param array{'field': 'value'} $sql_WHERE SQL文WHERE句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query_update($sql_SET, $sql_WHERE) {
+        public function query__UPDATE($sql_SET, $sql_WHERE) {
             $SET = '';
             $WHERE = '';
             $i = 0;
