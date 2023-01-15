@@ -12,7 +12,7 @@
     ]);
     $dbh->bindValue($stmt,[
         [':username', '姫情　太郎', PDO::PARAM_STR],
-        [':password', 'Himejo', PDO::PARAM_STR]
+        [':password', password_hash('Himejo', PASSWORD_DEFAULT), PDO::PARAM_STR]
     ]);
     $stmt->execute();
 
@@ -39,7 +39,7 @@
     while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
         echo $row->id . '<br>';
         echo $row->username . '<br>';
-        echo $row->password . '<br>';
+        echo 'Himejo' . var_dump(password_verify('Himejo', $row->password)) . '<br>';
         echo $row->created . '<br>';
     }
 ?>
