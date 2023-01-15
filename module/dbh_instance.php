@@ -26,7 +26,23 @@
     $dbh->bindValue($stmt,[
         [':username', '野村　純平', PDO::PARAM_STR],
         [':password', 'jnpnmr1227', PDO::PARAM_STR],
-        [':id', 1, PDO::PARAM_INT]
+        [':id', 3, PDO::PARAM_INT]
     ]);
     $stmt->execute();
+
+    $stmt = $dbh->query__SELECT([
+        DBH::SQL__SELECT => '*',
+        DBH::SQL__WHERE => [
+            ['id' => ':id']
+        ]
+    ]);
+    $dbh->bindValue($stmt,[
+        [':id', 3, PDO::PARAM_INT]
+    ]);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+        echo $row->username;
+        echo $row->password;
+        echo $row->created;
+    }
 ?>

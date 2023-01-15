@@ -38,7 +38,13 @@
         public const SQL__UPDATE = 'UPDATE';
         public const SQL__SET = 'SET';
         public const SQL__WHERE = 'WHERE';
+        public const SQL__FROM = 'FROM';
         public const SQL__ORDER_BY = 'ORDER BY';
+        public const SQL__LIMIT = 'LIMIT';
+        public const SQL__BETWEEN = 'BETWEEN';
+        public const SQL__IN = 'IN';
+        public const SQL__AND = 'AND';
+        public const SQL__OR = 'OR';
         /**
          * @var string 昇順にする句
          */
@@ -50,18 +56,19 @@
 
         // このクラスでのSQL文を入力するメソッドは、使用時にテーブル名書かなくても良い仕様にする。
         // 途中で読み書きしたいテーブルがあればメソッド使用前にpublic $tableNameにテーブル名を代入し変更する。
+        // FROM句も同様でメソッド使用時はショートカットできる
 
         /**
          * データベースにデータを書き込むSQL文のステートメントが返るメソッド
-         * @param array{'SET': array{… array{'field': 'value'}}} $sql_SET SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{'SET': array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query__INSERT_INTO($sql_SET) {
+        public function query__INSERT_INTO($array_sql) {
             $SET = '';
             $i = 0;
-            while ($i < count($sql_SET[self::SQL__SET])) {
-                foreach ($sql_SET[self::SQL__SET][$i] as $key => $val) {
-                    $SET .= '`' . $this->tableName . '`.`' . $key .'` = ' . $val . ',';
+            while ($i < count($array_sql[self::SQL__SET])) {
+                foreach ($array_sql[self::SQL__SET][$i] as $field => $val) {
+                    $SET .= '`' . $this->tableName . '`.`' . $field .'` = ' . $val . ',';
                 }
                 $i++;
             }
@@ -76,24 +83,66 @@
         }
 
         /**
-         * データベースのデータを更新・編集するSQL文のステートメントが返るメソッド
-         * @param array{'SET': array{… array{'field': 'value'}}, 'WHERE': array{'field': 'value'}} $sql_SET_WHERE SQL文SET句とWHERE句でセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * ！WHERE句のANDとORは検討！
+         * データベースにデータを書き込むSQL文のステートメントが返るメソッド
+         * @param array{'SET': array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query__UPDATE($sql_SET_WHERE) {
+        public function query__SELECT($array_sql) {
+            $SELECT_field = $array_sql[self::SQL__SELECT];
+            $WHERE = NULL;
+            $ORDER_BY = NULL;
+            $LIMIT = NULL;
+            if (isset($array_sql[self::SQL__WHERE])) {
+                $WHERE = self::SQL__WHERE;
+                $i = 0;
+                while ($i < count($array_sql[self::SQL__WHERE])) {
+                    foreach ($array_sql[self::SQL__WHERE][$i] as $field => $val) {
+                        $WHERE .= '`' . $this->tableName . '`.`' . $field .'` = ' . $val;
+                    }
+                    $i++;
+                }
+            }
+            if (isset($array_sql[self::SQL__ORDER_BY])) {
+                $ORDER_BY = self::SQL__ORDER_BY;
+                foreach ($array_sql[self::SQL__ORDER_BY] as $field =>  $order) {
+                    $ORDER_BY .= '`' . $this->tableName . '`.`' . $field .'` = ' . $order;
+                }
+            }
+            if (isset($array_sql[self::SQL__LIMIT])) {
+                $LIMIT = self::SQL__LIMIT . ' ';
+                $LIMIT .= $array_sql[self::SQL__LIMIT];
+            }
+            return $this->pdo->prepare('
+                ' . self::SQL__SELECT . '
+                    ' . $SELECT_field . '
+                ' . self::SQL__FROM . '
+                `' . $this->tableName . '`
+                ' . $WHERE . '
+                ' . $ORDER_BY . '
+                ' . $LIMIT . '
+            ');
+        }
+
+        /**
+         * データベースのデータを更新・編集するSQL文のステートメントが返るメソッド
+         * @param array{'SET': array{… array{'field': 'value'}}, 'WHERE': array{'field': 'value'}} $array_sql SQL文SET句とWHERE句でセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @return PDOStatement
+         */
+        public function query__UPDATE($array_sql) {
             $SET = '';
             $WHERE = '';
             $i = 0;
-            while ($i < count($sql_SET_WHERE[self::SQL__SET])) {
-                foreach ($sql_SET_WHERE[self::SQL__SET][$i] as $key => $val) {
-                    $SET .= '`' . $this->tableName . '`.`' . $key .'` = ' . $val . ',';
+            while ($i < count($array_sql[self::SQL__SET])) {
+                foreach ($array_sql[self::SQL__SET][$i] as $field => $val) {
+                    $SET .= '`' . $this->tableName . '`.`' . $field .'` = ' . $val . ',';
                 }
                 $i++;
             }
             // 最後にコンマが入るとエラーが起こるので消す処理を加える。
             $SET = substr($SET, 0, -1);
-            foreach ($sql_SET_WHERE[self::SQL__WHERE] as $key => $val) {
-                $WHERE = '`' . $this->tableName . '`.`' . $key .'` = ' . $val;
+            foreach ($array_sql[self::SQL__WHERE] as $field => $val) {
+                $WHERE = '`' . $this->tableName . '`.`' . $field .'` = ' . $val;
             }
             return $this->pdo->prepare('
                 ' . self::SQL__UPDATE . '
@@ -131,15 +180,6 @@
                 $stmt->bindParam($array_bindParam[$i][0], $array_bindParam[$i][1], $array_bindParam[$i][2]);
                 $i++;
             }
-        }
-
-        /**
-         * fetchモードはオブジェクトで返す
-         * @param PDOStatement $stmt PDOStatementのオブジェクト
-         * @return mixed
-         */
-        public function fetch(PDOStatement $stmt) {
-            return $stmt->fetch(PDO::FETCH_OBJ);
         }
 
     }
