@@ -1,6 +1,5 @@
 <?php
     require_once('module/user.php');
-    $user = NULL;
     if (isset($_COOKIE['user'])) {
         /**
          * @var User
