@@ -78,7 +78,7 @@
 
         /**
          * データベースにデータを書き込むSQL文のステートメントが返るメソッド
-         * @param array{'SET': array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{DBH::SQL__SET: array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
         public function query__INSERT_INTO($array_sql) {
@@ -102,7 +102,7 @@
 
         /**
          * データベースのデータを取得するSQL文のステートメントが返るメソッド
-         * @param array{'SET': array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{DBH::SQL__SELECT: string, DBH::SQL__WHERE: array{'field': 'value'}, DBH::SQL__ORDER_BY: array{'field': DBH::SQL__ORDER_BY_ASC}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
         public function query__SELECT($array_sql) {
@@ -166,7 +166,7 @@
 
         /**
          * データベースのデータを更新・編集するSQL文のステートメントが返るメソッド
-         * @param array{'SET': array{… array{'field': 'value'}}, 'WHERE': array{'field': 'value'}} $array_sql SQL文SET句とWHERE句でセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
+         * @param array{DBH::SQL__SET: array{… array{'field': 'value'}}, DBH::SQL__WHERE: array{'field': 'value'}} $array_sql SQL文SET句とWHERE句でセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
         public function query__UPDATE($array_sql) {

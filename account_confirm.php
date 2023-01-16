@@ -59,17 +59,17 @@
                     </dl>
                     <div class="btn__outer account--confirm">
                         <p><a href="./account.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
-                            <p>
-                                <a href="account_success.php" class="btn">
-                                    <span>
-                                        <i class="fa-solid fa-plus"></i>
-                                        <i class="fa-solid fa-circle-user"></i>
-                                    </span>
-                                    <span>
-                                        アカウントを登録する
-                                    </span>
-                                </a>
-                            </p>
+                        <p>
+                            <a href="account_create.php" class="btn">
+                                <span>
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </span>
+                                <span>
+                                    アカウントを登録する
+                                </span>
+                            </a>
+                        </p>
                         </div>
                 </div>
             </div>
