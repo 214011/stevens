@@ -25,7 +25,7 @@
             <div class="account main__content content-w">
                 <div class="account--text content-w">
                     <p>すでにアカウントをお持ちの方はこちらのボタンからログインしてください。</p>
-                    <p class="btn__outer fx-jc-center"><a class="btn" href="account_login.html"><i class="fa-solid fa-right-to-bracket"></i>ログイン</a></p>
+                    <p class="btn__outer fx-jc-center"><a class="btn" href="login.php"><i class="fa-solid fa-right-to-bracket"></i>ログイン</a></p>
                 </div>
                 <form action="./account_confirm.php" method="POST" class="account__container" id="js-form">
                     <dl class="account__container--item">
