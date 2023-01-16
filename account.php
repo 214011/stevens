@@ -1,11 +1,3 @@
-<?php
-    require_once('module/user.php');
-    session_start();
-    $session_user = NULL;
-    if (isset($_SESSION['user'])) {
-        $session_user = unserialize($_SESSION['user']);
-    }
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -16,6 +8,13 @@
     </head>
     <body>
         <?php require_once('blocks/header.php'); ?>
+        <?php
+            require_once('module/user.php');
+            $session_user = NULL;
+            if (isset($_SESSION['user'])) {
+                $session_user = unserialize($_SESSION['user']);
+            }
+        ?>
         <main class="main">
             <h2 class="main--title main--title_account">
                 <span class="span-block"><i class="fa-solid fa-circle-user"></i>Account</span>

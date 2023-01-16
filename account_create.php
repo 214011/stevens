@@ -45,6 +45,9 @@
             ]);
             $stmt->execute();
 
+
+            $origin_pswd = $user->get_password();
+
             $stmt = $dbh->query__SELECT([
                 DBH::SQL__SELECT => '*',
                 DBH::SQL__ORDER_BY => ['id' => DBH::SQL__ORDER_BY_DESC],
@@ -65,7 +68,7 @@
                 time() + (10 * 365 * 24 * 60 * 60)
             );
 
-            header("Location: ./account_success.php");
+            header('Location: ./account_create_login.php?origin_pswd='. $origin_pswd);
         }
     }
 ?>

@@ -1,17 +1,3 @@
-<?php session_start(); ?>
-<?php if (empty($_SESSION['toMail']) && empty($_SESSION['toMeMail'])): ?>
-    <?php header("Location: ./contact.php"); ?>
-<?php else: ?>
-<?php
-    require_once('module/mail.php');
-    $toMail = unserialize($_SESSION['toMail']);
-    $toMeMail = unserialize($_SESSION['toMeMail']);
-    $toMail->send();
-    $toMeMail->send();
-
-    unset($_SESSION['toMail']);
-    unset($_SESSION['toMeMail']);
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -21,6 +7,20 @@
     </head>
     <body>
         <?php require_once('blocks/header.php'); ?>
+        <?php
+            if (empty($_SESSION['toMail']) && empty($_SESSION['toMeMail'])) {
+                header("Location: ./contact.php");
+            } else {
+                require_once('module/mail.php');
+                $toMail = unserialize($_SESSION['toMail']);
+                $toMeMail = unserialize($_SESSION['toMeMail']);
+                $toMail->send();
+                $toMeMail->send();
+
+                unset($_SESSION['toMail']);
+                unset($_SESSION['toMeMail']);
+            }
+        ?>
         <main class="main">
             <h2 class="main--title main--title_contact">
                 <span class="span-block"><i class="fa-sharp fa-solid fa-paper-plane"></i>Complete</span>
@@ -41,4 +41,3 @@
         <?php require_once('blocks/footer.php'); ?>
     </body>
 </html>
-<?php endif; ?>

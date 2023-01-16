@@ -33,11 +33,6 @@
         ],
         $_POST['contactMsg']
     );
-
-
-    session_start();
-    $_SESSION['toMail'] = serialize($toMail);
-    $_SESSION['toMeMail'] = serialize($toMeMail);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -48,6 +43,10 @@
     </head>
     <body>
         <?php require_once('blocks/header.php'); ?>
+        <?php
+            $_SESSION['toMail'] = serialize($toMail);
+            $_SESSION['toMeMail'] = serialize($toMeMail);
+        ?>
         <main class="main">
             <h2 class="main--title main--title_contact">
                 <span class="span-block"><i class="fa-sharp fa-solid fa-paper-plane"></i>Confirm</span>

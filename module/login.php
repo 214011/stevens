@@ -8,7 +8,6 @@
         private string $mailAddress;
         private string $password;
         private User $user;
-        private bool $login_state;
 
         /**
          * コンストラクターで'login'のキー名で＄_SESSION変数にセットする。キーの値は、['mailAddress' => $val, 'password' => $val]
@@ -18,13 +17,13 @@
         public function __construct (string $mailAddress, string $password) {
             $this->mailAddress = $mailAddress;
             $this->password = $password;
+            var_dump(self::is_user_cookie());
             if (self::is_user_cookie()) {
                 $this->user = unserialize($_COOKIE['user']);
                 if ((password_verify($this->password, $this->user->get_password()))) {
-                    $this->login_state = true;
                     $this->set_session();
                 } else {
-                    $this->login_state = false;
+                    // no process
                 }
             } else {
                 unset($_SESSION['login']);
@@ -39,12 +38,16 @@
             return isset($_COOKIE['user']);
         }
 
-        public function logout () {
+        public static function logout () {
             unset($_SESSION['login']);
         }
 
-        public function is_login () {
-            return $this->login_state;
+        public static function is_login () {
+            if (isset($_SESSION['login'])) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
     }

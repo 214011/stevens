@@ -1,11 +1,3 @@
-<?php
-    require_once('module/mail.php');
-    session_start();
-    $toMail = NULL;
-    if (isset($_SESSION['toMail'])) {
-        $toMail = unserialize($_SESSION['toMail']);
-    }
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -15,6 +7,13 @@
     </head>
     <body>
         <?php require_once('blocks/header.php'); ?>
+        <?php
+            require_once('module/mail.php');
+            $toMail = NULL;
+            if (isset($_SESSION['toMail'])) {
+                $toMail = unserialize($_SESSION['toMail']);
+            }
+        ?>
         <main class="main">
             <h2 class="main--title main--title_contact">
                 <span class="span-block"><i class="fa-sharp fa-solid fa-paper-plane"></i>Contact</span>
