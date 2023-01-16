@@ -50,7 +50,7 @@
                                 <p>メニューは、一般,大学・専門学生,高校・中学生,小学生,幼児ごとに料金をご用意しております。</p>
                                 <p>メニューの詳細は下のボタンからどうぞ</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="menu.html">メニュー表の詳細へ</a></p>
+                            <p class="btn__outer"><a class="btn" href="menu.php">メニュー表の詳細へ</a></p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <div class="content__text">
                                 <p>カットの予約と、予約状況の把握の確認ができます。予約せずとも当店にお越しいただけますが、予約客が優先ですので状況によりお時間いただきます。</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="reserve.html">予約する</a></p>
+                            <p class="btn__outer"><a class="btn" href="reserve.php">予約する</a></p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                                 <p>おすすめのシャンプーや、流行りの髪型や当店（Bordeaux）の近況報告などをつぶやいているページが見れます。</p>
                                 <p>お得情報もありますので是非チェック！</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="blog.html">ブログを見る</a></p>
+                            <p class="btn__outer"><a class="btn" href="blog.php">ブログを見る</a></p>
                         </div>
                     </div>
                 </div>
