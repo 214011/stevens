@@ -9,7 +9,7 @@
         private bool $pass_state;
 
         /**
-         * コンストラクターで'login'のキー名で＄_SESSION変数にセットする。キーの値は、['mailAddress' => $val, 'password' => $val]
+         * コンストラクターでプライベートプロパティに値を代入する処理と認証処理を行う。
          * @param string $mailAddress メールアドレスの文字列
          * @param string $origin_password 認証したいパスワードの文字列
          * @param string $hashed_password ハッシュ化されたパスワードの文字列
@@ -18,20 +18,35 @@
             $this->mailAddress = $mailAddress;
             $this->password = $origin_password;
             if ((password_verify($this->password, $hashed_password))) {
-                $this->set_login_session();
                 $this->pass_state = true;
             } else {
                 $this->pass_state = false;
             }
         }
 
+        private int $mode = 1;
+        public const SET_INSERT_ARRAY_MODE = 0;
+        public const SET_INSERT_DICTIONARY_MODE = 1;
+
         /**
-         * 見やすいようにクラス内メソッドで処理をカプセル化しておく。
+         * ログインセッション変数にインサートするデータ構造を指定
+         * @param int $insert_mode デフォルトで連想配列の構造になる。Login::SET_INSERT_ARRAY_MODEとすれば配列モードになる
+         */
+        public function setInsertMode (int $insert_mode = Login::SET_INSERT_DICTIONARY_MODE) {
+            $this->mode = $insert_mode;
+        }
+
+        /**
+         * 'login'のキー名で＄_SESSION変数にセットする。キーの値は、['mailAddress' => $val, 'password' => $val]。
          * session_start()の実行タイミングはユーザに委ねる。
          * @return void
          */
-        private function set_login_session () {
-            $_SESSION['login'] = ['mailAddress' => $this->mailAddress, 'password' => $this->password];
+        public function insert_login_session () {
+            if ($this->mode) {
+                $_SESSION['login'] = [$this->mailAddress, $this->password];
+            } else {
+                $_SESSION['login'] = ['mailAddress' => $this->mailAddress, 'password' => $this->password];
+            }
         }
 
         /**
