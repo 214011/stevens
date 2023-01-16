@@ -1,17 +1,6 @@
 <?php if (empty($_POST)): ?>
     <?php header("Location: ./account.php"); ?>
 <?php else: ?>
-<?php
-    require_once('module/user.php');
-    session_start();
-    $user = new User(
-        ['firstName' => $_POST['firstName'],'lastName' => $_POST['lastName']],
-        ['firstTel' => $_POST['firstTel'], 'middleTel' => $_POST['middleTel'], 'lastTel' => $_POST['lastTel']],
-        $_POST['mail'],
-        $_POST['password']
-    );
-    $_SESSION['user'] = serialize($user);
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -20,6 +9,17 @@
     </head>
     <body>
         <?php require_once('blocks/header.php'); ?>
+        <?php
+            require_once('module/user.php');
+            session_start();
+            $user = new User(
+                ['firstName' => $_POST['firstName'],'lastName' => $_POST['lastName']],
+                ['firstTel' => $_POST['firstTel'], 'middleTel' => $_POST['middleTel'], 'lastTel' => $_POST['lastTel']],
+                $_POST['mail'],
+                $_POST['password']
+            );
+            $_SESSION['user'] = serialize($user);
+        ?>
         <main class="main">
             <h2 class="main--title main--title_account">
                 <span class="span-block"><i class="fa-solid fa-circle-user"></i>Confirm</span>

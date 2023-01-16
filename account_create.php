@@ -53,7 +53,7 @@
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $user->set_id($row->id);
-                $user->set_password($row->id);
+                $user->set_password($row->pswd);
                 $user->set_reserveDatetime($row->reserve_datetime);
                 $user->set_created($row->created);
                 $user->set_modified($row->modified);
