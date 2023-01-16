@@ -22,7 +22,7 @@
          * @param string $mail_address メールアドレス
          * @param string $password パスワード（ハッシュ化する前）
          */
-        public function __construct($array_usr_name, $array_tel, $mail_address, $password) {
+        public function __construct ($array_usr_name, $array_tel, $mail_address, $password) {
             $this->userName = [
                 'full' => $array_usr_name['lastName'] . '　' . $array_usr_name['firstName'],
                 'provide' => [$array_usr_name['lastName'], $array_usr_name['firstName']]
@@ -35,19 +35,23 @@
             $this->password = $password;
         }
 
-        public function get_userName() {
+        public function get_userName () {
             return $this->userName;
         }
 
-        public function get_tel() {
+        public function get_tel () {
             return $this->tel;
         }
 
-        public function get_mailAddress() {
+        public function get_mailAddress () {
             return $this->mailAddress;
         }
 
-        public function get_password() {
+        public function set_password (string $password) {
+            $this->password = $password;
+        }
+
+        public function get_password () {
             return $this->password;
         }
 

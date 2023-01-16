@@ -16,7 +16,7 @@
          * @param string $msg メールのメッセージ
          * @return ToMail
          */
-        public function  __construct($to_subject, $to_name, $to_address, $to_tel, $msg) {
+        public function  __construct ($to_subject, $to_name, $to_address, $to_tel, $msg) {
             $this->subject = self::SUBJECTS[$to_subject];
             $this->name = [
                 'full' => $to_name['lastName'] . '　' . $to_name['firstName'],
@@ -81,39 +81,39 @@
             );
         }
 
-        public function get_subject() {
+        public function get_subject () {
             return $this->h($this->subject);
         }
 
-        public function get_full_name() {
+        public function get_full_name () {
             return $this->h($this->name['full']);
         }
 
-        public function get_provide_name() {
+        public function get_provide_name () {
             return $this->name['provide'];
         }
 
-        public function get_mail() {
+        public function get_mail () {
             return $this->h($this->mail);
         }
 
-        public function get_full_tel() {
+        public function get_full_tel () {
             return $this->h($this->tel['full']);
         }
 
-        public function get_provide_tel() {
+        public function get_provide_tel () {
             return $this->tel['provide'];
         }
 
-        public function get_msg() {
+        public function get_msg () {
             return $this->msg;
         }
 
-        public function get_bind_msg() {
+        public function get_bind_msg () {
             return nl2br($this->h($this->msg));
         }
 
-        private function h(string $str) {
+        private function h (string $str) {
             return htmlspecialchars($str);
         }
 

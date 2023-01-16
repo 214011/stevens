@@ -22,7 +22,6 @@
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_OBJ);
 
-
         if ($row) {
             unset($_SESSION['user']);
             header("Location: ./account_failed.php");
@@ -54,6 +53,7 @@
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $user->set_id($row->id);
+                $user->set_password($row->id);
                 $user->set_reserveDatetime($row->reserve_datetime);
                 $user->set_created($row->created);
                 $user->set_modified($row->modified);
