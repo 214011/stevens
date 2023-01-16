@@ -1,7 +1,7 @@
 <?php
     require_once('module/mail.php');
     session_start();
-    $toMail;
+    $toMail = NULL;
     if (isset($_SESSION['toMail'])) {
         $toMail = unserialize($_SESSION['toMail']);
     }
@@ -74,7 +74,7 @@
                                         <select name="subject" id="form-subject" class="form-focus">
                                             <?php $i = 0; ?>
                                             <?php while ($i < count(ToMail::SUBJECTS)): ?>
-                                                <?php if (isset($_SESSION['toMail']) && $toMail->get_subject() === ToMail::SUBJECTS[$i]) :?>
+                                                <?php if (isset($toMail) && $toMail->get_subject() === ToMail::SUBJECTS[$i]) :?>
                                                     <option value="<?php echo $i; ?>" selected><?php echo ToMail::SUBJECTS[$i]; ?></option>
                                                 <?php else: ?>
                                                     <option value="<?php echo $i; ?>"><?php echo ToMail::SUBJECTS[$i]; ?></option>
@@ -90,11 +90,12 @@
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-username">お名前</label></dt>
                                 <dd>
-                                    <?php if (isset($_SESSION['toMail'])): ?>
+                                    <?php if (isset($toMail)): ?>
                                         <input type="text" name="lastName" value="<?php echo $toMail->get_provide_name()[0]; ?>" id="form-username" class="form-focus" placeholder="姓" required>
                                         <input type="text" name="firstName" value="<?php echo $toMail->get_provide_name()[1]; ?>" class="form-focus" placeholder="名" required>
                                     <?php else: ?>
-                                        <input type="text" name="lastName" id="form-username" class="form-focus" placeholder="姓" required><input type="text" name="firstName" class="form-focus" placeholder="名" required>
+                                        <input type="text" name="lastName" id="form-username" class="form-focus" placeholder="姓" required>
+                                        <input type="text" name="firstName" class="form-focus" placeholder="名" required>
                                     <?php endif; ?>
                                 </dd>
                             </dl>
@@ -103,7 +104,7 @@
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-tel">電話番号</label></dt>
                                 <dd>
-                                    <?php if (isset($_SESSION['toMail'])): ?>
+                                    <?php if (isset($toMail)): ?>
                                         <input type="tel" name="firstTel" value="<?php echo $toMail->get_provide_tel()[0]; ?>" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
                                         <div><input type="tel" name="middleTel" value="<?php echo $toMail->get_provide_tel()[1]; ?>" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
                                         <input type="tel" name="lastTel" value="<?php echo $toMail->get_provide_tel()[2]; ?>" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
@@ -119,7 +120,7 @@
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-email">メールアドレス</label></dt>
                                 <dd>
-                                    <?php if (isset($_SESSION['toMail'])): ?>
+                                    <?php if (isset($toMail)): ?>
                                         <input type="email" name="mail" value="<?php echo $toMail->get_mail(); ?>" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                                     <?php else: ?>
                                         <input type="email" name="mail" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
@@ -131,7 +132,7 @@
                             <dl class="contact-table__row--col">
                                 <dt class="form-required"><label for="form-contact_content">お問い合わせ内容</label></dt>
                                 <dd>
-                                    <?php if (isset($_SESSION['toMail'])): ?>
+                                    <?php if (isset($toMail)): ?>
                                         <textarea name="contactMsg"id="form-contact_content" class="form-focus" required><?php echo $toMail->get_msg(); ?></textarea>
                                     <?php else: ?>
                                         <textarea name="contactMsg" id="form-contact_content" class="form-focus" required></textarea>

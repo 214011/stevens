@@ -82,7 +82,7 @@
                             <?php
                                 $pswd = $user->get_password();
                                 $i = 0;
-                                while($i < count(str_split($pswd))) {
+                                while ($i < count(str_split($pswd))) {
                                     if($i === 0 || $i === (count(str_split($pswd)) - 1)) {
                                         echo $pswd[$i];
                                     } else {
