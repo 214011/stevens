@@ -5,6 +5,12 @@
 <?php
     require_once('module/user.php');
     $user = unserialize($_SESSION['user']);
+    setcookie(
+        'user',
+        serialize($user),
+        time() + (10 * 365 * 24 * 60 * 60)
+    );
+    unset($_SESSION['user']);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
