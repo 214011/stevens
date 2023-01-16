@@ -11,7 +11,7 @@
         private $password = '';
         // データベースから取得する値など
         private $id = '';
-        private $reserveDate = '';
+        private $reserveDatetime = '';
         private $created = '';
         private $modified = '';
 
@@ -55,8 +55,8 @@
             $this->id = $id;
         }
 
-        public function set_reserveDate (string $reserveDate) {
-            $this->reserveDate = $reserveDate;
+        public function set_reserveDatetime ($reserveDatetime) {
+            $this->reserveDatetime = $reserveDatetime;
         }
 
         public function set_created (string $created) {
@@ -72,7 +72,7 @@
         }
 
         public function get_reserveDate () {
-            $this->reserveDate;
+            $this->reserveDatetime;
         }
 
         public function get_created () {

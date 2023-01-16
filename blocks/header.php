@@ -1,3 +1,13 @@
+<?php
+    require_once('module/user.php');
+    $user = NULL;
+    if (isset($_COOKIE['user'])) {
+        /**
+         * @var User
+         */
+        $user = unserialize($_COOKIE['user']);
+    }
+?>
 <header class="header js-hamburger__hook">
     <div class="content-w">
         <h1 class="header--title"><a href="./"><img src="images/header_logo.svg" alt="Bordeaux" width="142" height="50"></a></h1>
@@ -13,7 +23,18 @@
                 <li class="gnav__container--item"><a class="js-gnav" href="reserve.php">Reserve</a></li>
                 <li class="gnav__container--item"><a class="js-gnav" href="blog.php">Blog</a></li>
                 <li class="gnav__container--item"><a class="js-gnav" href="contact.php">Contact</a></li>
-                <li class="gnav__container--item"><a class="js-gnav" href="account.php"><i class="fa-solid fa-circle-user"></i>Account</a></li>
+                <li class="gnav__container--item">
+                    <a class="js-gnav" href="account.php">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <?php
+                            if (isset($user)) {
+                                echo $user->get_userName()['full'];
+                            } else {
+                                echo 'Account';
+                            }
+                        ?>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
