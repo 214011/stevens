@@ -44,7 +44,7 @@
                     <h2 class="footer__container--title"><a href="account.php" class="footer__account-content"><i class="fa-solid fa-circle-user"></i>Account</a></h2>
                     <ul class="footer__container--list">
                         <li><a href="account.php">アカウント登録</a></li>
-                        <li><a href="login.php">ログイン</a></li>
+                        <li><a href="account_login.php">ログイン</a></li>
                     </ul>
                 </section>
             </div>

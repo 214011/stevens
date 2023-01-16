@@ -43,9 +43,9 @@
          */
         public function insert_login_session () {
             if ($this->mode) {
-                $_SESSION['login'] = [$this->mailAddress, $this->password];
-            } else {
                 $_SESSION['login'] = ['mailAddress' => $this->mailAddress, 'password' => $this->password];
+            } else {
+                $_SESSION['login'] = [$this->mailAddress, $this->password];
             }
         }
 
