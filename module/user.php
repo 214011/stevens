@@ -16,7 +16,7 @@
         private $modified = '';
 
         /**
-         * ユーザー情報を登録
+         * ユーザー情報をプロパティに格納
          * @param array{'firstName': string, 'lastName': string} $array_usr_name 氏名（姓と名）=>連想配列
          * @param array{'firstTel': string, 'middleTel': string, 'lastTel': string} $array_tel 電話番号 =>連想配列
          * @param string $mail_address メールアドレス
