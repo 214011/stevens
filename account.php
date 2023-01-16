@@ -1,3 +1,11 @@
+<?php
+    require_once('module/user.php');
+    session_start();
+    $user;
+    if (isset($_SESSION['user$user'])) {
+        $user = unserialize($_SESSION['user$user']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -58,19 +66,19 @@
                 <form action="./account_confirm.php" method="POST" class="account__container" id="js-form">
                     <dl class="account__container--item">
                         <dt class="form-required"><label for="form-username">お名前をご入力してください。（姓と名）</label></dt>
-                        <dd><input type="text" id="form-username" class="form-focus" placeholder="姓" required><input type="text" class="form-focus" placeholder="名" required></dd>
+                        <dd><input type="text" name="lastName" id="form-username" class="form-focus" placeholder="姓" required><input type="text" name="firstName" class="form-focus" placeholder="名" required></dd>
                     </dl>
                     <dl class="account__container--item">
                         <dt class="form-required"><label for="form-tel">電話番号</label></dt>
                         <dd>
-                            <input type="tel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
-                            <div><input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
-                            <input type="tel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
+                            <input type="tel" name="firstTel" pattern="\d{2,4}" id="form-tel" class="no-spin form-focus js-contact__tel" required>
+                            <div><input type="tel" name="middleTel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required></div>
+                            <input type="tel" name="lastTel" pattern="\d{2,4}" class="no-spin form-focus js-contact__tel" required>
                         </dd>
                     </dl>
                     <dl class="account__container--item">
                         <dt class="form-required"><label for="form-email">メールアドレスをご入力してください。</label></dt>
-                        <dd><input type="email" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
+                        <dd><input type="email" name="mail" id="form-email" class="form-focus" placeholder="Bordeaux@for.example" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
                     </dl>
                     <dl class="account__container--item">
                         <dt class="form-required">
@@ -83,7 +91,7 @@
                     </dl>
                     <dl class="account__container--item">
                         <dt><label for="form-re_password">確認のため再度入力してください。</label></dt>
-                        <dd><input type="password" id="form-re_password" class="form-focus" required></dd>
+                        <dd><input type="password" name="password" id="form-re_password" class="form-focus" required></dd>
                     </dl>
                     <div class="btn__outer">
                         <input type="submit" id="form-submit" value="アカウントを登録する" class="fa-sr-only">

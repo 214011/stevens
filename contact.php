@@ -91,10 +91,10 @@
                                 <dt class="form-required"><label for="form-username">お名前</label></dt>
                                 <dd>
                                     <?php if (isset($_SESSION['toMail'])): ?>
-                                        <input type="text" name="firstName" value="<?php echo $toMail->get_provide_name()[0]; ?>" id="form-username" class="form-focus" placeholder="姓" required>
-                                        <input type="text" name="lastName" value="<?php echo $toMail->get_provide_name()[1]; ?>" class="form-focus" placeholder="名" required>
+                                        <input type="text" name="lastName" value="<?php echo $toMail->get_provide_name()[0]; ?>" id="form-username" class="form-focus" placeholder="姓" required>
+                                        <input type="text" name="firstName" value="<?php echo $toMail->get_provide_name()[1]; ?>" class="form-focus" placeholder="名" required>
                                     <?php else: ?>
-                                        <input type="text" name="firstName" id="form-username" class="form-focus" placeholder="姓" required><input type="text" name="lastName" class="form-focus" placeholder="名" required>
+                                        <input type="text" name="lastName" id="form-username" class="form-focus" placeholder="姓" required><input type="text" name="firstName" class="form-focus" placeholder="名" required>
                                     <?php endif; ?>
                                 </dd>
                             </dl>

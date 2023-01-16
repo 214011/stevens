@@ -1,3 +1,17 @@
+<?php if (empty($_POST)): ?>
+    <?php header("Location: ./contact.php"); ?>
+<?php else: ?>
+<?php
+    require_once('module/user.php');
+    session_start();
+    $user = new User(
+        ['firstName' => $_POST['firstName'],'lastName' => $_POST['lastName']],
+        ['firstTel' => $_POST['firstTel'], 'middleTel' => $_POST['middleTel'], 'lastTel' => $_POST['lastTel']],
+        $_POST['mail'],
+        $_POST['password']
+    );
+    $_SESSION['user'] = serialize($user);
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -52,19 +66,32 @@
                 <div class="account__container">
                     <dl class="account--confirm__container--item">
                         <dt>お名前</dt>
-                        <dd>姫情　太郎</dd>
+                        <dd><?php echo $user->get_userName()['full']; ?></dd>
                     </dl>
                     <dl class="account--confirm__container--item">
                         <dt>電話番号</dt>
-                        <dd>姫情　太郎</dd>
+                        <dd><?php echo $user->get_tel()['full']; ?></dd>
                     </dl>
                     <dl class="account--confirm__container--item">
                         <dt>メールアドレス</dt>
-                        <dd>姫情　太郎</dd>
+                        <dd><?php echo $user->get_mailAddress(); ?></dd>
                     </dl>
                     <dl class="account--confirm__container--item">
                         <dt>パスワード</dt>
-                        <dd>姫情　太郎</dd>
+                        <dd>
+                            <?php
+                                $pswd = $user->get_password();
+                                $i = 0;
+                                while($i < count(str_split($pswd))) {
+                                    if($i === 0 || $i === (count(str_split($pswd)) - 1)) {
+                                        echo $pswd[$i];
+                                    } else {
+                                        echo '＊';
+                                    }
+                                    $i++;
+                                }
+                            ?>
+                            </dd>
                     </dl>
                     <div class="btn__outer account--confirm">
                         <p><a href="./account.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
@@ -145,3 +172,4 @@
         </footer>
     </body>
 </html>
+<?php endif; ?>

@@ -5,8 +5,8 @@
     class User {
 
         // コンストラクターで代入される値
-        private $userName = '';
-        private $tel = '';
+        private $userName = [];
+        private $tel = [];
         private $mailAddress = '';
         private $password = '';
         // データベースから取得する値など
@@ -23,8 +23,14 @@
          * @param string $password パスワード（ハッシュ化する前）
          */
         public function __construct($array_usr_name, $array_tel, $mail_address, $password) {
-            $this->userName = $array_usr_name['firstName'] . '　' . $array_usr_name['lastName'];
-            $this->tel = $array_tel['firstTel'] . '-' . $array_tel['middleTel'] . '-' . $array_tel['lastTel'];
+            $this->userName = [
+                'full' => $array_usr_name['lastName'] . '　' . $array_usr_name['firstName'],
+                'provide' => [$array_usr_name['firstName'], $array_usr_name['lastName']]
+            ];
+            $this->tel = [
+                'full' => $array_tel['firstTel'] . '-' . $array_tel['middleTel'] . '-' . $array_tel['lastTel'],
+                'provide' => [$array_tel['firstTel'], $array_tel['middleTel'], $array_tel['lastTel']]
+            ];
             $this->mailAddress = $mail_address;
             $this->password = $password;
         }

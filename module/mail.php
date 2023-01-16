@@ -19,7 +19,7 @@
         public function  __construct($to_subject, $to_name, $to_address, $to_tel, $msg) {
             $this->subject = self::SUBJECTS[$to_subject];
             $this->name = [
-                'full' => $to_name['firstName'] . '　' . $to_name['lastName'],
+                'full' => $to_name['lastName'] . '　' . $to_name['firstName'],
                 'provide' => [$to_name['firstName'], $to_name['lastName']]
             ];
             $this->mail = $to_address;
