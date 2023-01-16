@@ -20,7 +20,7 @@
             $this->subject = self::SUBJECTS[$to_subject];
             $this->name = [
                 'full' => $to_name['lastName'] . '　' . $to_name['firstName'],
-                'provide' => [$to_name['firstName'], $to_name['lastName']]
+                'provide' => [$to_name['lastName'], $to_name['firstName']]
             ];
             $this->mail = $to_address;
             $this->tel = [

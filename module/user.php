@@ -25,7 +25,7 @@
         public function __construct($array_usr_name, $array_tel, $mail_address, $password) {
             $this->userName = [
                 'full' => $array_usr_name['lastName'] . '　' . $array_usr_name['firstName'],
-                'provide' => [$array_usr_name['firstName'], $array_usr_name['lastName']]
+                'provide' => [$array_usr_name['lastName'], $array_usr_name['firstName']]
             ];
             $this->tel = [
                 'full' => $array_tel['firstTel'] . '-' . $array_tel['middleTel'] . '-' . $array_tel['lastTel'],
