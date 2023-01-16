@@ -16,7 +16,7 @@
             <div class="menu content-w main__content">
                 <ul class="menu__link-list">
                     <li class="menu__link-list--item"><a class="btn" href="#common">一般</a></li>
-                    <li class="menu__link-list--item"><a class="btn" href="#unversity">大学生・専門学生</a></li>
+                    <li class="menu__link-list--item"><a class="btn" href="#university">大学生・専門学生</a></li>
                     <li class="menu__link-list--item"><a class="btn" href="#junior-high">中学生・高校生</a></li>
                     <li class="menu__link-list--item"><a class="btn" href="#elementary">小学生</a></li>
                     <li class="menu__link-list--item"><a class="btn" href="#child">幼児</a></li>
@@ -176,7 +176,7 @@
                         </section>
                     </section>
                     <section class="menu__container">
-                        <h3 class="menu__container--title" id="unversity">大学生・専門学生</h3>
+                        <h3 class="menu__container--title" id="university">大学生・専門学生</h3>
                         <section class="menu__container--item">
                             <h4>Main</h4>
                             <section class="menu__container--item_price">

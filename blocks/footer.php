@@ -17,7 +17,7 @@
                     <h2 class="footer__container--title"><a href="menu.php" class="footer__menu-content"><i class="fa-solid fa-scissors"></i>MenuList</a></h2>
                     <ul class="footer__container--list" id="menu__link-list">
                         <li><a href="menu.php#common">一般客向けの価格</a></li>
-                        <li><a href="menu.php#unversity">大学・専門学生向けの価格</a></li>
+                        <li><a href="menu.php#university">大学・専門学生向けの価格</a></li>
                         <li><a href="menu.php#junior-high">高校・中学生向けの価格</a></li>
                         <li><a href="menu.php#elementary">小学生向けの価格</a></li>
                         <li><a href="menu.php#child">幼児向けの価格</a></li>
