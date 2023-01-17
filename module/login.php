@@ -44,6 +44,7 @@
         }
 
         /**
+         * !important これが無ければログイン中の判断ができないため、必ず呼び出す。
          * 'login'のキー名で＄_SESSION変数にセットする。キーの値の構造は、setInsertModeで指定する。
          * session_start()の実行タイミングはユーザに委ねる。
          * @return void
