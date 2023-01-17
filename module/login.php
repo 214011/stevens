@@ -10,14 +10,15 @@
 
         /**
          * コンストラクターでプライベートプロパティに値を代入する処理と認証処理を行う。
-         * @param string $mailAddress メールアドレスの文字列
+         * @param string $user_mailAddress 認証元のメールアドレスの文字列
+         * @param string $input_mailAddress 認証したいメールアドレスの文字列を入力
          * @param string $origin_password 認証したいパスワードの文字列
          * @param string $hashed_password ハッシュ化されたパスワードの文字列
          */
-        public function __construct (string $mailAddress, string $origin_password, string $hashed_password) {
-            $this->mailAddress = $mailAddress;
+        public function __construct (string $user_mailAddress, string $input_mailAddress, string $origin_password, string $hashed_password) {
+            $this->mailAddress = $user_mailAddress;
             $this->password = $origin_password;
-            if ((password_verify($this->password, $hashed_password))) {
+            if (password_verify($this->password, $hashed_password) && $input_mailAddress === $this->mailAddress) {
                 $this->pass_state = true;
             } else {
                 $this->pass_state = false;
@@ -50,7 +51,7 @@
         }
 
         /**
-         * パスワードが認証できたかどうかを条件値で返すインスタンスメソッド
+         * ユーザが認証できたかどうかを条件値で返すインスタンスメソッド
          * @return bool
          */
         public function is_pass () {
@@ -67,6 +68,7 @@
 
         /**
          * ログインセッション変数が存在しているかどうかを条件値で返す静的メソッド（ログインの有無）
+         * session_start()の実行タイミングはユーザに委ねる。
          * @return bool
          */
         public static function is_login () {
