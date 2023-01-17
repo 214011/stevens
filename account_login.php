@@ -13,16 +13,16 @@
                 <span class="span-block">ログイン</span>
             </h2>
             <div class="account main__content content-w">
-                <form action="./account_login.html" method="POST" class="account-login__container">
+                <form action="./account_login_process.php" method="POST" class="account-login__container">
                     <dl class="account-login__container--item">
                         <dt><label for="form-email">メールアドレス</label></dt>
-                        <dd><input type="email" id="form-email" class="form-focus" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
+                        <dd><input type="email" name="mailAddress" id="form-email" class="form-focus" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
                     </dl>
                     <dl class="account-login__container--item">
                         <dt>
                             <label for="form-password">パスワード</label>
                         </dt>
-                        <dd><input type="password" id="form-password" class="form-focus" required></dd>
+                        <dd><input type="password" name="password" id="form-password" class="form-focus" required></dd>
                     </dl>
                     <div class="btn__outer">
                         <input type="submit" id="form-submit" value="ログイン" class="fa-sr-only">
