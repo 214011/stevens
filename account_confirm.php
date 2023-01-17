@@ -41,20 +41,7 @@
                     </dl>
                     <dl class="account--confirm__container--item">
                         <dt>パスワード</dt>
-                        <dd>
-                            <?php
-                                $pswd = $user->get_password();
-                                $i = 0;
-                                while ($i < count(str_split($pswd))) {
-                                    if($i === 0 || $i === (count(str_split($pswd)) - 1)) {
-                                        echo $pswd[$i];
-                                    } else {
-                                        echo '＊';
-                                    }
-                                    $i++;
-                                }
-                            ?>
-                            </dd>
+                        <dd><?php User::to_hidden_password($user->get_password()); ?></dd>
                     </dl>
                     <div class="btn__outer account--confirm">
                         <p><a href="./account.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>

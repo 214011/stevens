@@ -23,7 +23,7 @@
                 <li class="gnav__container--item"><a class="js-gnav" href="contact.php">Contact</a></li>
                 <li class="gnav__container--item">
                     <?php if (Login::is_login()): ?>
-                        <a class="js-gnav" href="account_logout.php"><i class="fa-solid fa-circle-user"></i><?php echo $user->get_userName()['full']; ?></a>
+                        <a class="js-gnav" href="account_info.php"><i class="fa-solid fa-circle-user"></i><?php echo $user->get_userName()['full']; ?></a>
                     <?php else: ?>
                         <a class="js-gnav" href="account.php"><i class="fa-solid fa-circle-user"></i>Account</a>
                     <?php endif; ?>

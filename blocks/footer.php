@@ -44,6 +44,7 @@
                     <h2 class="footer__container--title"><a href="account.php" class="footer__account-content"><i class="fa-solid fa-circle-user"></i>Account</a></h2>
                     <ul class="footer__container--list">
                         <?php if (Login::is_login()): ?>
+                            <li><a href="account_info.php">アカウント情報</a></li>
                             <li><a href="account_logout.php">ログアウト</a></li>
                         <?php else: ?>
                             <li><a href="account.php">アカウント登録</a></li>

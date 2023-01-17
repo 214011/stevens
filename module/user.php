@@ -55,11 +55,25 @@
             return $this->password;
         }
 
+        public static function to_hidden_password (string $password) {
+            $hiddenPswd = '';
+            $i = 0;
+            while ($i < count(str_split($password))) {
+                if($i === 0 || $i === (count(str_split($password)) - 1)) {
+                    $hiddenPswd .= $password[$i];
+                } else {
+                    $hiddenPswd .= '＊';
+                }
+                $i++;
+            }
+            return $hiddenPswd;
+        }
+
         public function set_id (string $id) {
             $this->id = $id;
         }
 
-        public function set_reserveDatetime ($reserveDatetime) {
+        public function set_reserveDatetime (string $reserveDatetime) {
             $this->reserveDatetime = $reserveDatetime;
         }
 
@@ -72,19 +86,19 @@
         }
 
         public function get_id () {
-            $this->id;
+            return $this->id;
         }
 
-        public function get_reserveDate () {
-            $this->reserveDatetime;
+        public function get_reserveDatetime () {
+            return $this->reserveDatetime;
         }
 
         public function get_created () {
-            $this->created;
+            return $this->created;
         }
 
         public function get_modified () {
-            $this->modified;
+            return $this->modified;
         }
 
     }

@@ -58,6 +58,8 @@
                                         <input type="text" name="firstName" value="<?php echo $toMail->get_provide_name()[1]; ?>" class="form-focus" placeholder="名" required>
                                     <?php elseif (Login::is_login()): ?>
                                         <?php echo $user->get_userName()['full']; ?>
+                                        <input type="hidden" name="lastName" value="<?php echo $user->get_userName()['provide'][0]; ?>"required>
+                                        <input type="hidden" name="firstName" value="<?php echo $user->get_userName()['provide'][1]; ?>"required>
                                     <?php else: ?>
                                         <input type="text" name="lastName" id="form-username" class="form-focus" placeholder="姓" required>
                                         <input type="text" name="firstName" class="form-focus" placeholder="名" required>

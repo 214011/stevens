@@ -2299,6 +2299,66 @@ button[type = button]#js-toTop::after {
     box-shadow: none;
 }
 
+/*
+    confirm
+*/
+
+.confirm .contact-table__row:last-child dd p {
+    width: 33.8em;
+    height: clamp(234px, 36.9791666666vw, 284px);
+    min-height: 0vw;
+    padding: 1em 0;
+    display: block;
+    overflow-y: scroll;
+}
+
+.confirm .contact-table__row:last-child dd::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fff0;
+}
+
+.confirm .contact-table__row:last-child dd::-webkit-scrollbar-track {
+    width: 5px;
+    background-color: #fff0;
+}
+
+.confirm .contact-table__row:last-child dd::-webkit-scrollbar-thumb {
+    width: 5px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(20, 20, 20, .6);
+    border-radius: calc(5px / 2);
+}
+
+.confirm .contact__container .btn__outer {
+    min-height: 0vw;
+    gap: clamp(50px, 13.020833333333333vw, 100px);
+}
+
+
+/*
+    complete
+*/
+.complete__container {
+    margin-top: 100px;
+}
+
+.complete__container--inner {
+    padding: 40px;
+    border-top: 2px solid var(--c-green);
+    border-bottom: 2px solid var(--c-green);
+    line-height: 2;
+}
+
+.complete__container--inner p:last-child {
+    margin-top: clamp(30px, 5.208333333333334vw, 40px);
+    text-align: center;
+}
+
+.complete__container--inner p:last-child a:hover {
+    text-decoration: none;
+}
+
 
 /* account */
 
@@ -2493,65 +2553,41 @@ button[type = button]#js-toTop::after {
     box-shadow: none;
 }
 
-
 /*
-    confirm
+    info
 */
 
-.confirm .contact-table__row:last-child dd p {
-    width: 33.8em;
-    height: clamp(234px, 36.9791666666vw, 284px);
-    min-height: 0vw;
-    padding: 1em 0;
-    display: block;
-    overflow-y: scroll;
+.account__info {
+    width: min(768px, 100%);
+    margin: 0 auto;
 }
 
-.confirm .contact-table__row:last-child dd::-webkit-scrollbar {
-    width: 5px;
-    background-color: #fff0;
+.account__info--row {
+    padding: 1.2em 0;
 }
 
-.confirm .contact-table__row:last-child dd::-webkit-scrollbar-track {
-    width: 5px;
-    background-color: #fff0;
+.account__info--row:first-child {
+    padding-top: 0;
 }
 
-.confirm .contact-table__row:last-child dd::-webkit-scrollbar-thumb {
-    width: 5px;
-    display: grid;
-    place-items: center;
-    background-color: rgba(20, 20, 20, .6);
-    border-radius: calc(5px / 2);
+.account__info--row:not(:first-child) {
+    border-top: 1px solid var(--c-font);
 }
 
-.confirm .contact__container .btn__outer {
-    min-height: 0vw;
-    gap: clamp(50px, 13.020833333333333vw, 100px);
+.account__info--row dl {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-/*
-    complete
-*/
-.complete__container {
-    margin-top: 100px;
+.account__info--row dl dt {
+    padding-left: 1em;
+    font-size: var(--fsz-secondary);
 }
 
-.complete__container--inner {
-    padding: 40px;
-    border-top: 2px solid var(--c-green);
-    border-bottom: 2px solid var(--c-green);
-    line-height: 2;
-}
-
-.complete__container--inner p:last-child {
-    margin-top: clamp(30px, 5.208333333333334vw, 40px);
-    text-align: center;
-}
-
-.complete__container--inner p:last-child a:hover {
-    text-decoration: none;
+.account__info--row dl dd {
+    padding-right: var(--fsz-secondary);
 }
 
 
