@@ -12,7 +12,7 @@
         protected $msg = '';
 
         /**
-         * @param number $to_subject お問い合わせの件名(インデックス番号)['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問']
+         * @param int $to_subject お問い合わせの件名(インデックス番号)['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問']
          * @param array{'firstName': string, 'lastName': string} $to_name 宛先の氏名
          * @param string $to_address 宛先のメールアドレス
          * @param array{'firstTel': string, 'middleTel': string, 'lastTel': string} $to_tel 宛先の電話番号
