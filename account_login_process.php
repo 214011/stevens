@@ -27,6 +27,7 @@
             );
 
             $login = new Login($row->mail, $_POST['mailAddress'], $_POST['password'], $row->pswd);
+
             if ($login->is_pass()) {
                 $array_userName = explode('　', $row->username);
                 $array_tel = explode('-', $row->tel);
