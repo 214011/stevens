@@ -201,6 +201,31 @@ ul {
 
 }
 
+.btn--reserve {
+    background-color: var(--c-green);
+}
+
+@media screen and (min-width: 901px) {
+
+    .btn--reserve:hover {
+        background-color: var(--c-green);
+        box-shadow: none;
+        filter: brightness(0.98);
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .btn--reserve:active {
+        background-color: var(--c-green);
+        box-shadow: none;
+        filter: brightness(0.98);
+        transform: scale(.98);
+    }
+
+}
+
 .span-block {
     display: block;
 }
@@ -2558,7 +2583,7 @@ button[type = button]#js-toTop::after {
 */
 
 .account__info {
-    width: min(768px, 100%);
+    width: min(600px, 100%);
     margin: 0 auto;
 }
 
@@ -2588,6 +2613,15 @@ button[type = button]#js-toTop::after {
 
 .account__info--row dl dd {
     padding-right: var(--fsz-secondary);
+}
+
+.account__info + .btn__outer {
+    margin-top: 1.5em;
+    gap: 2em;
+}
+
+.account__info + .btn__outer .btn {
+    width: 10em;
 }
 
 
