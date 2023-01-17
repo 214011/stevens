@@ -97,7 +97,7 @@
                     `' . $this->tableName . '`
                 ' . self::SQL__SET . '
                 ' . $SET . '
-            ');
+            ;');
         }
 
         /**
@@ -161,7 +161,7 @@
                 ' . $WHERE . '
                 ' . $ORDER_BY . '
                 ' . $LIMIT . '
-            ');
+            ;');
         }
 
         /**
@@ -191,7 +191,7 @@
                 ' . $SET . '
                 ' . self::SQL__WHERE . '
                 ' . $WHERE . '
-            ');
+            ;');
         }
 
         /**
