@@ -5,15 +5,15 @@
     class User {
 
         // コンストラクターで代入される値
-        private $userName = [];
-        private $tel = [];
-        private $mailAddress = '';
-        private $password = '';
+        private array $userName;
+        private array $tel;
+        private string $mailAddress;
+        private string $password;
         // データベースから取得する値など
-        private $id = '';
-        private $reserveDatetime = '';
-        private $created = '';
-        private $modified = '';
+        private string $id;
+        private string | null $reserveDatetime;
+        private string $created;
+        private string $modified;
 
         /**
          * ユーザー情報をプロパティに格納
@@ -22,7 +22,7 @@
          * @param string $mail_address メールアドレス
          * @param string $password パスワード（ハッシュ化する前）
          */
-        public function __construct ($array_usr_name, $array_tel, $mail_address, $password) {
+        public function __construct (array $array_usr_name, array $array_tel, string $mail_address, string $password) {
             $this->userName = [
                 'full' => $array_usr_name['lastName'] . '　' . $array_usr_name['firstName'],
                 'provide' => [$array_usr_name['lastName'], $array_usr_name['firstName']]
@@ -35,26 +35,52 @@
             $this->password = $password;
         }
 
+        /**
+         * ユーザ名が入った連想配列が返る
+         * @return array
+         */
         public function get_userName () {
             return $this->userName;
         }
 
+        /**
+         * 電話番号が入った連想配列が返る
+         * @return array
+         */
         public function get_tel () {
             return $this->tel;
         }
 
+        /**
+         * メールアドレスの文字列が返る
+         * @return string
+         */
         public function get_mailAddress () {
             return $this->mailAddress;
         }
 
+        /**
+         * パスワードの文字列をプロパティに代入するセッター
+         * @param string $password セットしたいパスワードの文字列
+         * @return void
+         */
         public function set_password (string $password) {
             $this->password = $password;
         }
 
+        /**
+         * パスワードの文字列が返る
+         * @return string
+         */
         public function get_password () {
             return $this->password;
         }
 
+        /**
+         * パスワードの文字列を一部隠した文字列が返る静的メソッド
+         * @param string $password 隠したいパスワードの文字列
+         * @return string
+         */
         public static function to_hidden_password (string $password) {
             $hiddenPswd = '';
             $i = 0;
@@ -69,34 +95,70 @@
             return $hiddenPswd;
         }
 
+        /**
+         * IDの文字列をプロパティに代入するセッター
+         * @param string $id セットしたいIDの文字列
+         * @return void
+         */
         public function set_id (string $id) {
             $this->id = $id;
         }
 
-        public function set_reserveDatetime (string $reserveDatetime) {
+        /**
+         * 予約日の文字列をプロパティに代入するセッター
+         * @param string $reserveDatetime セットしたい予約日の文字列
+         * @return void
+         */
+        public function set_reserveDatetime (string | null $reserveDatetime) {
             $this->reserveDatetime = $reserveDatetime;
         }
 
+        /**
+         * 作成日の文字列をプロパティに代入するセッター
+         * @param string $created セットしたい作成日の文字列
+         * @return void
+         */
         public function set_created (string $created) {
             $this->created = $created;
         }
 
+        /**
+         * 更新日の文字列をプロパティに代入するセッター
+         * @param string $modified セットしたい更新日の文字列
+         * @return void
+         */
         public function set_modified (string $modified) {
             $this->modified = $modified;
         }
 
+        /**
+         * IDの文字列が返る
+         * @return string
+         */
         public function get_id () {
             return $this->id;
         }
 
+        /**
+         * 予約日の文字列が返る
+         * @return string
+         */
         public function get_reserveDatetime () {
             return $this->reserveDatetime;
         }
 
+        /**
+         * 作成日の文字列が返る
+         * @return string
+         */
         public function get_created () {
             return $this->created;
         }
 
+        /**
+         * 更新日の文字列が返る
+         * @return string
+         */
         public function get_modified () {
             return $this->modified;
         }

@@ -41,7 +41,7 @@
                     </dl>
                     <dl class="account--confirm__container--item">
                         <dt>パスワード</dt>
-                        <dd><?php User::to_hidden_password($user->get_password()); ?></dd>
+                        <dd><?php echo User::to_hidden_password($user->get_password()); ?></dd>
                     </dl>
                     <div class="btn__outer account--confirm">
                         <p><a href="./account.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
