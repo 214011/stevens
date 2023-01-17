@@ -38,7 +38,7 @@
         }
 
         /**
-         * 'login'のキー名で＄_SESSION変数にセットする。キーの値は、['mailAddress' => $val, 'password' => $val]。
+         * 'login'のキー名で＄_SESSION変数にセットする。キーの値の構造は、setInsertModeで指定する。
          * session_start()の実行タイミングはユーザに委ねる。
          * @return void
          */
