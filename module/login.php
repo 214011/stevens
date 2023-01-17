@@ -26,7 +26,13 @@
         }
 
         private int $mode = 1;
+        /**
+         * @var int 配列モード
+         */
         public const SET_INSERT_ARRAY_MODE = 0;
+        /**
+         * @var int 連想配列モード['mailAddress' => $value, 'password' => $value]
+         */
         public const SET_INSERT_DICTIONARY_MODE = 1;
 
         /**
