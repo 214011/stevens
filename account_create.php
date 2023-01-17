@@ -22,11 +22,11 @@
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_OBJ);
 
+
+        unset($_SESSION['user']);
         if ($row) {
-            unset($_SESSION['user']);
             header("Location: ./account_failed.php");
         } else {
-            unset($_SESSION['user']);
 
             $stmt = $dbh->query__INSERT_INTO([
                 DBH::SQL__SET => [
@@ -61,6 +61,12 @@
                 $user->set_created($row->created);
                 $user->set_modified($row->modified);
             }
+
+            setcookie(
+                'user',
+                '',
+                time() - 60
+            );
 
             setcookie(
                 'user',

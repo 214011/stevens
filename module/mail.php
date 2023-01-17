@@ -4,7 +4,7 @@
      */
     class ToMail {
 
-        public const SUBJECTS = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
+        public const SUBJECTS = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問', 'ログインについて'];
         protected $subject = 0;
         protected $name = [];
         protected $mail = '';
