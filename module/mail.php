@@ -1,4 +1,7 @@
 <?php
+    /**
+     * 相手方のメールを作るクラス
+     */
     class ToMail {
 
         public const SUBJECTS = ['質問', 'お店へのお問い合わせ', '予約の取り消し', 'サイトの質問'];
@@ -120,7 +123,9 @@
     }
 
 
-
+    /**
+     * 自分用のメールを作るクラス
+     */
     class ToMeMail extends ToMail {
 
         protected function mail_text () {
