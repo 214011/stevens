@@ -11,7 +11,7 @@
         /**
          * コンストラクターでプライベートプロパティに値を代入する処理と認証処理を行う。
          * @param string $origin_mailAddress 認証したいメールアドレスの文字列
-         * @param string $verify_mailAddress 認証元のメールアドレスの文字列
+         * @param string $verify_mailAddress 認証先のメールアドレスの文字列
          * @param string $origin_password 認証したいパスワードの文字列
          * @param string $hashed_password ハッシュ化されたパスワードの文字列
          */
@@ -25,7 +25,7 @@
             }
         }
 
-        private int $mode = 1;
+        private int $var_mode = 1;
         /**
          * @var int 配列モード
          */
@@ -40,7 +40,7 @@
          * @param int $insert_mode デフォルトで連想配列の構造になる。Login::SET_INSERT_ARRAY_MODEとすれば配列モードになる
          */
         public function setInsertMode (int $insert_mode = Login::SET_INSERT_DICTIONARY_MODE) {
-            $this->mode = $insert_mode;
+            $this->var_mode = $insert_mode;
         }
 
         /**
@@ -50,7 +50,7 @@
          * @return void
          */
         public function insert_login_session () {
-            if ($this->mode) {
+            if ($this->var_mode) {
                 $_SESSION['login'] = ['mailAddress' => $this->mailAddress, 'password' => $this->password];
             } else {
                 $_SESSION['login'] = [$this->mailAddress, $this->password];
