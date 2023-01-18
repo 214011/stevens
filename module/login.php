@@ -37,10 +37,10 @@
 
         /**
          * ログインセッション変数にインサートするデータ構造を指定
-         * @param int $insert_mode デフォルトで連想配列の構造になる。Login::SET_INSERT_ARRAY_MODEとすれば配列モードになる
+         * @param int $mode デフォルトで連想配列の構造になる。Login::SET_INSERT_ARRAY_MODEとすれば配列モードになる
          */
-        public function setInsertMode (int $insert_mode = Login::SET_INSERT_DICTIONARY_MODE) {
-            $this->var_mode = $insert_mode;
+        public function setInsertMode (int $mode = Login::SET_INSERT_DICTIONARY_MODE) {
+            $this->var_mode = $mode;
         }
 
         /**
