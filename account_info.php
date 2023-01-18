@@ -15,6 +15,7 @@
                     <span class="span-block">アカウント情報</span>
                 </h2>
                 <div class="account main__content content-w">
+                    <?php var_dump($_SESSION['login']); ?>
                     <ul class="account__info">
                         <li class="account__info--row">
                             <dl>
