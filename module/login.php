@@ -10,15 +10,15 @@
 
         /**
          * コンストラクターでプライベートプロパティに値を代入する処理と認証処理を行う。
-         * @param string $user_mailAddress 認証元のメールアドレスの文字列
-         * @param string $input_mailAddress 認証したいメールアドレスの文字列を入力
+         * @param string $origin_mailAddress 認証したいメールアドレスの文字列
+         * @param string $verify_mailAddress 認証元のメールアドレスの文字列
          * @param string $origin_password 認証したいパスワードの文字列
          * @param string $hashed_password ハッシュ化されたパスワードの文字列
          */
-        public function __construct (string $user_mailAddress, string $input_mailAddress, string $origin_password, string $hashed_password) {
-            $this->mailAddress = $user_mailAddress;
+        public function __construct (string $origin_mailAddress, string $verify_mailAddress, string $origin_password, string $hashed_password) {
+            $this->mailAddress = $origin_mailAddress;
             $this->password = $origin_password;
-            if (password_verify($this->password, $hashed_password) && $input_mailAddress === $this->mailAddress) {
+            if (password_verify($this->password, $hashed_password) && $verify_mailAddress === $this->mailAddress) {
                 $this->pass_state = true;
             } else {
                 $this->pass_state = false;
