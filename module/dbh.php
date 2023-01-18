@@ -7,12 +7,12 @@
         /**
          * @var PDO PHP Data Objects(データベースに接続および読み書きするクラスのインスタンス)
          */
-        private $pdo;
+        private PDO $pdo;
 
         /**
          * @var string 持ってきたいデータベースのテーブル名
          */
-        private $tableName = '';
+        private string $tableName = '';
 
         /**
          * @param string $host mysqlサーバーのホスト名
@@ -20,7 +20,7 @@
          * @param string $user_name mysqlサーバーのユーザー名
          * @param string $password mysqlサーバーのパスワード
          */
-        public function __construct ($host, $dbname, $user_name, $password) {
+        public function __construct (string $host, string $dbname, string $user_name, string $password) {
             $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
             try {
                 $this->pdo = new PDO($dsn, $user_name, $password);
@@ -81,7 +81,7 @@
          * @param array{DBH::SQL__SET: array{… array{'field': 'value'}}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query__INSERT_INTO ($array_sql) {
+        public function query__INSERT_INTO (array $array_sql) {
             $SET = '';
             $i = 0;
             while ($i < count($array_sql[self::SQL__SET])) {
@@ -105,7 +105,7 @@
          * @param array{DBH::SQL__SELECT: string, DBH::SQL__WHERE: array{'field': 'value'}, DBH::SQL__ORDER_BY: array{'field': DBH::SQL__ORDER_BY_ASC}} $array_sql SQL文SET句でのセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query__SELECT ($array_sql) {
+        public function query__SELECT (array $array_sql) {
             $SELECT_field = $array_sql[self::SQL__SELECT];
             $WHERE = NULL;
             $ORDER_BY = NULL;
@@ -169,7 +169,7 @@
          * @param array{DBH::SQL__SET: array{… array{'field': 'value'}}, DBH::SQL__WHERE: array{'field': 'value'}} $array_sql SQL文SET句とWHERE句でセットするフィールドと値(キー名:フィールド名 => 値やバインド値)
          * @return PDOStatement
          */
-        public function query__UPDATE ($array_sql) {
+        public function query__UPDATE (array $array_sql) {
             $SET = '';
             $WHERE = '';
             $i = 0;
@@ -199,7 +199,7 @@
          * @param array{… array{0: int|string, 1: mixed, 2: int | PDO::PARAM_STR?}} $array_bindValue 配列化したbindValueメソッドに入れる値（インデックスを引数に対応させる）
          * @return void
          */
-        public function bindValue (PDOStatement $stmt, $array_bindValue) {
+        public function bindValue (PDOStatement $stmt, array $array_bindValue) {
             $i = 0;
             while ($i < count($array_bindValue)) {
                 $array_bindValue[$i];
