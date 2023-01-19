@@ -210,7 +210,7 @@
 
         /**
          * @param PDOStatement $stmt PDOStatementのオブジェクト
-         * @param array{… array{0: int|string, 1: mixed, 2: int | PDO::PARAM_STR?}} $array_bindValue 配列化したbindValueメソッドに入れる値（インデックスを引数に対応させる）
+         * @param array{… array{0: int|string, 1: mixed, 2: int | PDO::PARAM_STR?}} $array_bindParam 配列化したbindParamメソッドに入れる値（インデックスを引数に対応させる）
          * @return void
          */
         public function bindParam (PDOStatement $stmt, $array_bindParam) {
