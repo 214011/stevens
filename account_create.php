@@ -8,7 +8,7 @@
 
         $user = unserialize($_SESSION['user']);
 
-        require_once('get_user.php');
+        require_once('module/get_user.php');
         $row = get_user($dbh, $user->get_mailAddress());
 
 

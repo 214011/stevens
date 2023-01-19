@@ -5,7 +5,7 @@
     require_once('module/user.php');
     if (isset($_POST['mailAddress']) && isset($_POST['password'])) {
 
-        require_once('get_user.php');
+        require_once('module/get_user.php');
         $row = get_user($dbh, $_POST['mailAddress']);
 
         if ($row) {
