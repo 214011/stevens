@@ -17,6 +17,10 @@
             header("Location: ./account_failed.php");
         } else {
 
+            mb_language('Ja') ;
+            mb_internal_encoding('UTF-8') ;
+            date_default_timezone_set('Asia/Tokyo');
+
             $stmt = $dbh->query__INSERT_INTO([
                 DBH::SQL__SET => [
                     ['username' => ':username'],
