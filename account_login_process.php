@@ -5,18 +5,8 @@
     require_once('module/user.php');
     if (isset($_POST['mailAddress']) && isset($_POST['password'])) {
 
-        $stmt = $dbh->query__SELECT([
-            DBH::SQL__SELECT => '*',
-            DBH::SQL__WHERE => [
-                ['mail' => ':mail']
-            ],
-            DBH::SQL__LIMIT => 1
-        ]);
-        $dbh->bindValue($stmt,[
-            [':mail', $_POST['mailAddress'], PDO::PARAM_STR]
-        ]);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_OBJ);
+        require_once('get_user.php');
+        $row = get_user($dbh, $_POST['mailAddress']);
 
         if ($row) {
 
