@@ -20,11 +20,7 @@
 
         if ($row) {
 
-            setcookie(
-                'user',
-                '',
-                time() - 60
-            );
+            setcookie('user', '', time() - 60);
 
             $login = new Login($_POST['mailAddress'], $row->mail, $_POST['password'], $row->pswd);
 
@@ -43,11 +39,7 @@
                 $user->set_created($row->created);
                 $user->set_modified($row->modified);
 
-                setcookie(
-                    'user',
-                    serialize($user),
-                    time() + (10 * 365 * 24 * 60 * 60)
-                );
+                setcookie('user', serialize($user), time() + (10 * 365 * 24 * 60 * 60));
 
                 $login->setInsertMode(Login::SET_INSERT_DICTIONARY_MODE);
                 $login->insert_login_session();

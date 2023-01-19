@@ -62,17 +62,9 @@
                 $user->set_modified($row->modified);
             }
 
-            setcookie(
-                'user',
-                '',
-                time() - 60
-            );
+            setcookie('user', '', time() - 60);
 
-            setcookie(
-                'user',
-                serialize($user),
-                time() + (10 * 365 * 24 * 60 * 60)
-            );
+            setcookie('user',serialize($user), time() + (10 * 365 * 24 * 60 * 60));
 
             header('Location: ./account_create_login.php?origin_pswd='. $origin_pswd);
         }
