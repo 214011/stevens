@@ -76,4 +76,3 @@
             header('Location: ./login.php?origin_pswd='. $origin_pswd);
         }
     }
-?>
