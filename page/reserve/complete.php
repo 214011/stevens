@@ -5,7 +5,7 @@
         <?php require_once('blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php''); ?>
         <main class="main">
             
             <div class="reserve--text content-w">
@@ -15,6 +15,6 @@
             </div>
 
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

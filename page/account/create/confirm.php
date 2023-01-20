@@ -8,7 +8,7 @@
         <?php require_once('blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php''); ?>
         <?php
             require_once('lib/user.php');
             $user = new User(
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>
 <?php endif; ?>

@@ -42,7 +42,7 @@
         <?php require_once('blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php''); ?>
         <?php
             $_SESSION['toMail'] = serialize($toMail);
             $_SESSION['toMeMail'] = serialize($toMeMail);
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>
 <?php endif; ?>

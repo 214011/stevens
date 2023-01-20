@@ -1,12 +1,12 @@
-<?php require_once('lib/login.php'); ?>
+<?php require_once('../../../lib/login.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>アカウント情報｜Bordeaux</title>
-        <?php require_once('blocks/head.php'); ?>
+        <?php require_once('../../../blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../../blocks/header.php'); ?>
         <?php if (Login::is_login()): ?>
             <main class="main">
                 <h2 class="main--title main--title_account">
@@ -74,6 +74,6 @@
         <?php else: ?>
             <?php header('Location: ./'); ?>
         <?php endif; ?>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../../blocks/footer.php'); ?>
     </body>
 </html>

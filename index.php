@@ -12,9 +12,9 @@
                 <div class="index__container--catchcopy">
                     <div class="content-w">
                         <h2 class="catchcopy--text">
-                            <span class="catchcopy--text__Stylish"><img src="images/index_Stylish.svg" alt="Stylish" width="453" height="92"></span>
-                            <span class="catchcopy--text__and"><img src="images/index_and.svg" alt="and" width="193" height="46"></span>
-                            <span class="catchcopy--text__Beauty"><img src="images/index_Beauty.svg" alt="Beauty" width="426" height="89"></span>
+                            <span class="catchcopy--text__Stylish"><img src="<?php echo $images->get_file('index_Stylish.svg'); ?>" alt="Stylish" width="453" height="92"></span>
+                            <span class="catchcopy--text__and"><img src="<?php echo $images->get_file('index_and.svg'); ?>" alt="and" width="193" height="46"></span>
+                            <span class="catchcopy--text__Beauty"><img src="<?php echo $images->get_file('index_Beauty.svg'); ?>" alt="Beauty" width="426" height="89"></span>
                         </h2>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                                 <p>メニューは、一般,大学・専門学生,高校・中学生,小学生,幼児ごとに料金をご用意しております。</p>
                                 <p>メニューの詳細は下のボタンからどうぞ</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="menu.php">メニュー表の詳細へ</a></p>
+                            <p class="btn__outer"><a class="btn" href="<?php echo $menu->get_file(''); ?>">メニュー表の詳細へ</a></p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <div class="content__text">
                                 <p>カットの予約と、予約状況の把握の確認ができます。予約せずとも当店にお越しいただけますが、予約客が優先ですので状況によりお時間いただきます。</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="reserve.php">予約する</a></p>
+                            <p class="btn__outer"><a class="btn" href="<?php echo $reserve->get_file(''); ?>">予約する</a></p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                                 <p>おすすめのシャンプーや、流行りの髪型や当店（Bordeaux）の近況報告などをつぶやいているページが見れます。</p>
                                 <p>お得情報もありますので是非チェック！</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="blog.php">ブログを見る</a></p>
+                            <p class="btn__outer"><a class="btn" href="<?php echo $blog->get_file(''); ?>">ブログを見る</a></p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                                 <p>このサイト、当店の分からないことがあればなんでもお申し付け下さい！</p>
                                 <p>予約の取り消しがリクエストできますので予定に不都合生じた際にご利用ください。もちろんお電話でも対応させていただきます！</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="contact.php">お問い合わせページへ</a></p>
+                            <p class="btn__outer"><a class="btn" href="<?php echo $contact->get_file(''); ?>">お問い合わせページへ</a></p>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                                 <p>予約をする際、アカウント登録が必須となります。初回入店の方にはカット料金から15％OFFにさせていただきます。</p>
                                 <p>加えてアカウントを登録していただくとオプションメニューが1つに限り無料となります。</p>
                             </div>
-                            <p class="btn__outer"><a class="btn" href="account.php">アカウント登録する</a></p>
+                            <p class="btn__outer"><a class="btn" href="<?php echo $account_create->get_file(''); ?>">アカウント登録する</a></p>
                         </div>
                     </div>
                 </div>

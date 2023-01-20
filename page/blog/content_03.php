@@ -2,11 +2,11 @@
 <html lang="ja">
     <head>
         <title>ブログ｜Bordeauxでうるツヤ髪へ、シルクのような抜群の手触りに</title>
-        <?php require_once('blocks/head.php'); ?>
-        <script src="js/blog.js"></script>
+        <?php require_once('../../blocks/head.php'); ?>
+        <script src="<?php echo $js->get_file('blog.js'); ?>"></script>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <main class="main">
             <article class="blog content-w">
                 <dl class="blog__published">
@@ -23,7 +23,7 @@
                     </dd>
                 </dl>
                 <figure class="blog__image">
-                    <img src="images/blog_nagai.jpg" alt="髪の毛さらさら" width="1600" height="1066">
+                    <img src="<?php echo $images->get_file('blog_nagai.jpg'); ?>" alt="髪の毛さらさら" width="1600" height="1066">
                 </figure>
                 <div class="blog__container">
                     <h2 class="blog__container--title">Bordeauxでうるツヤ髪へ、シルクのような抜群の手触りに</h2>
@@ -40,17 +40,17 @@
                 </div>
             </article>
             <div class="blog__pager content-w">
-                <button class="blog__pager--previousBtn __blog-arrowBtn" type="button" onclick="location.href='blog-content_02.php'"><span class="fa-sr-only">前の記事へ</span></button>
+                <button class="blog__pager--previousBtn __blog-arrowBtn" type="button" onclick="location.href='<?php echo $blog->get_file('content_02.php'); ?>'"><span class="fa-sr-only">前の記事へ</span></button>
                 <ul class="blog__pager--link">
-                    <li class="blog__pager--link_item"><a href="blog-content_01.php">1</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_02.php">2</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_03.php" class="__blog-current">3</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_04.php">4</a></li>
-                    <li class="blog__pager--link_item"><a href="blog-content_05.php">5</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_01.php'); ?>">1</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_02.php'); ?>">2</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_03.php'); ?>" class="__blog-current">3</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_04.php'); ?>">4</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_05.php'); ?>">5</a></li>
                 </ul>
-                <button class="blog__pager--nextBtn" type="button" onclick="location.href='blog-content_04.php'"><span class="fa-sr-only">次の記事へ</span></button>
+                <button class="blog__pager--nextBtn" type="button" onclick="location.href='<?php echo $blog->get_file('content_04.php'); ?>'"><span class="fa-sr-only">次の記事へ</span></button>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

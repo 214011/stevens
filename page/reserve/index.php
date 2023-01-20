@@ -2,11 +2,11 @@
 <html lang="ja">
     <head>
         <title>予約｜Bordeaux</title>
-        <?php require_once('blocks/head.php'); ?>
-        <script src="js/reserve.js"></script>
+        <?php require_once('../../blocks/head.php'); ?>
+        <script src="<?php echo $js->get_file('reserve.js'); ?>"></script>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <main class="main">
             <h2 class="main--title main--title_reserve">
                 <span class="span-block"><i class="fa-regular fa-calendar-days"></i>Reserve</span>
@@ -275,6 +275,6 @@
                 </section>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

@@ -2,10 +2,10 @@
 <html lang="ja">
     <head>
         <title>ブログ｜Bordeaux</title>
-        <?php require_once('blocks/head.php'); ?>
+        <?php require_once('../../blocks/head.php'); ?>
     </head>
     <body class="bg bg__blog-top">
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <main class="main">
             <h2 class="main--title main--title_blog">
                 <span class="span-block"><i class="fa-solid fa-blog"></i>Blog</span>
@@ -22,7 +22,7 @@
                         </h3>
                         <figure class="main__content--blog__latest">
                             <div class="main__content--blog__latest--img">
-                                <img src="images/blog-kubata.jpg" alt="天然水" width="680" height="454">
+                                <img src="<?php echo $images->get_file('blog-kubata.jpg'); ?>" alt="天然水" width="680" height="454">
                             </div>
                             <figcaption>
                                 <section class="main__content--blog__latest--content">
@@ -44,15 +44,15 @@
                                             </dd>
                                         </dl>
                                     </div>
-                                    <p class="btn__outer main__content--blog__latest--content-btn"><a class="btn" href="blog-content_01.php">この記事を見る</a></p>
+                                    <p class="btn__outer main__content--blog__latest--content-btn"><a class="btn" href="<?php echo $blog->get_file('content_01.php'); ?>">この記事を見る</a></p>
                                 </section>
                             </figcaption>
                         </figure>
                         <div class="main__content--blog__container">
-                            <a href="blog-content_02.php">
+                            <a href="<?php echo $blog->get_file('content_02.php'); ?>">
                                 <figure class="main__content--blog__card">
                                     <div class="main__content--blog__card--img">
-                                        <img src="images/blog_arisue.jpg" alt="バリカンのイメージ画像" width="2239" height="2560">
+                                        <img src="<?php echo $images->get_file('blog-kubata.jpg'); ?>" alt="バリカンのイメージ画像" width="2239" height="2560">
                                     </div>
                                     <figcaption>
                                         <section class="main__content--blog__card--content">
@@ -77,10 +77,10 @@
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="blog-content_03.php">
+                            <a href="<?php echo $blog->get_file('content_03.php'); ?>">
                                 <figure class="main__content--blog__card">
                                     <div class="main__content--blog__card--img">
-                                        <img src="images/blog_nagai.jpg" alt="髪の毛さらさら" width="1080" height="608">
+                                        <img src="<?php echo $images->get_file('blog_nagai.jpg'); ?>" alt="髪の毛さらさら" width="1080" height="608">
                                     </div>
                                     <figcaption>
                                         <section class="main__content--blog__card--content">
@@ -104,10 +104,10 @@
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="blog-content_04.php">
+                            <a href="<?php echo $blog->get_file('content_04.php'); ?>">
                                 <figure class="main__content--blog__card">
                                     <div class="main__content--blog__card--img">
-                                        <img src="images/blog_murakami.jpg" alt="クーポンの紹介" width="1920" height="1440">
+                                        <img src="<?php echo $images->get_file('blog_murakami.jpg'); ?>" alt="クーポンの紹介" width="1920" height="1440">
                                     </div>
                                     <figcaption>
                                         <section class="main__content--blog__card--content">
@@ -131,10 +131,10 @@
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="blog-content_05.php">
+                            <a href="<?php echo $blog->get_file('content_05.php'); ?>">
                                 <figure class="main__content--blog__card">
                                     <div class="main__content--blog__card--img">
-                                        <img src="images/blog_nomura.jpg" alt="Bordeauxのお得情報！" width="1000" height="667">
+                                        <img src="<?php echo $images->get_file('blog_nomura.jpg'); ?>" alt="Bordeauxのお得情報！" width="1000" height="667">
                                     </div>
                                     <figcaption>
                                         <section class="main__content--blog__card--content">
@@ -165,6 +165,6 @@
                 </div>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

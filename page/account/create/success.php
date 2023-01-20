@@ -5,7 +5,7 @@
         <?php require_once('blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php''); ?>
         <main class="main">
             <h2 class="main--title main--title_account">
                 <span class="span-block"><i class="fa-solid fa-circle-user"></i>Success</span>
@@ -18,6 +18,6 @@
                 <p><a href="./reserve.php">予約をとる</a></p>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

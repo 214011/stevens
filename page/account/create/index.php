@@ -7,7 +7,7 @@
         <script src="js/password.js"></script>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php''); ?>
         <?php
             require_once('lib/user.php');
             $session_user = NULL;
@@ -103,6 +103,6 @@
                 </form>
             </div>
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

@@ -6,7 +6,7 @@
         <?php require_once('blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php''); ?>
         <?php
             if (empty($_SESSION['toMail']) && empty($_SESSION['toMeMail'])) {
                 header("Location: ./contact.php");
@@ -38,6 +38,6 @@
             </div>
 
         </main>
-        <?php require_once('blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>
