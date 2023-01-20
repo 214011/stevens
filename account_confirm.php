@@ -10,7 +10,7 @@
     <body>
         <?php require_once('blocks/header.php'); ?>
         <?php
-            require_once('module/user.php');
+            require_once('lib/user.php');
             $user = new User(
                 ['firstName' => $_POST['firstName'],'lastName' => $_POST['lastName']],
                 ['firstTel' => $_POST['firstTel'], 'middleTel' => $_POST['middleTel'], 'lastTel' => $_POST['lastTel']],

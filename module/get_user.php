@@ -1,5 +1,6 @@
 <?php
-    require_once('module/dbh_instance.php');
+    require_once(__DIR__ . '/dbh_instance.php');
+
     function get_user (DBH $dbh, string $mailAddress) {
         $stmt = $dbh->query__SELECT([
             DBH::SQL__SELECT => '*',
@@ -15,4 +16,3 @@
         $row = $stmt->fetch(PDO::FETCH_OBJ);
         return $row;
     }
-?>

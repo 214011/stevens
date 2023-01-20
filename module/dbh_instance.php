@@ -1,5 +1,5 @@
 <?php
-    require_once('dbh.php');
+    require_once(__DIR__ . '/../lib/dbh.php');
     $dbh = new DBH('localhost', 'stevens', 'root', 'root');
     $dbh->set_tableName('user_info');
 
@@ -16,4 +16,3 @@
     //     [':id', 3, PDO::PARAM_INT]
     // ]);
     // $stmt->execute();
-?>

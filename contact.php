@@ -8,7 +8,7 @@
     <body>
         <?php require_once('blocks/header.php'); ?>
         <?php
-            require_once('module/mail.php');
+            require_once('lib/mail.php');
             $toMail = NULL;
             if (isset($_SESSION['toMail'])) {
                 $toMail = unserialize($_SESSION['toMail']);

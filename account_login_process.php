@@ -1,8 +1,8 @@
 <?php
     session_start();
     require_once('module/dbh_instance.php');
-    require_once('module/login.php');
-    require_once('module/user.php');
+    require_once('lib/login.php');
+    require_once('lib/user.php');
     if (isset($_POST['mailAddress']) && isset($_POST['password'])) {
 
         require_once('module/get_user.php');

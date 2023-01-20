@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once('module/user.php');
-    require_once('module/login.php');
+    require_once('lib/user.php');
+    require_once('lib/login.php');
     if (Login::is_login()) {
         $user = unserialize($_COOKIE['user']);
     }

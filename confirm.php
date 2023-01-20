@@ -2,7 +2,7 @@
     <?php header("Location: ./contact.php"); ?>
 <?php else: ?>
 <?php
-    require_once('module/mail.php');
+    require_once('lib/mail.php');
 
     $toMail = new ToMail(
         (int)$_POST['subject'],

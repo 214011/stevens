@@ -3,7 +3,7 @@
     if (empty($_SESSION['user'])) {
         header("Location: ./account.php");
     } else {
-        require_once('module/user.php');
+        require_once('lib/user.php');
         require_once('module/dbh_instance.php');
 
         $user = unserialize($_SESSION['user']);

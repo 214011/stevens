@@ -9,7 +9,7 @@
     <body>
         <?php require_once('blocks/header.php'); ?>
         <?php
-            require_once('module/user.php');
+            require_once('lib/user.php');
             $session_user = NULL;
             if (isset($_SESSION['user'])) {
                 $session_user = unserialize($_SESSION['user']);

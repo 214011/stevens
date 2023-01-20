@@ -11,7 +11,7 @@
             if (empty($_SESSION['toMail']) && empty($_SESSION['toMeMail'])) {
                 header("Location: ./contact.php");
             } else {
-                require_once('module/mail.php');
+                require_once('lib/mail.php');
                 $toMail = unserialize($_SESSION['toMail']);
                 $toMeMail = unserialize($_SESSION['toMeMail']);
                 $toMail->send();

@@ -1,4 +1,4 @@
-<?php require_once('module/login.php'); ?>
+<?php require_once('lib/login.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
