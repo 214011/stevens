@@ -109,7 +109,7 @@
          * @param string $reserveDatetime セットしたい予約日の文字列
          * @return void
          */
-        public function set_reserveDatetime (string | null $reserveDatetime) {
+        public function set_reserveDatetime (mixed $reserveDatetime) {
             $this->reserveDatetime = $reserveDatetime;
         }
 

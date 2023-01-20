@@ -2,13 +2,13 @@
 <html lang="ja">
     <head>
         <title>お問い合わせ｜Bordeaux</title>
-        <?php require_once('../blocks/head.php'); ?>
-        <script src="js/form.js"></script>
+        <?php require_once('../../blocks/head.php'); ?>
+        <script src="<?php echo $js->get_file('form.js'); ?>"></script>
     </head>
     <body>
-        <?php require_once('../blocks/header.php'); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <?php
-            require_once('../lib/mail.php');
+            require_once('../../lib/mail.php');
             $toMail = NULL;
             if (isset($_SESSION['toMail'])) {
                 $toMail = unserialize($_SESSION['toMail']);
@@ -115,6 +115,6 @@
                 </form>
             </div>
         </main>
-        <?php require_once('../blocks/footer.php'); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

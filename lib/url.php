@@ -22,7 +22,10 @@
          * 親フォルダー名をクラス内参照のthisに登録
          * @param string | array  $parentFolderName 親フォルダー名の文字列。ただし、同階層の場合「''」空白無しの文字列。入れ子のフォルダーが多いようであれば配列。
          */
-        public function __construct (mixed $parentFolderName = '') {
+        public function __construct ($parentFolderName = '') {
+            if(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === "https") {
+                $_SERVER['HTTPS'] = 'on';
+            }
             if(isset($_SERVER['HTTPS'])){
                 $this->url = self::PROTOCOL_HTTPS;
             }else{

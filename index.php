@@ -3,7 +3,7 @@
     <head>
         <title>Bordeaux</title>
         <?php require_once('blocks/head.php'); ?>
-        <script src="js/index.js"></script>
+        <script src="<?php echo $js->get_file('index.js'); ?>"></script>
     </head>
     <body class="bg bg__index-01">
         <?php require_once('blocks/header.php'); ?>
