@@ -1,3 +1,6 @@
+<?php
+    require_once(__DIR__ . '/../lib/url.php');
+?>
 <footer class="footer">
     <div class="content-w">
         <div class="footer__flex-container">
