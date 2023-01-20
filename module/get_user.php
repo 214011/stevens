@@ -1,7 +1,7 @@
 <?php
     require_once(__DIR__ . '/dbh_instance.php');
 
-    function get_user (DBH $dbh, string $mailAddress) {
+    function get_db_user (DBH $dbh, string $mailAddress) {
         $stmt = $dbh->query__SELECT([
             DBH::SQL__SELECT => '*',
             DBH::SQL__WHERE => [
