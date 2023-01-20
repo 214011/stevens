@@ -9,4 +9,3 @@
         $login->insert_login_session();
         header("Location: ./success.php");
     }
-?>

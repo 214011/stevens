@@ -6,7 +6,7 @@
     require_once('../../../lib/user.php');
     if (isset($_POST['mailAddress']) && isset($_POST['password'])) {
 
-        require_once('../../../module/get_user.php');
+        require_once('../../../module/get_db_user.php');
         $row = get_db_user($dbh, $_POST['mailAddress']);
 
         if ($row) {

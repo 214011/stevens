@@ -6,7 +6,7 @@
         <script src="js/reserve.js"></script>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php''); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <main class="main">
             <div class="reserve __reserve-day main__content content-w">
                 <div class="reserve__calender--container">
