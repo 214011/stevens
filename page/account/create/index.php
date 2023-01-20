@@ -2,14 +2,14 @@
 <html lang="ja">
     <head>
         <title>アカウント登録｜Bordeaux</title>
-        <?php require_once('blocks/head.php'); ?>
-        <script src="js/form.js"></script>
-        <script src="js/password.js"></script>
+        <?php require_once('../../../blocks/head.php'); ?>
+        <script src="<?php echo $js->get_file('form.js'); ?>"></script>
+        <script src="<?php echo $js->get_file('password.js'); ?>"></script>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php''); ?>
         <?php
-            require_once('lib/user.php');
+            require_once('../../../blocks/header.php');
+            require_once('../../../lib/user.php');
             $session_user = NULL;
             if (isset($_SESSION['user'])) {
                 $session_user = unserialize($_SESSION['user']);
@@ -24,9 +24,9 @@
             <div class="account main__content content-w">
                 <div class="account--text content-w">
                     <p>すでにアカウントをお持ちの方はこちらのボタンからログインしてください。</p>
-                    <p class="btn__outer fx-jc-center"><a class="btn" href="account_login.php"><i class="fa-solid fa-right-to-bracket"></i>ログイン</a></p>
+                    <p class="btn__outer fx-jc-center"><a class="btn" href="<?php echo $account_login->get_file(''); ?>"><i class="fa-solid fa-right-to-bracket"></i>ログイン</a></p>
                 </div>
-                <form action="./account_confirm.php" method="POST" class="account__container" id="js-form">
+                <form action="<?php echo $account_create->get_file('confirm.php'); ?>" method="POST" class="account__container" id="js-form">
                     <dl class="account__container--item">
                         <dt class="form-required"><label for="form-username">お名前をご入力してください。（姓と名）</label></dt>
                         <dd>
@@ -103,6 +103,6 @@
                 </form>
             </div>
         </main>
-        <?php require_once('../../blocks/footer.php'); ?>
+        <?php require_once('../../../blocks/footer.php'); ?>
     </body>
 </html>

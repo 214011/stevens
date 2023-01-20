@@ -1,16 +1,16 @@
 <?php if (empty($_POST)): ?>
-    <?php header("Location: ./account.php"); ?>
+    <?php header("Location: ./"); ?>
 <?php else: ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>アカウント登録の内容を確認｜Bordeaux</title>
-        <?php require_once('blocks/head.php'); ?>
+        <?php require_once('../../../blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php''); ?>
+        <?php require_once('../../../blocks/header.php'); ?>
         <?php
-            require_once('lib/user.php');
+            require_once('../../../lib/user.php');
             $user = new User(
                 ['firstName' => $_POST['firstName'],'lastName' => $_POST['lastName']],
                 ['firstTel' => $_POST['firstTel'], 'middleTel' => $_POST['middleTel'], 'lastTel' => $_POST['lastTel']],
@@ -44,9 +44,9 @@
                         <dd><?php echo User::to_hidden_password($user->get_password()); ?></dd>
                     </dl>
                     <div class="btn__outer account--confirm">
-                        <p><a href="./account.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
+                        <p><a href="./" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
                         <p>
-                            <a href="account_create.php" class="btn">
+                            <a href="process.php" class="btn">
                                 <span>
                                     <i class="fa-solid fa-plus"></i>
                                     <i class="fa-solid fa-circle-user"></i>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </main>
-        <?php require_once('../../blocks/footer.php'); ?>
+        <?php require_once('../../../blocks/footer.php'); ?>
     </body>
 </html>
 <?php endif; ?>

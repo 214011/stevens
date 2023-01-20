@@ -1,8 +1,8 @@
 <?php if (empty($_POST)): ?>
-    <?php header("Location: ./contact.php"); ?>
+    <?php header("Location: ./"); ?>
 <?php else: ?>
 <?php
-    require_once('lib/mail.php');
+    require_once('../../lib/mail.php');
 
     $toMail = new ToMail(
         (int)$_POST['subject'],
@@ -39,10 +39,10 @@
     <head>
         <title>お問い合わせ内容を確認｜Bordeaux</title>
         <title></title>
-        <?php require_once('blocks/head.php'); ?>
+        <?php require_once('../../blocks/head.php'); ?>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php''); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <?php
             $_SESSION['toMail'] = serialize($toMail);
             $_SESSION['toMeMail'] = serialize($toMeMail);
@@ -88,7 +88,7 @@
                         </li>
                     </ul>
                     <div class="btn__outer">
-                        <p><a href="./contact.php" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
+                        <p><a href="./" class="btn btn--cancel"><i class="fa-solid fa-pencil"></i>修正する</a></p>
                         <p><a href="./complete.php" class="btn"><i class="fa-sharp fa-solid fa-paper-plane"></i>送信する</a></p>
                     </div>
                 </div>

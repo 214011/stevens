@@ -66,13 +66,13 @@
                         </li>
                     </ul>
                     <div class="btn__outer fx-jc-center">
-                        <p><a class="btn btn--reserve" href="reserve.php"><i class="fa-regular fa-calendar-days"></i></i>予約する</a></p>
-                        <p><a class="btn" href="account_logout.php"><i class="fa-solid fa-right-from-bracket"></i></i>ログアウト</a></p>
+                        <p><a class="btn btn--reserve" href="<?php echo $reserve->get_file(''); ?>"><i class="fa-regular fa-calendar-days"></i></i>予約する</a></p>
+                        <p><a class="btn" href="<?php echo $account_logout->get_file(''); ?>"><i class="fa-solid fa-right-from-bracket"></i></i>ログアウト</a></p>
                     </div>
                 </div>
             </main>
         <?php else: ?>
-            <?php header('Location: ./'); ?>
+            <?php header('Location: ' . $account_login->get_file('')); ?>
         <?php endif; ?>
         <?php require_once('../../../blocks/footer.php'); ?>
     </body>

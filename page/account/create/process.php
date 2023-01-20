@@ -1,20 +1,20 @@
 <?php
     session_start();
     if (empty($_SESSION['user'])) {
-        header("Location: ./account.php");
+        header("Location: ./");
     } else {
-        require_once('lib/user.php');
-        require_once('module/dbh_instance.php');
+        require_once('../../../lib/user.php');
+        require_once('../../../module/dbh_instance.php');
 
         $user = unserialize($_SESSION['user']);
 
-        require_once('module/get_user.php');
+        require_once('../../../module/get_user.php');
         $row = get_user($dbh, $user->get_mailAddress());
 
 
         unset($_SESSION['user']);
         if ($row) {
-            header("Location: ./account_failed.php");
+            header("Location: ./failed.php");
         } else {
 
             mb_language('Ja') ;
@@ -55,11 +55,25 @@
                 $user->set_modified($row->modified);
             }
 
-            setcookie('user', '', time() - 60);
+            setcookie(
+                'user',
+                '',
+                [
+                    'expires' => time() - 60,
+                    'path' => '/stevens'
+                ]
+            );
 
-            setcookie('user',serialize($user), time() + (10 * 365 * 24 * 60 * 60));
+            setcookie(
+                'user',
+                serialize($user),
+                [
+                    'expires' => time() + (10 * 365 * 24 * 60 * 60),
+                    'path' => '/stevens'
+                ]
+            );
 
-            header('Location: ./account_create_login.php?origin_pswd='. $origin_pswd);
+            header('Location: ./login.php?origin_pswd='. $origin_pswd);
         }
     }
 ?>
