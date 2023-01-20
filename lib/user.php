@@ -11,7 +11,7 @@
         private string $password;
         // データベースから取得する値など
         private string $id;
-        private string | null $reserveDatetime;
+        private mixed $reserveDatetime;
         private string $created;
         private string $modified;
 
