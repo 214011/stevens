@@ -2,9 +2,7 @@
     session_start();
     require_once(__DIR__ . '/../lib/user.php');
     require_once(__DIR__ . '/../lib/login.php');
-    require_once(__DIR__ . '/../lib/url.php');
 
-    $root = new URL();
     $images = new URL('images');
 
     if (Login::is_login()) {
