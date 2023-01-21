@@ -1,0 +1,4 @@
+host: mysql90.conoha.ne.jp
+dbname: mcmzt_stevens
+username: mcmzt_nmjuune
+password: Xx_Junpei1227_xX

@@ -1,18 +1,18 @@
 <?php require_once('module/utility_functions.php'); ?>
+<?php
+    $js = new URL('js');
+    $images = new URL('images');
+    $menu = new URL(['page', 'menu']);
+    $reserve = new URL(['page', 'reserve']);
+    $blog = new URL(['page', 'blog']);
+    $contact = new URL(['page', 'contact']);
+    $account_create = new URL(['page', 'account', 'create']);
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>Bordeaux</title>
         <?php get_head(); ?>
-        <?php
-            $js = new URL('js');
-            $images = new URL('images');
-            $menu = new URL(['page', 'menu']);
-            $reserve = new URL(['page', 'reserve']);
-            $blog = new URL(['page', 'blog']);
-            $contact = new URL(['page', 'contact']);
-            $account_create = new URL(['page', 'account', 'create']);
-        ?>
         <script src="<?php echo $js->get_file('index.js'); ?>"></script>
     </head>
     <body class="bg bg__index-01">

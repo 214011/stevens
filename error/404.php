@@ -1,11 +1,15 @@
+<?php require_once(__DIR__ . '/../module/utility_functions.php'); ?>
+<?php
+    $root = new URL();
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>404 Not Found</title>
-        <?php require_once(__DIR__ . '/../blocks/head.php'); ?>
+        <?php get_head(); ?>
     </head>
     <body>
-        <?php require_once(__DIR__ . '/../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <main>
             <div class="error content-w">
                 <h1>
@@ -18,6 +22,6 @@
                 <p class="btn__outer"><a class="btn" href="<?php echo $root->get_file(''); ?>">トップページに戻る</a></p>
             </div>
         </main>
-        <?php require_once(__DIR__ . '/../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>
