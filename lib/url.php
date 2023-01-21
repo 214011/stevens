@@ -33,14 +33,14 @@
             }
             $this->url .= $_SERVER['HTTP_HOST'] . '/' . self::$DIR . '/';
 
-            if (is_array($parentFolderName)) {
+            if (is_string($parentFolderName) && $parentFolderName !== '') {
+                $this->url .= $parentFolderName . '/';
+            } else if (is_array($parentFolderName)) {
                 $i = 0;
                 while ($i < count($parentFolderName)) {
                     $this->url .= $parentFolderName[$i] . '/';
                     $i++;
                 }
-            } else if (is_string($parentFolderName) && $parentFolderName !== '') {
-                $this->url .= $parentFolderName . '/';
             } else {
                 $this->url .= $parentFolderName;
             }
