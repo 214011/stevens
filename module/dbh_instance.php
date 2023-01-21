@@ -2,6 +2,8 @@
     require_once(__DIR__ . '/../lib/dbh.php');
     $dbh = new DBH('localhost', 'stevens', 'root', 'root');
     $dbh->set_tableName('user_info');
+    define('dbh', $dbh);
+
 
     // $stmt = $dbh->query__UPDATE([
     //     DBH::SQL__SET => [

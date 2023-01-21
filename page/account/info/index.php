@@ -1,13 +1,17 @@
-<?php require_once('../../../lib/login.php'); ?>
+<?php require_once('../../../module/utility_functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>アカウント情報｜Bordeaux</title>
-        <?php require_once('../../../blocks/head.php'); ?>
+        <?php get_head(); ?>
     </head>
     <body>
-        <?php require_once('../../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <?php if (Login::is_login()): ?>
+            <?php
+                get_class_user();
+                $user = unserialize($_COOKIE['user']);
+            ?>
             <main class="main">
                 <h2 class="main--title main--title_account">
                     <span class="span-block"><i class="fa-solid fa-circle-user"></i>Account</span>
@@ -66,14 +70,14 @@
                         </li>
                     </ul>
                     <div class="btn__outer fx-jc-center">
-                        <p><a class="btn btn--reserve" href="<?php echo $reserve->get_file(''); ?>"><i class="fa-regular fa-calendar-days"></i></i>予約する</a></p>
-                        <p><a class="btn" href="<?php echo $account_logout->get_file(''); ?>"><i class="fa-solid fa-right-from-bracket"></i></i>ログアウト</a></p>
+                        <p><a class="btn btn--reserve" href="<?php echo reserve->get_file(''); ?>"><i class="fa-regular fa-calendar-days"></i></i>予約する</a></p>
+                        <p><a class="btn" href="<?php echo account_logout->get_file(''); ?>"><i class="fa-solid fa-right-from-bracket"></i></i>ログアウト</a></p>
                     </div>
                 </div>
             </main>
         <?php else: ?>
             <?php header('Location: ' . $account_login->get_file('')); ?>
         <?php endif; ?>
-        <?php require_once('../../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>

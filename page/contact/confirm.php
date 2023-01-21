@@ -2,7 +2,8 @@
     <?php header("Location: ./"); ?>
 <?php else: ?>
 <?php
-    require_once('../../lib/mail.php');
+    require_once('../../module/utility_functions.php');
+    get_class_mail();
 
     $toMail = new ToMail(
         (int)$_POST['subject'],
@@ -39,10 +40,10 @@
     <head>
         <title>お問い合わせ内容を確認｜Bordeaux</title>
         <title></title>
-        <?php require_once('../../blocks/head.php'); ?>
+        <?php get_head(); ?>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <?php
             $_SESSION['toMail'] = serialize($toMail);
             $_SESSION['toMeMail'] = serialize($toMeMail);
@@ -94,7 +95,7 @@
                 </div>
             </div>
         </main>
-        <?php require_once('../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>
 <?php endif; ?>

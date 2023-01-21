@@ -1,17 +1,24 @@
+<?php require_once('../../module/utility_functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>お問い合わせ｜Bordeaux</title>
-        <?php require_once('../../blocks/head.php'); ?>
-        <script src="<?php echo $js->get_file('form.js'); ?>"></script>
+        <?php get_head(); ?>
+        <script src="<?php echo js->get_file('form.js'); ?>"></script>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <?php
-            require_once('../../lib/mail.php');
+            get_class_mail();
+            get_class_login();
+            get_class_user();
+            get_class_user();
             $toMail = NULL;
             if (isset($_SESSION['toMail'])) {
                 $toMail = unserialize($_SESSION['toMail']);
+            }
+            if (isset($_COOKIE['user'])) {
+                $user = unserialize($_COOKIE['user']);
             }
         ?>
         <main class="main">
@@ -115,6 +122,6 @@
                 </form>
             </div>
         </main>
-        <?php require_once('../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>

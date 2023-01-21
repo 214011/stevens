@@ -1,11 +1,12 @@
+<?php require_once('../../../module/utility_functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>ログイン｜Bordeaux</title>
-        <?php require_once('../../../blocks/head.php'); ?>
+        <?php get_head(); ?>
     </head>
     <body>
-        <?php require_once('../../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <main class="main">
             <h2 class="main--title main--title_account">
                 <span class="span-block"><i class="fa-solid fa-right-to-bracket"></i>Login</span>
@@ -13,7 +14,7 @@
                 <span class="span-block">ログイン</span>
             </h2>
             <div class="account main__content content-w">
-                <form action="<?php echo $account_login->get_file('process.php'); ?>" method="POST" class="account-login__container">
+                <form action="<?php echo account_login->get_file('process.php'); ?>" method="POST" class="account-login__container">
                     <dl class="account-login__container--item">
                         <dt><label for="form-email">メールアドレス</label></dt>
                         <dd><input type="email" name="mailAddress" id="form-email" class="form-focus" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>
@@ -31,6 +32,6 @@
                 </form>
             </div>
         </main>
-        <?php require_once('../../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>

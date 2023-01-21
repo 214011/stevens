@@ -1,13 +1,14 @@
 <?php
     session_start();
-    require_once('../../../module/dbh_instance.php');
-    require_once('../../../lib/login.php');
-    require_once('../../../lib/url.php');
-    require_once('../../../lib/user.php');
+    require_once('../../../module/utility_functions.php');
+    get_module_dbh_instance();
+    get_class_login();
+    get_class_url();
+    get_class_user();
     if (isset($_POST['mailAddress']) && isset($_POST['password'])) {
 
-        require_once('../../../module/get_db_user.php');
-        $row = get_db_user($dbh, $_POST['mailAddress']);
+        get_module_get_db_user();
+        $row = get_db_user(dbh, $_POST['mailAddress']);
 
         if ($row) {
 
@@ -48,9 +49,7 @@
 
                 $login->setInsertMode(Login::SET_INSERT_DICTIONARY_MODE);
                 $login->insert_login_session();
-                URL::$DIR = 'stevens';
-                $root = new URL();
-                header("Location: " . $root->get_file(''));
+                header("Location: " . root->get_file(''));
             } else {
                 header("Location: ./failed.php");
             }

@@ -1,13 +1,14 @@
+<?php require_once('../../../module/utility_functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <title>アカウント登録｜Bordeaux</title>
-        <?php require_once('../../../blocks/head.php'); ?>
+        <title>ログアウト｜Bordeaux</title>
+        <?php get_head(); ?>
     </head>
     <body>
-        <?php require_once('../../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <?php
-            require_once('../../../lib/user.php');
+            get_class_user();
             $session_user = NULL;
             if (isset($_SESSION['user'])) {
                 $session_user = unserialize($_SESSION['user']);
@@ -26,6 +27,6 @@
                 </div>
             </div>
         </main>
-        <?php require_once('../../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>

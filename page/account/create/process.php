@@ -3,13 +3,14 @@
     if (empty($_SESSION['user'])) {
         header("Location: ./");
     } else {
-        require_once('../../../lib/user.php');
-        require_once('../../../module/dbh_instance.php');
+        require_once('../../../module/utility_functions.php');
+        get_class_user();
+        get_module_dbh_instance();
 
         $user = unserialize($_SESSION['user']);
 
-        require_once('../../../module/get_db_user.php');
-        $row = get_db_user($dbh, $user->get_mailAddress());
+        get_module_get_db_user();
+        $row = get_db_user(dbh, $user->get_mailAddress());
 
 
         unset($_SESSION['user']);
@@ -21,7 +22,7 @@
             mb_internal_encoding('UTF-8') ;
             date_default_timezone_set('Asia/Tokyo');
 
-            $stmt = $dbh->query__INSERT_INTO([
+            $stmt = dbh->query__INSERT_INTO([
                 DBH::SQL__SET => [
                     ['username' => ':username'],
                     ['tel' => ':tel'],
@@ -30,7 +31,7 @@
                     ['created' => 'NOW()']
                 ]
             ]);
-            $dbh->bindValue($stmt,[
+            dbh->bindValue($stmt,[
                 [':username', $user->get_userName()['full'], PDO::PARAM_STR],
                 [':tel', $user->get_tel()['full'], PDO::PARAM_STR],
                 [':mail', $user->get_mailAddress(), PDO::PARAM_STR],
@@ -41,7 +42,7 @@
 
             $origin_pswd = $user->get_password();
 
-            $stmt = $dbh->query__SELECT([
+            $stmt = dbh->query__SELECT([
                 DBH::SQL__SELECT => '*',
                 DBH::SQL__ORDER_BY => ['id' => DBH::SQL__ORDER_BY_DESC],
                 DBH::SQL__LIMIT => 1

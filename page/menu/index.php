@@ -1,12 +1,13 @@
+<?php require_once('../../module/utility_functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>メニュー｜Bordeaux</title>
-        <?php require_once('../../blocks/head.php'); ?>
-        <script src="<?php echo $js->get_file('menu.js'); ?>"></script>
+        <?php get_head(); ?>
+        <script src="<?php echo js->get_file('menu.js'); ?>"></script>
     </head>
     <body class="bg__menu">
-        <?php require_once('../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <main class="main">
             <h2 class="main--title main--title_menu">
                 <span class="span-block"><i class="fa-solid fa-scissors"></i>MenuList</span>
@@ -564,6 +565,6 @@
                 </span>
             </button>
         </main>
-        <?php require_once('../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>

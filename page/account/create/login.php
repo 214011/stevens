@@ -1,7 +1,8 @@
 <?php
+    require_once('../../../module/utility_functions.php');
     session_start();
-    require_once('../../../lib/user.php');
-    require_once('../../../lib/login.php');
+    get_class_user();
+    get_class_login();
     $user = unserialize($_COOKIE['user']);
     $login = new Login($user->get_mailAddress(), $user->get_mailAddress(), $_GET['origin_pswd'], $user->get_password());
     if ($login->is_pass()) {

@@ -1,7 +1,8 @@
 <?php
+    require_once('../../../module/utility_functions.php');
     session_start();
-    require_once('../../../lib/login.php');
-    require_once('../../../lib/url.php');
+    get_class_login();
+    get_class_url();
     URL::$DIR = 'stevens';
     $root = new URL();
     $account_login = new URL(['page', 'account', 'login']);
@@ -15,8 +16,8 @@
             ]
         );
         Login::logout();
-        header('Location: ' . $root->get_file(''));
+        header('Location: ' . root->get_file(''));
     } else {
-        header('Location: ' . $account_login->get_file(''));
+        header('Location: ' . account_login->get_file(''));
     }
 ?>
