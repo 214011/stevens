@@ -1,6 +1,5 @@
 <?php
     require_once(__DIR__ . '/../lib/url.php');
-
     URL::$DIR = 'stevens';
     $root = new URL();
     $css = new URL('css');
