@@ -1,10 +1,15 @@
 <?php require_once('../../module/utility_functions.php'); ?>
+<?php
+    $js = new URL('js');
+    $images = new URL('images');
+    $blog = new URL(['page', 'blog']);
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>ブログ｜刈り上げヘアが好きだ！そんな貴方へ朗報です！！！！</title>
         <?php get_head(); ?>
-        <script src="<?php echo js->get_file('blog.js'); ?>"></script>
+        <script src="<?php echo $js->get_file('blog.js'); ?>"></script>
     </head>
     <body>
         <?php get_header(); ?>
@@ -25,7 +30,7 @@
                     </dd>
                 </dl>
                 <figure class="blog__image">
-                    <img src="<?php echo images->get_file('blog_arisue.jpg'); ?>" alt="バリカンのイメージ画像" width="2239" height="2560">
+                    <img src="<?php echo $images->get_file('blog_arisue.jpg'); ?>" alt="バリカンのイメージ画像" width="2239" height="2560">
                 </figure>
                 <div class="blog__container">
                     <h2 class="blog__container--title">刈り上げヘアが好きだ！そんな貴方へ朗報です！！！！</h2>
@@ -45,15 +50,15 @@
             </article>
             <div class="blog__pager content-w">
                 <button class="blog__pager--previousBtn __blog-arrowBtn" type="button"
-                    onclick="location.href='<?php echo blog->get_file('content_01.php'); ?>'"><span class="fa-sr-only">前の記事へ</span></button>
+                    onclick="location.href='<?php echo $blog->get_file('content_01.php'); ?>'"><span class="fa-sr-only">前の記事へ</span></button>
                 <ul class="blog__pager--link">
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_01.php'); ?>">1</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_02.php'); ?>" class="__blog-current">2</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_03.php'); ?>">3</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_04.php'); ?>">4</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_05.php'); ?>">5</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_01.php'); ?>">1</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_02.php'); ?>" class="__blog-current">2</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_03.php'); ?>">3</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_04.php'); ?>">4</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_05.php'); ?>">5</a></li>
                 </ul>
-                <button class="blog__pager--nextBtn" type="button" onclick="location.href='<?php echo blog->get_file('content_03.php'); ?>'"><span class="fa-sr-only">次の記事へ</span></button>
+                <button class="blog__pager--nextBtn" type="button" onclick="location.href='<?php echo $blog->get_file('content_03.php'); ?>'"><span class="fa-sr-only">次の記事へ</span></button>
             </div>
         </main>
         <?php get_footer(); ?>

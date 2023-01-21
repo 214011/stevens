@@ -1,10 +1,13 @@
 <?php require_once('../../module/utility_functions.php'); ?>
+<?php
+    $js = new URL('js');
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>予約｜Bordeaux</title>
         <?php get_head(); ?>
-        <script src="<?php echo js->get_file('reserve.js'); ?>"></script>
+        <script src="<?php echo $js->get_file('reserve.js'); ?>"></script>
     </head>
     <body>
         <?php get_header(); ?>

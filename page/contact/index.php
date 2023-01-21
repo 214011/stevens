@@ -1,10 +1,13 @@
 <?php require_once('../../module/utility_functions.php'); ?>
+<?php
+    $js = new URL('js');
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>お問い合わせ｜Bordeaux</title>
         <?php get_head(); ?>
-        <script src="<?php echo js->get_file('form.js'); ?>"></script>
+        <script src="<?php echo $js->get_file('form.js'); ?>"></script>
     </head>
     <body>
         <?php get_header(); ?>

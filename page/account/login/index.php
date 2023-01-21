@@ -1,4 +1,7 @@
 <?php require_once('../../../module/utility_functions.php'); ?>
+<?php
+    $account_login = new URL(['page', 'account', 'login']);
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -14,7 +17,7 @@
                 <span class="span-block">ログイン</span>
             </h2>
             <div class="account main__content content-w">
-                <form action="<?php echo account_login->get_file('process.php'); ?>" method="POST" class="account-login__container">
+                <form action="<?php echo $account_login->get_file('process.php'); ?>" method="POST" class="account-login__container">
                     <dl class="account-login__container--item">
                         <dt><label for="form-email">メールアドレス</label></dt>
                         <dd><input type="email" name="mailAddress" id="form-email" class="form-focus" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></dd>

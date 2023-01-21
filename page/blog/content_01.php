@@ -1,10 +1,15 @@
 <?php require_once('../../module/utility_functions.php'); ?>
+<?php
+    $js = new URL('js');
+    $images = new URL('images');
+    $blog = new URL(['page', 'blog']);
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>ブログ｜当店のシャワーヘッドは、塩素除去によって髪の毛や頭皮のダメージを抑えてあなたに寄り添います</title>
         <?php get_head(); ?>
-        <script src="<?php echo js->get_file('blog.js'); ?>"></script>
+        <script src="<?php echo $js->get_file('blog.js'); ?>"></script>
     </head>
     <body>
         <?php get_header(); ?>
@@ -25,7 +30,7 @@
                     </dd>
                 </dl>
                 <figure class="blog__image">
-                    <img src="<?php echo images->get_file('blog-kubata.jpg'); ?>" alt="天然水" width="680" height="454">
+                    <img src="<?php echo $images->get_file('blog-kubata.jpg'); ?>" alt="天然水" width="680" height="454">
                 </figure>
                 <div class="blog__container">
                     <h2 class="blog__container--title">当店のシャワーヘッドは、塩素除去によって髪の毛や頭皮のダメージを抑えてあなたに寄り添います</h2>
@@ -43,13 +48,13 @@
                 <button class="blog__pager--previousBtn __blog-arrowBtn_none" type="button"
                     onclick="location.href='#'"><span class="fa-sr-only">前の記事へ</span></button>
                 <ul class="blog__pager--link">
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_01.php'); ?>" class="__blog-current">1</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_02.php'); ?>">2</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_03.php'); ?>">3</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_04.php'); ?>">4</a></li>
-                    <li class="blog__pager--link_item"><a href="<?php echo blog->get_file('content_05.php'); ?>">5</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_01.php'); ?>" class="__blog-current">1</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_02.php'); ?>">2</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_03.php'); ?>">3</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_04.php'); ?>">4</a></li>
+                    <li class="blog__pager--link_item"><a href="<?php echo $blog->get_file('content_05.php'); ?>">5</a></li>
                 </ul>
-                <button class="blog__pager--nextBtn" type="button" onclick="location.href='<?php echo blog->get_file('content_02.php'); ?>'"><span class="fa-sr-only">次の記事へ</span></button>
+                <button class="blog__pager--nextBtn" type="button" onclick="location.href='<?php echo $blog->get_file('content_02.php'); ?>'"><span class="fa-sr-only">次の記事へ</span></button>
             </div>
         </main>
         <?php get_footer(); ?>

@@ -1,4 +1,7 @@
 <?php require_once('../../../module/utility_functions.php'); ?>
+<?php
+    $reserve = new URL(['page', 'reserve']);
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -16,7 +19,7 @@
             <div class="account--success main__content content-w">
                 <p>アカウントの登録ができました！さっそく予約をとってみましょう！</p>
                 <p>予約は下のリンクからできます。</p>
-                <p><a href="<?php echo reserve->get_file(''); ?>">予約をとる</a></p>
+                <p><a href="<?php echo $reserve->get_file(''); ?>">予約をとる</a></p>
             </div>
         </main>
         <?php get_footer(); ?>

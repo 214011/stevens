@@ -1,10 +1,13 @@
 <?php require_once('../../module/utility_functions.php'); ?>
+<?php
+    $js = new URL('js');
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>メニュー｜Bordeaux</title>
         <?php get_head(); ?>
-        <script src="<?php echo js->get_file('menu.js'); ?>"></script>
+        <script src="<?php echo $js->get_file('menu.js'); ?>"></script>
     </head>
     <body class="bg__menu">
         <?php get_header(); ?>

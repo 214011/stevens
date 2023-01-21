@@ -1,11 +1,10 @@
 <?php
     require_once('../../../module/utility_functions.php');
+    $root = new URL();
+    $account_login = new URL(['page', 'account', 'login']);
     session_start();
     get_class_login();
     get_class_url();
-    URL::$DIR = 'stevens';
-    $root = new URL();
-    $account_login = new URL(['page', 'account', 'login']);
     if (Login::is_login()) {
         setcookie(
             'user',
@@ -16,8 +15,8 @@
             ]
         );
         Login::logout();
-        header('Location: ' . root->get_file(''));
+        header('Location: ' . $root->get_file(''));
     } else {
-        header('Location: ' . account_login->get_file(''));
+        header('Location: ' . $account_login->get_file(''));
     }
 ?>

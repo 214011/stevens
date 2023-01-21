@@ -1,14 +1,14 @@
 <?php
-    session_start();
-    require_once('../../../module/utility_functions.php');
-    get_module_dbh_instance();
-    get_class_login();
-    get_class_url();
-    get_class_user();
     if (isset($_POST['mailAddress']) && isset($_POST['password'])) {
-
+        session_start();
+        require_once('../../../module/utility_functions.php');
+        $root = new URL();
+        $dbh = get_module_dbh_instance();
+        get_class_login();
+        get_class_url();
+        get_class_user();
         get_module_get_db_user();
-        $row = get_db_user(dbh, $_POST['mailAddress']);
+        $row = get_db_user($dbh, $_POST['mailAddress']);
 
         if ($row) {
 
@@ -49,7 +49,7 @@
 
                 $login->setInsertMode(Login::SET_INSERT_DICTIONARY_MODE);
                 $login->insert_login_session();
-                header("Location: " . root->get_file(''));
+                header("Location: " . $root->get_file(''));
             } else {
                 header("Location: ./failed.php");
             }

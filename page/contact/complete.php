@@ -1,4 +1,7 @@
 <?php require_once('../../module/utility_functions.php'); ?>
+<?php
+    $root = new URL();
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -34,7 +37,7 @@
                     <p>こちらでお問い合わせ内容を確認でき次第早めに返信させていただきますので今しばらくお待ちください。</p>
                     <p>下記のリンクからトップページにお戻りになれますのでクリックしてください。</p>
                     <p>※メールが確認できない場合、迷惑メールに受信している可能性がございますので、そちらの方をご確認いただけると幸いです。</p>
-                    <p><a href="<?php echo root->get_file(''); ?>">トップページに戻る</a></p>
+                    <p><a href="<?php echo $root->get_file(''); ?>">トップページに戻る</a></p>
                 </div>
             </div>
 
