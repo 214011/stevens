@@ -1,5 +1,7 @@
 <?php
-    require_once(__DIR__ . '/env.php');
+    require_once(__DIR__ . '/../lib/url.php');
+    // インスタンスメソッドでディレクトリ名を指定していると、インスタンス生成ごとにセットしなければならないため、静的プロパティへ直にセットする。
+    URL::$DIR = 'stevens';
 
     // HTML blocs
     function get_head () {
