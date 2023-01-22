@@ -11,7 +11,7 @@
         private string $password;
         // データベースから取得する値など
         private string $id;
-        private $reserveDatetime;
+        private string | null $reserveDatetime;
         private string $created;
         private string $modified;
 
@@ -109,7 +109,7 @@
          * @param string $reserveDatetime セットしたい予約日の文字列
          * @return void
          */
-        public function set_reserveDatetime ($reserveDatetime) {
+        public function set_reserveDatetime (string | null $reserveDatetime) {
             $this->reserveDatetime = $reserveDatetime;
         }
 
