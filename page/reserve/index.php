@@ -7,7 +7,13 @@
     <head>
         <title>予約｜Bordeaux</title>
         <?php get_head(); ?>
-        <script src="<?php echo $js->get_file('reserve.js'); ?>"></script>
+        <?php
+            get_class_mydate();
+            $now = new MyDate(MyDate::LAST_DAY);
+
+            var_dump($now->getDate());
+        ?>
+        <!-- <script src="<?php echo $js->get_file('reserve.js'); ?>"></script> -->
     </head>
     <body>
         <?php get_header(); ?>

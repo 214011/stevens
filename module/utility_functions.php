@@ -37,6 +37,11 @@
         require_once(__DIR__ . '/../lib/user.php');
     }
 
+    function get_class_mydate () {
+        require_once(__DIR__ . '/../lib/mydate.php');
+        date_default_timezone_set('Asia/Tokyo');
+    }
+
     // module
     function get_module_date_format () {
         require_once(__DIR__ . '/../module/date_format.php');
