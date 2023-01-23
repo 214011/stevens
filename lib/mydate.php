@@ -12,7 +12,10 @@
         private const FORMAT__MINUTES = 'i';
         private const FORMAT__SECONDS = 's';
 
+        public const FIRST_DAY = 'first day of this month';
         public const LAST_DAY = 'last day of this month';
+        public const NEXT_MONTH_FIRST_DAY = 'first day of next month';
+        public const NEXT_MONTH_LAST_DAY = 'last day of next month';
 
         /**
          * 年が返るメソッド
@@ -70,13 +73,14 @@
             return $this->format(self::FORMAT__SECONDS);
         }
 
+
+        public const WEEK = ['日', '月', '火', '水', '木', '金', '土'];
         /**
          * 日本語で曜日が返るメソッド
          * @return string
          */
-        public static function ja_week_format (int $day): string {
-            $week = ['日', '月', '火', '水', '木', '金', '土'];
-            return $week[$day];
+        public static function ja_week_format(int $day): string {
+            return self::WEEK[$day];
         }
 
     }

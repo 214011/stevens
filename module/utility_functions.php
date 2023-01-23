@@ -43,6 +43,10 @@
     }
 
     // module
+    function get_module_calender () {
+        require_once(__DIR__ . '/../module/calender.php');
+    }
+
     function get_module_date_format () {
         require_once(__DIR__ . '/../module/date_format.php');
     }
