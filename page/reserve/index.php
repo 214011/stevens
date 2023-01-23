@@ -7,7 +7,7 @@
         <?php
             $js = new URL('js');
         ?>
-        <!-- <script src="<?php echo $js->get_file('reserve.js'); ?>"></script> -->
+        <script src="<?php echo $js->get_file('reserve.js'); ?>"></script>
     </head>
     <body>
         <?php get_header(); ?>

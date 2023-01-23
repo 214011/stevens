@@ -23,7 +23,7 @@
             <table>
                 <thead>
                     <tr>
-                    <?php $day = 0; ?>
+                        <?php $day = 0; ?>
                         <?php while ($day < count(MyDate::WEEK)): ?>
                             <th><?php echo MyDate::ja_week_format($day); ?></th>
                             <?php $day++ ?>
@@ -41,10 +41,12 @@
                                 <td></td>
                             <?php elseif ($r === 0 && $c >= $m['firstDay']->getDay()): ?>
                                 <?php $day_count++; ?>
-                                <td><a href="reserve_day.html"><?php echo $day_count; ?></a></td>
+                                <?php $d = new DateTime($m['firstDay']->format('Y-m') . '-' . $day_count); ?>
+                                <td><a href="<?php echo $reserve_day->get_file('?date=') . $d->format('Y-m-d'); ?>"><?php echo $day_count; ?></a></td>
                             <?php elseif ($day_count < $m['lastDay']->getDate()): ?>
                                 <?php $day_count++; ?>
-                                <td><a href="reserve_day.html"><?php echo $day_count; ?></a></td>
+                                <?php $d = new DateTime($m['firstDay']->format('Y-m') . '-' . $day_count); ?>
+                                <td><a href="<?php echo $reserve_day->get_file('?date=') . $d->format('Y-m-d'); ?>"><?php echo $day_count; ?></a></td>
                             <?php else: ?>
                                 <td></td>
                             <?php endif; ?>

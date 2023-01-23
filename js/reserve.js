@@ -3,7 +3,6 @@
     w.addEventListener('DOMContentLoaded', () => {
 
         const $elms = {
-            calenderMonth: d.getElementsByClassName('calender--container__item--title'),
             reserveCalender: d.getElementsByClassName('js-reserve__calender')
         };
 
@@ -34,9 +33,6 @@
 
 		let nextMonth = new Date(`${formatYear(currentMonthFirstDay.getMonth() + 1)}-${formatMonth(currentMonthFirstDay.getMonth() + 1)}-1`);
 		const nextMonthLastDay = new Date(nextMonth.getFullYear(), formatMonth(nextMonth.getMonth()), 0);
-
-        $elms.calenderMonth[0].innerText = `${formatMonth(currentMonthFirstDay.getMonth())}月`;
-        $elms.calenderMonth[1].innerText = `${formatMonth(nextMonth.getMonth())}月`;
 
         let forCurrent = 0;
         let currentDayIndex = [0, 0];
@@ -69,37 +65,6 @@
                 col_0.children[0].addEventListener('mouseout', () => Array.from($elms.reserveCalender[0].children).forEach(($row, r)=> Array.from($row.children).forEach(($col, c) => {if ($col.children[0] && r === currentDayIndex[0] && c === currentDayIndex[1]) $col.children[0].classList.add('calender__currentDay')})));
             }
         }
-
-
-
-
-        const setCalender = (where, firstDay, lastDay) => {
-
-            let dayCount = 0;
-
-            for (let r = 0; r < 6; r++) {
-                for (let c = 0; c < 7; c++) {
-                    const col = where.children[r].children[c];
-                    if (firstDay.getDay() <= c && r === 0) {
-                        dayCount++;
-                        col.children[0].innerText = dayCount;
-                    } else if (r >= 1) {
-                        if (dayCount > lastDay.getDate() - 1) {
-                            delete col.children[0].remove();
-                        } else {
-                            dayCount++;
-                            col.children[0].innerText = dayCount;
-                        }
-                    } else {
-                        delete col.children[0].remove();
-                    }
-                }
-            }
-
-        };
-
-        setCalender($elms.reserveCalender[0], currentMonthFirstDay, currentMonthLastDay);
-        setCalender($elms.reserveCalender[1], nextMonth, nextMonthLastDay);
 
 
     });
