@@ -42,11 +42,11 @@
                             <?php elseif ($r === 0 && $c >= $m['firstDay']->getDay()): ?>
                                 <?php $day_count++; ?>
                                 <?php $d = new DateTime($m['firstDay']->format('Y-m') . '-' . $day_count); ?>
-                                <td><a href="<?php echo $reserve_day->get_file('?date=') . $d->format('Y-m-d'); ?>"><?php echo $day_count; ?></a></td>
+                                <td><a class="js-reserve__calender--item" href="<?php echo $reserve_day->get_file('?date=') . $d->format('Y-m-d'); ?>"><?php echo $day_count; ?></a></td>
                             <?php elseif ($day_count < $m['lastDay']->getDate()): ?>
                                 <?php $day_count++; ?>
                                 <?php $d = new DateTime($m['firstDay']->format('Y-m') . '-' . $day_count); ?>
-                                <td><a href="<?php echo $reserve_day->get_file('?date=') . $d->format('Y-m-d'); ?>"><?php echo $day_count; ?></a></td>
+                                <td><a class="js-reserve__calender--item" href="<?php echo $reserve_day->get_file('?date=') . $d->format('Y-m-d'); ?>"><?php echo $day_count; ?></a></td>
                             <?php else: ?>
                                 <td></td>
                             <?php endif; ?>

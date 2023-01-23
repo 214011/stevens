@@ -7,7 +7,7 @@
         <?php
             $js = new URL('js');
         ?>
-        <!-- <script src="<?php echo $js->get_file('reserve.js'); ?>"></script> -->
+        <script src="<?php echo $js->get_file('reserve.js'); ?>"></script>
     </head>
     <body>
         <?php get_header(); ?>
@@ -24,104 +24,7 @@
                             <span class="span-block">week曜日</span>
                         </span>
                     </h3>
-                    <ul class="reserve__today--container">
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>9:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>10:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>11:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>12:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>13:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>14:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>15:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                        <li class="reserve__today--container_item">
-                            <dl>
-                                <dt>16:00~</dt>
-                                <dd>
-                                    <dl>
-                                        <dt>空き</dt>
-                                        <dd>4人</dd>
-                                    </dl>
-                                </dd>
-                                <dd><button type="button" class="btn" onclick="location.href = '#'">予約する</button></dd>
-                            </dl>
-                        </li>
-                    </ul>
+                    <?php get_module_reserve_button(); ?>
                 </section>
             </div>
         </main>
