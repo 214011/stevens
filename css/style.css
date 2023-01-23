@@ -1479,6 +1479,31 @@ button[type = button]#js-toTop::after {
     border: 1.5px solid var(--c-font);
 }
 
+.hidden-text {
+    text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.calender_closed {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    transition: var(--transition);
+    position: relative;
+}
+
+.calender_closed::before {
+    content: "";
+    width: 60%;
+    height: 2px;
+    display: block;
+    background-color: var(--c-red_main);
+    transform: rotate(45deg);
+    position: absolute;
+}
+
 .calender--container__item--table table thead th:first-child {
     color: var(--c-red_accent);
 }
@@ -1498,7 +1523,7 @@ button[type = button]#js-toTop::after {
 }
 
 .calender__currentDay {
-    background-color: var(--c-green);
+    background-color: var(--c-green) !important;
 }
 
 .calender--container__item--table table tbody td a:hover {
