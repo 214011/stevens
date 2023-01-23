@@ -31,7 +31,7 @@
         }
 
         /**
-         * 日にち返るメソッド
+         * 日にちが返るメソッド
          * @return int
          */
         public function getDate(): int {
