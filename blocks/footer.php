@@ -3,6 +3,7 @@
     $images = new URL('images');
     $menu = new URL(['page', 'menu']);
     $reserve = new URL(['page', 'reserve']);
+    $reserve_day = new URL(['page', 'reserve', 'day']);
     $blog = new URL(['page', 'blog']);
     $contact = new URL(['page', 'contact']);
     $account_create = new URL(['page', 'account', 'create']);
@@ -39,7 +40,10 @@
                     <h2 class="footer__container--title"><a href="<?php echo $reserve->get_file(''); ?>" class="footer__reserve-content"><i class="fa-regular fa-calendar-days"></i>Reserve</a></h2>
                     <ul class="footer__container--list">
                         <li><a href="<?php echo $reserve->get_file(''); ?>">予約状況</a></li>
-                        <li><a href="<?php echo $reserve->get_file('reserve_day.php'); ?>">今日の予約</a></li>
+                        <?php
+                            $today = new DateTime();
+                        ?>
+                        <li><a href="<?php echo $reserve_day->get_file('?date=') . $today->format('Y-m-d'); ?>">今日の予約</a></li>
                     </ul>
                 </section>
                 <section class="footer__container">
