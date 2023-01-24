@@ -77,7 +77,7 @@
                 <dd>
                     <dl>
                         <dt>空き</dt>
-                        <dd><?php echo $info['reserverLimit']; ?>人</dd>
+                        <dd><span data-js-ajax="<?php echo $info['reserveDatetime']->format('Y-m-d H:i:s') ?>"><?php echo $info['reserverLimit']; ?></span>人</dd>
                     </dl>
                 </dd>
                 <dd><button type="button" class="btn" onclick="location.href = '<?php echo $info['href']; ?>'">予約する</button></dd>
