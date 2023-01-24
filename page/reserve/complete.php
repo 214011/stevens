@@ -1,20 +1,28 @@
+<?php require_once('../../module/utility_functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>予約ができました｜Bordeaux</title>
-        <?php require_once('blocks/head.php'); ?>
+        <?php get_head(); ?>
     </head>
     <body>
-        <?php require_once('../../blocks/header.php'); ?>
+        <?php get_header(); ?>
         <main class="main">
-            
-            <div class="reserve--text content-w">
-                <p>予約が完了しました。控えのメールをお送りしたのでご確認ください。</p>
-                <p>トップページにお戻りなる場合は下のリンクをクリックしてください。</p>
-                <p style="margin: 1em;"><a href="index.html">トップページに戻る</a></p>
+            <h2 class="main--title main--title_reserve">
+                <span class="span-block"><i class="fa-regular fa-calendar-days"></i>Complete</span>
+                <span class="fa-sr-only">-</span>
+                <span class="span-block">予約完了</span>
+            </h2>
+            <div class="account account--success main__content content-w">
+                <div class="account--text content-w">
+                    <p>予約が完了しました。控えのメールをお送りしたのでご確認ください。</p>
+                    <p>トップページにお戻りなる場合は下のリンクをクリックしてください。</p>
+                    <?php $root = new URL(); ?>
+                    <p><a href="<?php echo $root->get_file(''); ?>">トップページに戻る</a></p>
+                </div>
             </div>
-
+            </div>
         </main>
-        <?php require_once('../../blocks/footer.php'); ?>
+        <?php get_footer(); ?>
     </body>
 </html>

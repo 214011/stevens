@@ -1,8 +1,10 @@
 <?php
     require_once(__DIR__ . '/../lib/dbh.php');
-    $dbh = new DBH('localhost', 'stevens', 'root', 'root');
-    $dbh->set_tableName('user_info');
-    return $dbh;
+    function get_dbh () {
+        $dbh = new DBH('localhost', 'stevens', 'root', 'root');
+        $dbh->set_tableName('user_info');
+        return $dbh;
+    }
 
 
     // $stmt = $dbh->query__UPDATE([

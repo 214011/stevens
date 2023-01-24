@@ -53,7 +53,7 @@
 
     function get_module_dbh_instance () {
         require_once(__DIR__ . '/dbh_instance.php');
-        return $dbh;
+        return $dbh = get_dbh();
     }
 
     function get_module_get_db_user () {

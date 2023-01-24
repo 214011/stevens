@@ -1,7 +1,10 @@
 <?php
-    require_once(__DIR__ . '/../lib/url.php');
-    require_once(__DIR__ . '/../lib/mydate.php');
+    require_once(__DIR__ . '/utility_functions.php');
+    get_class_url();
+    get_class_mydate();
+    $dbh = get_module_dbh_instance();
     date_default_timezone_set('Asia/Tokyo');
+
     $hourTime = ['9', '10', '11', '12', '13', '14', '15', '16'];
     $reserve = new URL(['page', 'reserve']);
 ?>

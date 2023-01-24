@@ -4,6 +4,7 @@
     <head>
         <title>予約失敗｜Bordeaux</title>
         <?php get_head(); ?>
+        <?php get_class_url(); ?>
     </head>
     <body>
         <?php get_header(); ?>
@@ -11,13 +12,14 @@
             <h2 class="main--title main--title_reserve">
                 <span class="span-block"><i class="fa-regular fa-calendar-days"></i>Failed</span>
                 <span class="fa-sr-only">-</span>
-                <span class="span-block">アカウントを作成してください</span>
+                <span class="span-block">ログインもしくはアカウントを作成してください</span>
             </h2>
-            <div class="account main__content content-w">
+            <div class="account account--success main__content content-w">
                 <div class="account--text content-w">
-                    <p>アカウント登録がされていないため、予約ができません</p>
-                    <p>下記のリンクからアカウントを作成してください</p>
-                    <p class="btn__outer fx-jc-center"><a class="btn" href="process.php"><i class="fa-solid fa-right-from-bracket"></i></i>アカウントを作成/a></p>
+                    <p>ログインかアカウント登録がされていないため、予約ができません</p>
+                    <p>下記のリンクからアカウントをログイン・作成してください</p>
+                    <?php $account_create = new URL(['page', 'account', 'create']); ?>
+                    <p><a href="<?php echo $account_create->get_file(''); ?>">アカウント関連ページへ</a></p>
                 </div>
             </div>
             </div>
