@@ -1,23 +1,14 @@
-<?php require_once('../../module/utility_functions.php'); ?>
-<?php
-    $js = new URL('js');
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <title>予約｜Bordeaux</title>
-        <?php get_head(); ?>
-        <script src="<?php echo $js->get_file('reserve.js'); ?>"></script>
+        <?php require_once('blocks/head.php'); ?>
+        <script src="js/reserve.js"></script>
     </head>
     <body>
-        <?php get_header(); ?>
+        <?php require_once('../../blocks/header.php'); ?>
         <main class="main">
-            <h2 class="main--title main--title_reserve">
-                <span class="span-block"><i class="fa-regular fa-calendar-days"></i>Reserve</span>
-                <span class="fa-sr-only">-</span>
-                <span class="span-block">予約</span>
-            </h2>
-            <div class="reserve main__content content-w">
+            <div class="reserve __reserve-day main__content content-w">
                 <div class="reserve__calender--container">
                     <section class="calender--container__item">
                         <h3 class="calender--container__item--title">MM月</h3>
@@ -37,58 +28,58 @@
                                 <!-- フロントエンドなのでJSでカレンダーを作る。最終的にバックエンドでPHPを使って作る。 -->
                                 <tbody class="js-reserve__calender">
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -112,58 +103,58 @@
                                 <!-- フロントエンドなのでJSでカレンダーを作る。最終的にバックエンドでPHPを使って作る。 -->
                                 <tbody class="js-reserve__calender">
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
-                                        <td><a href="reserve_day.html"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
+                                        <td><a href="#"></a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -173,9 +164,9 @@
                 <section class="reserve__today">
                     <h3 class="reserve__today--title">
                         <span class="span-block">
-                            <span class="span-block">Today</span>
+                            <span class="span-block">MM月DD日</span>
                             <span class="fa-sr-only">-</span>
-                            <span class="span-block">今日の予約</span>
+                            <span class="span-block">week曜日</span>
                         </span>
                     </h3>
                     <ul class="reserve__today--container">
@@ -279,6 +270,6 @@
                 </section>
             </div>
         </main>
-        <?php get_footer(); ?>
+        <?php require_once('../../blocks/footer.php'); ?>
     </body>
 </html>

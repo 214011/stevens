@@ -37,25 +37,16 @@
         require_once(__DIR__ . '/../lib/user.php');
     }
 
-    function get_class_mydate () {
-        require_once(__DIR__ . '/../lib/mydate.php');
-        date_default_timezone_set('Asia/Tokyo');
-    }
-
     // module
-    function get_module_calender () {
-        require_once(__DIR__ . '/calender.php');
-    }
-
-    function get_module_reserve_button () {
-        require_once(__DIR__ . '/reserve_button.php');
+    function get_module_date_format () {
+        require_once(__DIR__ . '/../module/date_format.php');
     }
 
     function get_module_dbh_instance () {
-        require_once(__DIR__ . '/dbh_instance.php');
+        require_once(__DIR__ . '/../module/dbh_instance.php');
         return $dbh;
     }
 
     function get_module_get_db_user () {
-        require_once(__DIR__ . '/get_db_user.php');
+        require_once(__DIR__ . '/../module/get_db_user.php');
     }

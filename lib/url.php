@@ -49,7 +49,7 @@
 
         /**
          * 整形されたファイルまでのURLを返すメソッド
-         * @param string $fileName 取得したいファイル名
+         * @param string $fileName 使いたい画像ファイル名
          * @return string
          */
         public function get_file (string $fileName) {

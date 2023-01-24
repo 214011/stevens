@@ -1,6 +1,6 @@
 <?php
     require_once(__DIR__ . '/../lib/dbh.php');
-    $dbh = new DBH('localhost', 'stevens', 'root', 'root');
+    $dbh = new DBH('mysql90.conoha.ne.jp', 'mcmzt_stevens', 'mcmzt_nmjuune', 'Xx_Junpei1227_xX');
     $dbh->set_tableName('user_info');
     return $dbh;
 
