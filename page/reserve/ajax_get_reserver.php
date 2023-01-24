@@ -13,7 +13,7 @@
         while ($i < $postLen) {
             $datetime = new DateTime($Ajax_POST[$i]);
             array_push($resData, 4 - search_reserver($dbh, $datetime->format('Y-m-d H:i:s')));
-            $i++;
+            ++$i;
         }
         header("Content-type: application/json; charset=UTF-8");
         echo json_encode($resData);
