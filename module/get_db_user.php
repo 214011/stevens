@@ -1,6 +1,4 @@
 <?php
-    require_once(__DIR__ . '/dbh_instance.php');
-
     /**
      * データベースのアカウントユーザを取得する関数
      * @param DBH $dbh DBHクラスのインスタンスオブジェクト
