@@ -1,6 +1,12 @@
 <?php
     require_once(__DIR__ . '/dbh_instance.php');
 
+    /**
+     * データベースのアカウントユーザを取得する関数
+     * @param DBH $dbh DBHクラスのインスタンスオブジェクト
+     * @param string $mailAddress 取得したいアカウントのメールアドレス
+     * @return mixed
+     */
     function get_db_user (DBH $dbh, string $mailAddress) {
         $stmt = $dbh->query__SELECT([
             DBH::SQL__SELECT => '*',
