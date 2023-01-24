@@ -75,10 +75,10 @@
                             <?php else: ?>
                                 <td class="hidden-text">n</td>
                             <?php endif; ?>
-                            <?php $c++; ?>
+                            <?php ++$c; ?>
                         <?php endwhile; ?>
                         </tr>
-                        <?php $r++; ?>
+                        <?php ++$r; ?>
                     <?php endwhile; ?>
                 </tbody>
             </table>

@@ -59,14 +59,16 @@
         ]
     ];
     $i = 0;
-    while ($i < count($reserve_info)) {
-        if (isset($_GET['date'])) {
+    $isset_GET = isset($_GET['date']);
+    $resrvInfoLen = count($reserve_info);
+    while ($i < $resrvInfoLen) {
+        if ($isset_GET) {
             $reserve_info[$i]['reserveDatetime'] = new DateTime($_GET['date'] . ' ' . $reserve_info[$i]['time'] . ':00:00');
         }
         $format_datetime = $reserve_info[$i]['reserveDatetime']->format('Y-m-d H:i:s');
         $reserve_info[$i]['reserverLimit'] -= search_reserver($dbh, $format_datetime);
         $reserve_info[$i]['href'] .= $format_datetime;
-        $i++;
+        ++$i;
     }
 ?>
 <ul class="reserve__today--container">

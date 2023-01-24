@@ -17,7 +17,7 @@
         $stmt->execute();
         $reserver = 0;
         while ($stmt->fetch(PDO::FETCH_OBJ)) {
-            $reserver++;
+            ++$reserver;
         }
         return $reserver;
     }
