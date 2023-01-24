@@ -6,7 +6,9 @@
     $reserve = new URL(['page', 'reserve']);
 
     session_start();
-    if (Login::is_login()) {
+    if (!Login::is_login()) {
+        header('Location: ' . $reserve->get_file('reason_no-account.php'));
+    } else {
         if (empty($_GET['datetime'])) {
             header('Location: ./');
         } else {
@@ -24,9 +26,11 @@
 
             $reserver_limit = 4;
 
+            // 人数制限4人以上になったら予約失敗ページに飛ばす
             if (search_reserver($dbh, $date->format('Y-m-d H:i:s')) >= $reserver_limit) {
                 header('Location: ' . $reserve->get_file('reason_limit.php'));
             } else {
+                // 予約日をアップデート
                 $stmt = $dbh->query__UPDATE([
                     DBH::SQL__SET => [
                         ['reserve_datetime' => ':reserve_datetime']
@@ -39,6 +43,7 @@
                 ]);
                 $stmt->execute();
 
+                // 予約日をブラウザ側のユーザ情報にセット
                 $row = get_db_user($dbh, $user->get_mailAddress());
                 $user->set_reserveDatetime($row->reserve_datetime);
                 $user->set_modified($row->modified);
@@ -64,7 +69,5 @@
                 header('Location: ' . $reserve->get_file('complete.php'));
             }
         }
-    } else {
-        header('Location: ' . $reserve->get_file('reason_no-account.php'));
     }
 ?>

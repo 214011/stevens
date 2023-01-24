@@ -15,7 +15,6 @@
             get_class_mail();
             get_class_login();
             get_class_user();
-            get_class_user();
             $toMail = NULL;
             if (isset($_SESSION['toMail'])) {
                 $toMail = unserialize($_SESSION['toMail']);

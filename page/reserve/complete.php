@@ -21,7 +21,6 @@
                     <p><a href="<?php echo $root->get_file(''); ?>">トップページに戻る</a></p>
                 </div>
             </div>
-            </div>
         </main>
         <?php get_footer(); ?>
     </body>
