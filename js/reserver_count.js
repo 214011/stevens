@@ -1,4 +1,5 @@
 'use strict';
+// ライブラリフォルダのAjaxクラスが書かれたファイルを読み込む
 import Ajax from '/stevens/js/lib/ajax.js';
 ((d) => {
 
