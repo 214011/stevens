@@ -22,7 +22,6 @@
                     <p><a href="<?php echo $account_create->get_file(''); ?>">アカウント関連ページへ</a></p>
                 </div>
             </div>
-            </div>
         </main>
         <?php get_footer(); ?>
     </body>
