@@ -15,7 +15,8 @@
             </h2>
             <div class="account main__content content-w">
                 <div class="account--text content-w">
-                    <p>ア</p>
+                    <p>アカウント登録がされていないため、予約ができません</p>
+                    <p>下記のリンクからアカウントを作成してください</p>
                     <p class="btn__outer fx-jc-center"><a class="btn" href="process.php"><i class="fa-solid fa-right-from-bracket"></i></i>アカウントを作成/a></p>
                 </div>
             </div>
