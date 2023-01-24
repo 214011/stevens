@@ -51,6 +51,10 @@
         require_once(__DIR__ . '/reserve_button.php');
     }
 
+    function get_module_search_reserver () {
+        require_once(__DIR__ . '/search_reserver.php');
+    }
+
     function get_module_dbh_instance () {
         require_once(__DIR__ . '/dbh_instance.php');
         return $dbh = get_dbh();
