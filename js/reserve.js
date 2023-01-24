@@ -20,6 +20,7 @@
 
         let dayCount = 0;
         let todayIndex = [0, 0];
+        // r=row（行）, c=column（列）
         for (let r = 0; r < 6; r++) {
             for (let c = 0; c < 7; c++) {
                 if (r === 0 && c >= currentM_f.getDay()) {
