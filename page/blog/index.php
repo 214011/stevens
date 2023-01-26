@@ -57,7 +57,7 @@
                             <a href="<?php echo $blog->get_file('content_02.php'); ?>">
                                 <figure class="main__content--blog__card">
                                     <div class="main__content--blog__card--img">
-                                        <img src="<?php echo $images->get_file('blog-kubata.jpg'); ?>" alt="バリカンのイメージ画像" width="2239" height="2560">
+                                        <img src="<?php echo $images->get_file('blog_arisue.jpg'); ?>" alt="バリカンのイメージ画像" width="2239" height="2560">
                                     </div>
                                     <figcaption>
                                         <section class="main__content--blog__card--content">
